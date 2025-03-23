@@ -1342,24 +1342,99 @@
 // console.log(dateTomorrow(29, 2, 2024));
 
 
-const userInfo = {
-    firstName: "Viktor",
-    surName: "Gold",
-    age: 26
+//! Home Work 
+//! 1. Написать функцию, которая вычисляет факториал заданного числа.
+function claculateFactorialNumber(a:number) {
+    if (a == 1)
+        return a
+    else return a * claculateFactorialNumber(a-1)
 }
-const User = userInfo
-userInfo.surName = "Zolotko"
-User.town = "Sochi"
-console.log(User.town);
+console.log(claculateFactorialNumber(2));
+console.log(claculateFactorialNumber(4));
 
-let strit = 'strit'
-User[strit] = 'Sovetskaya'
-console.log(User.strit);
+//! 2. Написать функцию, которая выводит все числа из заданного пользователем диапазона 
+//! в прямом порядке. И еще одну функцию – для вывода в обратном порядке. 
+
+function showRangeNumber (b:number, c:number):any {
+    if(b == c) {
+        return b
+    } else {
+        return b + ' ' + showRangeNumber (b+1, c)
+    }
+}
+console.log(showRangeNumber(6, 6))
+console.log(showRangeNumber(2, 12))
+
+//! 3. Написать функцию, которая выводит переданное ей число задом наперед. 
+//! Например: число 1234 вывести как 4321.
+    
+function reversNumber(d:number):number {
+    if (d < 10){
+        return d
+    } else {
+        return Number(d % 10 + '' + reversNumber(Math.floor(d/10)))
+    }
+}
+console.log(reversNumber(6))
+console.log(reversNumber(12345))
+
+// Второй способ решения
+console.log(Number(String(1234).split('').reverse().join('')));
+
+//! 4. Написать функцию, которая считает сумму цифр числа. 
+//! Например: число 1357, сумма 1 + 3 + 5 + 7 = 16.
+    function calculateSum (e:number):any {
+        if(e < 10) {
+            return e
+        } else {
+            return e % 10 + calculateSum(Math.floor(e / 10))
+        }
+    }
+console.log(calculateSum(4))
+console.log(calculateSum(123))  
+
+//! 5. Написать функцию, которая принимает число и выводит соответствующее количество 
+//! вложенных пар круглых скобок. Например: число 4 – (((()))).
+    function showBrackets(f:number):any {
+        if (f == 1) {
+            return '()'
+        } else {
+            return '(' + showBrackets(f - 1) +')'
+        }
+    }
+console.log(showBrackets(4));
 
 
-// function a() {
-//     console.log("Viktor Gold");
-// }
-// a()
-// a = 10
-// console.log(a);
+//! Объекты __________________________________________
+//! Задание 1
+// Создать объект, описывающий автомобиль (производитель, модель, год выпуска, средняя скорость), 
+// и следующие функции для работы с этим объектом.
+//! 1. Функция для вывода на экран информации об автомобиле.
+//! 2. Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью.
+//! Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час. 
+
+let car = {
+    country: "Japan",
+    model: "Mitsubishi",
+    year: 2007,
+    averageSpeed: 100
+}
+function showCarInfo() {
+    for (let key in car) {
+        console.log(`${key}: ${car[key]}`);
+    }
+}
+function travelTime(distance:number) {
+    let time = (distance/car.averageSpeed)
+    if (time <= 4) {
+        return time.toFixed(2)
+    }
+    else if (time > 4) {
+        let numberBreaks = time / 4
+        time = time + numberBreaks
+        return Math.trunc(time)
+    }
+}
+
+showCarInfo()
+console.log(travelTime(800));
