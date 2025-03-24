@@ -1344,65 +1344,65 @@
 
 //! Home Work 
 //! 1. Написать функцию, которая вычисляет факториал заданного числа.
-function claculateFactorialNumber(a:number) {
-    if (a == 1)
-        return a
-    else return a * claculateFactorialNumber(a-1)
-}
-console.log(claculateFactorialNumber(2));
-console.log(claculateFactorialNumber(4));
+// function claculateFactorialNumber(a:number) {
+//     if (a == 1)
+//         return a
+//     else return a * claculateFactorialNumber(a-1)
+// }
+// console.log(claculateFactorialNumber(2));
+// console.log(claculateFactorialNumber(4));
 
 //! 2. Написать функцию, которая выводит все числа из заданного пользователем диапазона 
 //! в прямом порядке. И еще одну функцию – для вывода в обратном порядке. 
 
-function showRangeNumber (b:number, c:number):any {
-    if(b == c) {
-        return b
-    } else {
-        return b + ' ' + showRangeNumber (b+1, c)
-    }
-}
-console.log(showRangeNumber(6, 6))
-console.log(showRangeNumber(2, 12))
+// function showRangeNumber (b:number, c:number):any {
+//     if(b == c) {
+//         return b
+//     } else {
+//         return b + ' ' + showRangeNumber (b+1, c)
+//     }
+// }
+// console.log(showRangeNumber(6, 6))
+// console.log(showRangeNumber(2, 12))
 
 //! 3. Написать функцию, которая выводит переданное ей число задом наперед. 
 //! Например: число 1234 вывести как 4321.
     
-function reversNumber(d:number):number {
-    if (d < 10){
-        return d
-    } else {
-        return Number(d % 10 + '' + reversNumber(Math.floor(d/10)))
-    }
-}
-console.log(reversNumber(6))
-console.log(reversNumber(12345))
+// function reversNumber(d:number):number {
+//     if (d < 10){
+//         return d
+//     } else {
+//         return Number(d % 10 + '' + reversNumber(Math.floor(d/10)))
+//     }
+// }
+// console.log(reversNumber(6))
+// console.log(reversNumber(12345))
 
-// Второй способ решения
-console.log(Number(String(1234).split('').reverse().join('')));
+// // Второй способ решения
+// console.log(Number(String(1234).split('').reverse().join('')));
 
 //! 4. Написать функцию, которая считает сумму цифр числа. 
 //! Например: число 1357, сумма 1 + 3 + 5 + 7 = 16.
-    function calculateSum (e:number):any {
-        if(e < 10) {
-            return e
-        } else {
-            return e % 10 + calculateSum(Math.floor(e / 10))
-        }
-    }
-console.log(calculateSum(4))
-console.log(calculateSum(123))  
+//     function calculateSum (e:number):any {
+//         if(e < 10) {
+//             return e
+//         } else {
+//             return e % 10 + calculateSum(Math.floor(e / 10))
+//         }
+//     }
+// console.log(calculateSum(4))
+// console.log(calculateSum(123))  
 
 //! 5. Написать функцию, которая принимает число и выводит соответствующее количество 
 //! вложенных пар круглых скобок. Например: число 4 – (((()))).
-    function showBrackets(f:number):any {
-        if (f == 1) {
-            return '()'
-        } else {
-            return '(' + showBrackets(f - 1) +')'
-        }
-    }
-console.log(showBrackets(4));
+//     function showBrackets(f:number):any {
+//         if (f == 1) {
+//             return '()'
+//         } else {
+//             return '(' + showBrackets(f - 1) +')'
+//         }
+//     }
+// console.log(showBrackets(4));
 
 
 //! Объекты __________________________________________
@@ -1413,28 +1413,118 @@ console.log(showBrackets(4));
 //! 2. Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью.
 //! Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час. 
 
-let car = {
-    country: "Japan",
-    model: "Mitsubishi",
-    year: 2007,
-    averageSpeed: 100
-}
-function showCarInfo() {
-    for (let key in car) {
-        console.log(`${key}: ${car[key]}`);
-    }
-}
-function travelTime(distance:number) {
-    let time = (distance/car.averageSpeed)
-    if (time <= 4) {
-        return time.toFixed(2)
-    }
-    else if (time > 4) {
-        let numberBreaks = time / 4
-        time = time + numberBreaks
-        return Math.trunc(time)
-    }
-}
+// let car = {
+//     country: "Japan",
+//     model: "Mitsubishi",
+//     year: 2007,
+//     averageSpeed: 100
+// }
+// function showCarInfo(str:any) {
+//     for (const key in str) {
+//         console.log(`${key}: ${str[key]}`);
+//     }
+// }
+// showCarInfo(car);
 
-showCarInfo()
-console.log(travelTime(800));
+// function travelTime(distance:any, speed:number){
+//     let time = distance / speed
+//     let rest = Math.trunc(time / 4)
+//     if (time <= 4) {
+//         return time
+//     }
+//     else if (distance %400==0) {
+        
+//     }
+//     return time + " часов"  
+// }
+// console.log(travelTime(1000, 100));
+
+// function travelTime(distance:number) {
+//     let time = (distance/car.averageSpeed)
+//     if (time <= 4) {
+//         return time.toFixed(2)
+//     }
+//     else if (time > 4) {
+//         let numberBreaks = time / 4
+//         time = time + numberBreaks
+//         return Math.trunc(time)
+//     }
+// }
+
+// console.log(travelTime(800));
+
+//! оздать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом.
+//! 1. Функция вывода времени на экран.
+//! 2. Функция изменения времени на переданное количество секунд.
+//! 3. Функция изменения времени на переданное количество минут.
+//! 4. Функция изменения времени на переданное количество часов.
+//! Учтите, что в последних 3-х функциях, при изменении одной 
+//! части времени, может измениться и другая. Например: если ко 
+//! времени «20:30:45» добавить 30 секунд, то должно получиться 
+//! «20:31:15», а не «20:30:75». 
+
+// let time = {
+//     hours: 15,
+//     minutes: 1250,
+//     seconds: 30,
+// }
+
+// function seconds(sec:any) {
+//     sec = Math.trunc(time.seconds/60)
+//     if (time.seconds > 59) {
+//         time.seconds = time.seconds - sec*60
+//         time.minutes += sec
+//         return time
+//     } else {
+//         return time
+//     }
+// }
+// console.log(seconds(time));
+
+// function minutes(min:any) {
+//     min = Math.trunc(time.minutes / 60)
+//     if (time.minutes > 59) {
+//         time.minutes = time.minutes - min*60
+//         time.hours+=min
+//         return time
+//     }
+//     return time
+// }
+// console.log(minutes(time));
+
+// function showHours(hour:any) {
+//     hour = Math.trunc(time.hours/24)
+//     if (time.hours > 23) {
+//         time.hours = time.hours - hour*24
+//         return time
+//     }
+//     return time
+// }
+// console.log(showHours(time));
+
+
+//! Массивы
+let massive = [2, 10, true, "string"]
+massive[2] = "Эллемент изменен"
+massive[4] = "Добавлен"
+massive.push('LastEl') // добвляет в конец массива
+massive.pop() // удаляет последний эл-т 
+massive.shift() // удаляет первый эл-т 
+massive.unshift("Начало") // добвляет в начало массива
+
+console.log(massive.length);
+console.log(massive[2]);
+console.log(massive);
+
+let array = [0, 1, 2, 3, 4]
+let newArr = array.splice(2, 3) // Первое число - индекс, второе число - количество эл-ов для удаления
+delete array[0] // удаляет эл-т сохраняя за ним индекс
+console.log(array)
+console.log(newArr)
+
+console.log(Math.round(Math.random()*100)); // Рандомное число
+
+
+
+
+
