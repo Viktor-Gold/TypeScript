@@ -1504,25 +1504,107 @@
 
 
 //! Массивы
-let massive = [2, 10, true, "string"]
-massive[2] = "Эллемент изменен"
-massive[4] = "Добавлен"
-massive.push('LastEl') // добвляет в конец массива
-massive.pop() // удаляет последний эл-т 
-massive.shift() // удаляет первый эл-т 
-massive.unshift("Начало") // добвляет в начало массива
+// let massive = [2, 10, true, "string"]
+// massive[2] = "Эллемент изменен"
+// massive[4] = "Добавлен"
+// massive.push('LastEl') // добвляет в конец массива
+// massive.pop() // удаляет последний эл-т 
+// massive.shift() // удаляет первый эл-т 
+// massive.unshift("Начало") // добвляет в начало массива
 
-console.log(massive.length);
-console.log(massive[2]);
+// console.log(massive.length);
+// console.log(massive[2]);
+// console.log(massive);
+
+// let array = [0, 1, 2, 3, 4]
+// let newArr = array.splice(2, 3) // Первое число - индекс, второе число - количество эл-ов для удаления
+// delete array[0] // удаляет эл-т сохраняя за ним индекс
+// console.log(array)
+// console.log(newArr)
+
+// console.log(Math.round(Math.random()*100)); // Рандомное число
+
+//! Home Work
+//! Задание 1
+//! Создать массив из 10 случайных чисел и написать 
+//! несколько функций для работы с ним.
+let numberArray:number[] = []
+for (let i = 0; i < 10; i++) {
+    let num = Math.trunc(Math.random()*100)
+    numberArray.push(num)
+}
+//! 1. Функция принимает массив и выводит его на экран.
+function showArray(array:number[]) {
+    console.log(array);
+}
+showArray(numberArray)
+
+//! 2. Функция принимает массив и выводит только четные элементы.
+numberArray = [2, 3, 5, 10, 8, 9, 24]
+function showEvenNumbers(array:number[]) {
+    // for (let i = 0; i < array.length; i++) {
+    //     if (array[i] % 2 == 0) {
+    //         console.log(array[i]);
+    //     }
+    // }
+// 2-ой способ
+//     for (const el of array) {
+//         if (el % 2 == 0) {
+//             console.log(el);
+//         }
+//     }
+// }
+// showEvenNumbers(numberArray);
+}
+
+//! 3. Функция принимает массив и возвращает сумму всех элементов массива.
+numberArray = [5, 2, 3, 10, 20]
+function summaElementsArray(array:number[]) {
+    let summa = 0
+    for (let i = 0; i < array.length; i++) {
+        summa+=array[i]      
+    }
+    return summa
+}
+console.log(summaElementsArray(numberArray));
+
+//! 4. Функция принимает массив и возвращает его максимальный элемент.
+function showMaxNumber(array:number[]) {
+    return Math.max(...array)
+}
+console.log(showMaxNumber(numberArray));
+
+//! 5. Функция добавления нового элемента в массив по указанному индексу.
+function addingNewElement(array:any[], index:number, userElement:any) {
+    array.splice(index, 0, userElement)
+    return array
+}
+console.log(addingNewElement(numberArray, 2, 'STRING'));
+
+//! 6. Функция удаления элемента из массива по указанному индексу  
+function deleteElement(array:any[], index:number) {
+    array.splice(index, 1)
+    return array
+}
+console.log(deleteElement(numberArray, 2));
+
+let array2 = [1, 2, 3, 4, 5]
+console.log(String(array2));
+
+let sity = "Sochi, Krasnodar, Rostov-On-Don, Moscow"
+console.log(sity.split(' '));
+
+let massive = [2, 4, 5, 6, 7]
+// let method = massive.slice(1, 3)
+// console.log(method);
+
+// console.log(massive.concat(numberArray));
+
+massive.splice(1, 0, ...numberArray)
 console.log(massive);
 
-let array = [0, 1, 2, 3, 4]
-let newArr = array.splice(2, 3) // Первое число - индекс, второе число - количество эл-ов для удаления
-delete array[0] // удаляет эл-т сохраняя за ним индекс
-console.log(array)
-console.log(newArr)
 
-console.log(Math.round(Math.random()*100)); // Рандомное число
+
 
 
 
