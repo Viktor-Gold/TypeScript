@@ -1528,20 +1528,20 @@
 //! Задание 1
 //! Создать массив из 10 случайных чисел и написать 
 //! несколько функций для работы с ним.
-let numberArray:number[] = []
-for (let i = 0; i < 10; i++) {
-    let num = Math.trunc(Math.random()*100)
-    numberArray.push(num)
-}
-//! 1. Функция принимает массив и выводит его на экран.
-function showArray(array:number[]) {
-    console.log(array);
-}
-showArray(numberArray)
+// let numberArray:number[] = []
+// for (let i = 0; i < 10; i++) {
+//     let num = Math.trunc(Math.random()*100)
+//     numberArray.push(num)
+// }
+// //! 1. Функция принимает массив и выводит его на экран.
+// function showArray(array:number[]) {
+//     console.log(array);
+// }
+// showArray(numberArray)
 
-//! 2. Функция принимает массив и выводит только четные элементы.
-numberArray = [2, 3, 5, 10, 8, 9, 24]
-function showEvenNumbers(array:number[]) {
+// //! 2. Функция принимает массив и выводит только четные элементы.
+// numberArray = [2, 3, 5, 10, 8, 9, 24]
+// function showEvenNumbers(array:number[]) {
     // for (let i = 0; i < array.length; i++) {
     //     if (array[i] % 2 == 0) {
     //         console.log(array[i]);
@@ -1555,57 +1555,107 @@ function showEvenNumbers(array:number[]) {
 //     }
 // }
 // showEvenNumbers(numberArray);
-}
 
 //! 3. Функция принимает массив и возвращает сумму всех элементов массива.
-numberArray = [5, 2, 3, 10, 20]
-function summaElementsArray(array:number[]) {
-    let summa = 0
-    for (let i = 0; i < array.length; i++) {
-        summa+=array[i]      
-    }
-    return summa
-}
-console.log(summaElementsArray(numberArray));
+// numberArray = [5, 2, 3, 10, 20]
+// function summaElementsArray(array:number[]) {
+//     let summa = 0
+//     for (let i = 0; i < array.length; i++) {
+//         summa+=array[i]      
+//     }
+//     return summa
+// }
+// console.log(summaElementsArray(numberArray));
 
-//! 4. Функция принимает массив и возвращает его максимальный элемент.
-function showMaxNumber(array:number[]) {
-    return Math.max(...array)
-}
-console.log(showMaxNumber(numberArray));
+// //! 4. Функция принимает массив и возвращает его максимальный элемент.
+// function showMaxNumber(array:number[]) {
+//     return Math.max(...array)
+// }
+// console.log(showMaxNumber(numberArray));
 
-//! 5. Функция добавления нового элемента в массив по указанному индексу.
-function addingNewElement(array:any[], index:number, userElement:any) {
-    array.splice(index, 0, userElement)
-    return array
-}
-console.log(addingNewElement(numberArray, 2, 'STRING'));
+// //! 5. Функция добавления нового элемента в массив по указанному индексу.
+// function addingNewElement(array:any[], index:number, userElement:any) {
+//     array.splice(index, 0, userElement)
+//     return array
+// }
+// console.log(addingNewElement(numberArray, 2, 'STRING'));
 
-//! 6. Функция удаления элемента из массива по указанному индексу  
-function deleteElement(array:any[], index:number) {
-    array.splice(index, 1)
-    return array
-}
-console.log(deleteElement(numberArray, 2));
+// //! 6. Функция удаления элемента из массива по указанному индексу  
+// function deleteElement(array:any[], index:number) {
+//     array.splice(index, 1)
+//     return array
+// }
+// console.log(deleteElement(numberArray, 2));
 
-let array2 = [1, 2, 3, 4, 5]
-console.log(String(array2));
+// let array2 = [1, 2, 3, 4, 5]
+// console.log(String(array2));
 
-let sity = "Sochi, Krasnodar, Rostov-On-Don, Moscow"
-console.log(sity.split(' '));
+// let sity = "Sochi, Krasnodar, Rostov-On-Don, Moscow"
+// console.log(sity.split(' '));
 
-let massive = [2, 4, 5, 6, 7]
+// let massive = [2, 4, 5, 6, 7]
 // let method = massive.slice(1, 3)
 // console.log(method);
 
 // console.log(massive.concat(numberArray));
 
-massive.splice(1, 0, ...numberArray)
-console.log(massive);
+// massive.splice(1, 0, ...numberArray)
+// console.log(massive);
 
 
+//! Home_Work
+//! Дан массив с элементами 2, 5, 9, 15, 0, 4. С помощью цикла for и оператора if 
+//! выведите на экран столбец тех элементов массива, которые больше 3-х, но меньше 10.   
+
+console.log("Первое задание");
+let array = [2, 5, 9, 15, 0, 4]
+for (let i = 0; i < array.length; i++) {
+    if (array[i] > 3 && array[i] < 10) {
+        console.log(array[i]);
+    }
+}
 
 
+//! Дан массив с числами. Числа могут быть положительными и отрицательными. 
+//! Найдите сумму положительных элементов массива.  
+console.log("Второе задание");
+
+let mas = [2, -1, 9, 3, -5]
+let numberPositive = []
+for (let i = 0; i < mas.length; i++) {
+    if (mas[i] > 0) {
+        numberPositive.push(mas[i])
+    }
+    
+}
+let result = 0
+for (let i = 0; i < numberPositive.length; i++) {
+    result += numberPositive[i]
+}
+console.log(result);
+
+//! Дан массив с элементами 1, 2, 5, 9, 4, 13, 4, 10. С помощью цикла for и 
+//! оператора if проверьте есть ли в массиве элемент со значением, равным 4. 
+//! Если есть - выведите на экран 'Есть!' и выйдите из цикла. 
+//! Если нет - ничего делать не надо. 
+console.log("Третие задание");
+
+let massive = [1, 2, 5, 9, 4, 13, 4, 10]
+for (let i = 0; i < massive.length; i++) {
+    if (massive[i] == 4) {
+        console.log(`Элемент ${4} есть`);
+        break
+    }
+}
+
+//! Дан массив числами, например: [10, 20, 30, 50, 235, 3000]. Выведите 
+//! на экран только те числа из массива, которые начинаются на цифру 1, 2 или 5.
+console.log("_________________");
+console.log("Четвертое задание");
+
+let massiveNumber = [10, 20, 30, 50, 235, 3000]
+for (let i = 0; i < massiveNumber.length; i++) 
+    massiveNumber.toString
 
 
 
