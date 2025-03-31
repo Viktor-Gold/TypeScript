@@ -1606,57 +1606,178 @@
 //! Home_Work
 //! Дан массив с элементами 2, 5, 9, 15, 0, 4. С помощью цикла for и оператора if 
 //! выведите на экран столбец тех элементов массива, которые больше 3-х, но меньше 10.   
+// console.log("Первое задание");
 
-console.log("Первое задание");
 let array = [2, 5, 9, 15, 0, 4]
-for (let i = 0; i < array.length; i++) {
-    if (array[i] > 3 && array[i] < 10) {
-        console.log(array[i]);
-    }
-}
+// for (let i = 0; i < array.length; i++) {
+//     if (array[i] > 3 && array[i] < 10) {
+//         console.log(array[i]);
+//     }
+// }
+// Второй способ
+// for (const el of array) {
+//     if (el > 3 && el < 10) {
+//         console.log(el);
+//     }
+// }
+// Третий способ
+// array.forEach((el) => {
+//     if (el > 3 && el < 10) {
+//         console.log(el);
+//     }
+// })
 
 
 //! Дан массив с числами. Числа могут быть положительными и отрицательными. 
 //! Найдите сумму положительных элементов массива.  
-console.log("Второе задание");
+// console.log("Второе задание");
 
-let mas = [2, -1, 9, 3, -5]
-let numberPositive = []
-for (let i = 0; i < mas.length; i++) {
-    if (mas[i] > 0) {
-        numberPositive.push(mas[i])
-    }
-    
-}
-let result = 0
-for (let i = 0; i < numberPositive.length; i++) {
-    result += numberPositive[i]
-}
-console.log(result);
+// let mas = [2, 5, 0, 4, -1, 9, 5, -5]
+// let numberPositive = 0
+// for (let i = 0; i < mas.length; i++) {
+//     if (mas[i] > 0) {
+//         numberPositive+=mas[i]
+//     }
+// }
+// console.log(numberPositive);
+// Второй способ
+// for (const el of mas) {
+//     if (el > 0) {
+//         numberPositive+=el
+//     }
+// }
+// console.log(numberPositive);
 
 //! Дан массив с элементами 1, 2, 5, 9, 4, 13, 4, 10. С помощью цикла for и 
 //! оператора if проверьте есть ли в массиве элемент со значением, равным 4. 
 //! Если есть - выведите на экран 'Есть!' и выйдите из цикла. 
 //! Если нет - ничего делать не надо. 
-console.log("Третие задание");
+// console.log("Третие задание");
 
-let massive = [1, 2, 5, 9, 4, 13, 4, 10]
-for (let i = 0; i < massive.length; i++) {
-    if (massive[i] == 4) {
-        console.log(`Элемент ${4} есть`);
-        break
-    }
-}
+// let massive = [1, 2, 5, 9, 4, 13, 4, 10]
+// for (let i = 0; i < massive.length; i++) {
+//     if (massive[i] == 4) {
+//         console.log(`Элемент ${4} есть`);
+//         break
+//     }
+// }
 
 //! Дан массив числами, например: [10, 20, 30, 50, 235, 3000]. Выведите 
 //! на экран только те числа из массива, которые начинаются на цифру 1, 2 или 5.
-console.log("_________________");
-console.log("Четвертое задание");
+// console.log("_________________");
+// console.log("Четвертое задание");
 
-let massiveNumber = [10, 20, 30, 50, 235, 3000]
-for (let i = 0; i < massiveNumber.length; i++) 
-    massiveNumber.toString
+// let massiveNumber = [10, 20, 30, 50, 235, 3000]
+// for (let i = 0; i < massiveNumber.length; i++){
+//     let num = String(massiveNumber[i])
+//     if (num[0] == "1" || num[0] == "2" || num[0] == "5") {
+//         console.log(num);
+//     }
+// } 
+
+//! Дан массив с элементами 1, 2, 3, 4, 5, 6, 7, 8, 9. 
+//! С помощью цикла for создайте строку '1-2-3-4-5-6-7-8-9-'. 
+// console.log("Пятое задание");
+
+// let list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// console.log(list.toString().split(',').join("-"));
+
+//! Составьте массив дней недели. С помощью цикла for выведите все дни недели. 
+// console.log("Шестое задание");
+
+// let weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+// for (let i = 0; i < weekDays.length; i++) {
+//     console.log(weekDays);
+//     break
+// }
+
+// let weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+// console.log(weekDays.slice(0,3));
+// weekDays.splice(0, 2, "понедельник", "Вторник");
+// console.log(weekDays);
+
+let list1 = [2, 5, 2, 8]
+let list2 = [3, 10, 11]
+console.log(list1.concat(list2)); // Соединяет массивы
+
+list1.forEach((el) => {
+    console.log(el*2);  
+})
+
+console.log(list1.indexOf(2));// Показывает индекс элемента
+console.log(list1.lastIndexOf(2));// Показывает последний индекс из одинаковых эл-в
+console.log(list1.includes(1));// Показывает есть ли эл-т в массиве true/false
+list1.find((el, index) => {
+    if (el > 3) {
+        console.log(el + "-" + index);
+    }
+})
+
+let users = [
+    {id: 1, name: "Вася", payment: 20000},
+    {id: 2, name: "Петя", payment: 25000},
+    {id: 3, name: "Маша", payment: 15000},
+];
+let someUsers = users.find(el => el.payment >= 20000)//find выводит первое верное значение и завершает итерацию
+    console.log(someUsers);
+
+let someUsers2 = users.filter(el => el.payment >= 20000)//filter выводит все верные значения
+console.log(...someUsers2);
+
+let list3:number[] = [2, 5, 10]
+let accum = 0
+list3.forEach(el=>accum+=el)
+console.log(accum);
+
+let reduce = list3.reduce((accum, el)=>accum+=el) // Нужен для вычисления одного значения на основе всеъ эл-в массива
+console.log(reduce);
+
+console.log(list3.reverse());
+
+console.log(list3.sort((a,b)=>a-b));
+
+let newArray = list3.map(el => el*10)
+console.log(newArray);
+console.log(list3);
+console.log("________________________");
+
+//! Отсортировать пользователей по зарплате 
+users = [
+    {id: 1, name: "Вася", payment: 20000},
+    {id: 2, name: "Петя", payment: 25000},
+    {id: 3, name: "Маша", payment: 15000},
+];
+let usersName:string[] = []
+users.forEach(el => usersName.push(el.name))
+console.log(usersName);
+
+
+console.log("________________________");
+let unionPayment = 0
+users.forEach(el => unionPayment+=el.payment)
+console.log(`Общая зарплата сотрудников = ${unionPayment} рублей`);
+
+let sortPayment = []
+users.forEach(el => sortPayment.push(el.payment))
+console.log(sortPayment.sort());
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
