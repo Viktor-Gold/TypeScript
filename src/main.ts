@@ -1858,6 +1858,55 @@ salesReceipt.forEach(el => totalDeliveryAmount += el.price)
 let finalСheck = totalDeliveryAmount + totalAmount
 console.log(`Итоговая сумма чека: ${finalСheck}$`);
 
+//! Задание 11
+//! Создать массив, описывающий чек в магазине. Каждый элемент массива состоит из названия товара, 
+//! количества и цены за единицу товара. Написать следующие функции.
+// 1. Распечатка чека на экран.
+// 2. Подсчет общей суммы покупки.
+// 3. Получение самой дорогой покупки в чеке.
+// 4. Подсчет средней стоимости одного товара в чеке.  
+
+let check = [
+    {name:"Хлеб", quantity: 3, price: 50},
+    {name:"Молоко", quantity: 2, price: 100},
+    {name:"Соль", quantity: 1, price: 35},
+    {name:"Вода", quantity: 4, price: 50},
+]
+let sumIdenticalGoods:number[] = []
+if (check.filter(el => el.name)) {
+    sumIdenticalGoods.push(check[0].quantity*check[0].price)
+}
+if (check.filter(el => el.name)) {
+    sumIdenticalGoods.push(check[1].quantity*check[1].price)
+}
+if (check.filter(el => el.name)) {
+    sumIdenticalGoods.push(check[2].quantity*check[2].price)
+}
+if (check.filter(el => el.name)) {
+    sumIdenticalGoods.push(check[3].quantity*check[3].price)
+}
+
+let sumCheck = 0
+for (const el of sumIdenticalGoods) {
+    sumCheck += el
+}
+console.log(`Общая сумма чека: ${sumCheck} рублей`);
+console.log("Самая дорогая покупка в чеке вышла на: " + Math.max(...sumIdenticalGoods) + " рублей");
+
+let AverageCostGoods = 0
+AverageCostGoods = ((check[0].price+check[1].price+check[2].price+check[3].price)/check.length)
+console.log(`Средняя стоимость одного товара в чеке состовляет: ${AverageCostGoods} рублей`);
+
+
+// list1.forEach((el) => {
+//     console.log(el*2);  
+// })
+
+// let someUsers = users.find(el => el.payment >= 20000)//find выводит первое верное значение и завершает итерацию
+//     console.log(someUsers);
+
+// let someUsers2 = users.filter(el => el.payment >= 20000)//filter выводит все верные значения
+// console.log(...someUsers2);
 
 
 
