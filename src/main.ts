@@ -1872,6 +1872,7 @@ let check = [
     {name:"Соль", quantity: 1, price: 35},
     {name:"Вода", quantity: 4, price: 50},
 ]
+
 let sumIdenticalGoods:number[] = []
 if (check.filter(el => el.name)) {
     sumIdenticalGoods.push(check[0].quantity*check[0].price)
@@ -1897,16 +1898,8 @@ let AverageCostGoods = 0
 AverageCostGoods = ((check[0].price+check[1].price+check[2].price+check[3].price)/check.length)
 console.log(`Средняя стоимость одного товара в чеке состовляет: ${AverageCostGoods} рублей`);
 
+document.getElementById("sumCheck").innerText = AverageCostGoods;
 
-// list1.forEach((el) => {
-//     console.log(el*2);  
-// })
-
-// let someUsers = users.find(el => el.payment >= 20000)//find выводит первое верное значение и завершает итерацию
-//     console.log(someUsers);
-
-// let someUsers2 = users.filter(el => el.payment >= 20000)//filter выводит все верные значения
-// console.log(...someUsers2);
 
 
 

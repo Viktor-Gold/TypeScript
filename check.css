@@ -1,0 +1,47 @@
+body {
+    background:linear-gradient(lightgreen,gold);
+}
+#check {
+    background-color: white;
+    margin: auto;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    padding: 15px;
+    width: 50%;
+    max-width: 400px;
+}
+#check h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+#checkInfo div {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+#check p {
+    font-size: 32px;
+    margin-top: -1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+}
+#checkFoot {
+    margin-top: -30px;
+    text-transform: uppercase;
+}
+#checkFoot div {
+    display: flex;
+    justify-content: space-between;
+}
+#QRcode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+}
+#QRcode img {
+    width: 150px;
+}
