@@ -1696,73 +1696,167 @@ let array = [2, 5, 9, 15, 0, 4]
 // weekDays.splice(0, 2, "понедельник", "Вторник");
 // console.log(weekDays);
 
-let list1 = [2, 5, 2, 8]
-let list2 = [3, 10, 11]
-console.log(list1.concat(list2)); // Соединяет массивы
+// let list1 = [2, 5, 2, 8]
+// let list2 = [3, 10, 11]
+// console.log(list1.concat(list2)); // Соединяет массивы
 
-list1.forEach((el) => {
-    console.log(el*2);  
-})
+// list1.forEach((el) => {
+//     console.log(el*2);  
+// })
 
-console.log(list1.indexOf(2));// Показывает индекс элемента
-console.log(list1.lastIndexOf(2));// Показывает последний индекс из одинаковых эл-в
-console.log(list1.includes(1));// Показывает есть ли эл-т в массиве true/false
-list1.find((el, index) => {
-    if (el > 3) {
+// console.log(list1.indexOf(2));// Показывает индекс элемента
+// console.log(list1.lastIndexOf(2));// Показывает последний индекс из одинаковых эл-в
+// console.log(list1.includes(1));// Показывает есть ли эл-т в массиве true/false
+// list1.find((el, index) => {
+//     if (el > 3) {
+//         console.log(el + "-" + index);
+//     }
+// })
+
+// let users = [
+//     {id: 1, name: "Вася", payment: 20000},
+//     {id: 2, name: "Петя", payment: 25000},
+//     {id: 3, name: "Маша", payment: 15000},
+// ];
+// let someUsers = users.find(el => el.payment >= 20000)//find выводит первое верное значение и завершает итерацию
+//     console.log(someUsers);
+
+// let someUsers2 = users.filter(el => el.payment >= 20000)//filter выводит все верные значения
+// console.log(...someUsers2);
+
+// let list3:number[] = [2, 5, 10]
+// let accum = 0
+// list3.forEach(el=>accum+=el)
+// console.log(accum);
+
+// let reduce = list3.reduce((accum, el)=>accum+=el) // Нужен для вычисления одного значения на основе всеъ эл-в массива
+// console.log(reduce);
+
+// console.log(list3.reverse());
+
+// console.log(list3.sort((a,b)=>a-b));
+
+// let newArray = list3.map(el => el*10)
+// console.log(newArray);
+// console.log(list3);
+// console.log("________________________");
+
+// //! Отсортировать пользователей по зарплате 
+// users = [
+//     {id: 1, name: "Вася", payment: 20000},
+//     {id: 2, name: "Петя", payment: 25000},
+//     {id: 3, name: "Маша", payment: 15000},
+// ];
+// let usersName:string[] = []
+// users.forEach(el => usersName.push(el.name))
+// console.log(usersName);
+
+
+// console.log("________________________");
+// let unionPayment = 0
+// users.forEach(el => unionPayment+=el.payment)
+// console.log(`Общая зарплата сотрудников = ${unionPayment} рублей`);
+
+// let sortPayment = []
+// users.forEach(el => sortPayment.push(el.payment))
+// console.log(sortPayment.sort());
+
+
+//! Home Work
+//! Задание 1
+//! У вас есть 5 чисел. Найдите наибольшее и наименьшее из них.
+console.log("Task 1");
+let massiveForFiveNumbers:number[] = [];
+for (let i = 0; i < 5; i++) {
+    massiveForFiveNumbers.push(Math.trunc(Math.random() * 100))
+}
+let minNum = Math.min(...massiveForFiveNumbers);
+let maxNum = Math.max(...massiveForFiveNumbers)
+console.log(`Минимальное число массива: ${minNum}`);
+console.log(`Максимальное число массива: ${maxNum}`);
+
+//! Задание 2
+//! Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1] одной командой. 
+console.log("Task 2");
+let reverseMassive = [1,2,3]
+console.log(reverseMassive.reverse());
+
+//!Задание 3
+//! Отсортируйте 5 случайных чисел от 1 до 10 в порядке возрастания и затем в порядке убывания. 
+console.log("Task 3");
+let randomNumbers:number[] = []
+for (let i = 0; i < 5; i++) {
+    randomNumbers.push(Math.trunc(Math.random() * 10))
+}
+console.log(randomNumbers.sort());
+console.log(randomNumbers.reverse());
+
+//! Задание 4 объеденить два массива:
+console.log("Task 4");
+let arrOne = ['a', 'b', 'c'];
+let arrTwo:any = [1, 2, 3];
+console.log(arrOne.concat(arrTwo));
+
+//! Задание 5. Есть ли в этом массиве значение Banana?
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.includes("Banana"));
+
+//! Задание 6
+//! Напишите программу, которая будет преобразовывать число от 1 до 12 
+//! в соответствующее название месяца (Январь, февраль, ...)
+console.log("Task 6");
+let month = [
+    "index_0", "January", "February", "March", "April", "May", "June", 
+    "July", "August", "September", "October", "November", "December"
+]
+month.find((index, el) => {
+    if (el > 0) {
         console.log(el + "-" + index);
     }
 })
 
-let users = [
-    {id: 1, name: "Вася", payment: 20000},
-    {id: 2, name: "Петя", payment: 25000},
-    {id: 3, name: "Маша", payment: 15000},
-];
-let someUsers = users.find(el => el.payment >= 20000)//find выводит первое верное значение и завершает итерацию
-    console.log(someUsers);
+//! Задание 7. Получите Петю из массива arr.
+//! Посчитайте, сколько элементов находится в name. 
+console.log("Task 7");
+let obj = {
+    'name':['Вася', 'Петя', 'Коля'],
+    'age':[11, 30, 20],
+};
+console.log(obj.name[1])
+console.log(`В ключе 'name' находится ${obj.name.length} элемента`)
 
-let someUsers2 = users.filter(el => el.payment >= 20000)//filter выводит все верные значения
-console.log(...someUsers2);
+//! Задание 8. Получить объект у которого id=2.
+console.log("Task 8");
+let arr = [
+    {'id':'1','prop1':'val1'},
+    {'id':'2','prop1':'val2'}
+]
+console.log(arr.find(el => el.id == "2"));
 
-let list3:number[] = [2, 5, 10]
-let accum = 0
-list3.forEach(el=>accum+=el)
-console.log(accum);
+//! Задание 9. Добавьте элемент в конец массива.
+console.log("Task 9");
+let greetings = [ "Hi", "Hello", "Bonjour"]
+greetings.push("Hola")
+console.log(greetings);
 
-let reduce = list3.reduce((accum, el)=>accum+=el) // Нужен для вычисления одного значения на основе всеъ эл-в массива
-console.log(reduce);
+//! Задание 10.
+//! У нас есть 3 товара. У каждого товара есть цена, название и стоимость доставки. 
+//! Стоимость доставки для всех товаров одинаковая.
+//! Выведите на экран общую стоимость всех товаров вместе со стоимостью доставки. 
+//! Сделайте так, чтобы меняя стоимость доставки в одном месте, общая стоимость автоматически пересчитывалась.
 
-console.log(list3.reverse());
-
-console.log(list3.sort((a,b)=>a-b));
-
-let newArray = list3.map(el => el*10)
-console.log(newArray);
-console.log(list3);
-console.log("________________________");
-
-//! Отсортировать пользователей по зарплате 
-users = [
-    {id: 1, name: "Вася", payment: 20000},
-    {id: 2, name: "Петя", payment: 25000},
-    {id: 3, name: "Маша", payment: 15000},
-];
-let usersName:string[] = []
-users.forEach(el => usersName.push(el.name))
-console.log(usersName);
-
-
-console.log("________________________");
-let unionPayment = 0
-users.forEach(el => unionPayment+=el.payment)
-console.log(`Общая зарплата сотрудников = ${unionPayment} рублей`);
-
-let sortPayment = []
-users.forEach(el => sortPayment.push(el.payment))
-console.log(sortPayment.sort());
-
-
-
+let salesReceipt = [
+    {name:"Hot dog", price: 3, delivery: 0.25},
+    {name:"Shawarma", price: 2.75, delivery: 0.25},
+    {name:"Burger", price: 4, delivery: 0.25},
+    {name:"Coca-cola", price: 1, delivery: 0.25},
+]
+let totalAmount = 0
+let totalDeliveryAmount = 0
+salesReceipt.forEach(el => totalAmount += el.price)
+salesReceipt.forEach(el => totalDeliveryAmount += el.price)
+let finalСheck = totalDeliveryAmount + totalAmount
+console.log(`Итоговая сумма чека: ${finalСheck}$`);
 
 
 
