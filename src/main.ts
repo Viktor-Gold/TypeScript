@@ -1765,98 +1765,105 @@ let array = [2, 5, 9, 15, 0, 4]
 //! Home Work
 //! Задание 1
 //! У вас есть 5 чисел. Найдите наибольшее и наименьшее из них.
-console.log("Task 1");
-let massiveForFiveNumbers:number[] = [];
-for (let i = 0; i < 5; i++) {
-    massiveForFiveNumbers.push(Math.trunc(Math.random() * 100))
-}
-let minNum = Math.min(...massiveForFiveNumbers);
-let maxNum = Math.max(...massiveForFiveNumbers)
-console.log(`Минимальное число массива: ${minNum}`);
-console.log(`Максимальное число массива: ${maxNum}`);
+// console.log("Task 1");
+// let massiveForFiveNumbers:number[] = [];
+// for (let i = 0; i < 5; i++) {
+//     massiveForFiveNumbers.push(Math.trunc(Math.random() * 100))
+// }
+// let minNum = Math.min(...massiveForFiveNumbers);
+// let maxNum = Math.max(...massiveForFiveNumbers)
+// console.log(`Минимальное число массива: ${minNum}`);
+// console.log(`Максимальное число массива: ${maxNum}`);
+// // Второй способ решения
+// console.log(massiveForFiveNumbers.sort((a, b)=>a-b).pop());
 
-//! Задание 2
-//! Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1] одной командой. 
-console.log("Task 2");
-let reverseMassive = [1,2,3]
-console.log(reverseMassive.reverse());
 
-//!Задание 3
-//! Отсортируйте 5 случайных чисел от 1 до 10 в порядке возрастания и затем в порядке убывания. 
-console.log("Task 3");
-let randomNumbers:number[] = []
-for (let i = 0; i < 5; i++) {
-    randomNumbers.push(Math.trunc(Math.random() * 10))
-}
-console.log(randomNumbers.sort());
-console.log(randomNumbers.reverse());
+// //! Задание 2
+// //! Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1] одной командой. 
+// console.log("Task 2");
+// let reverseMassive = [1,2,3]
+// console.log(reverseMassive.reverse());
 
-//! Задание 4 объеденить два массива:
-console.log("Task 4");
-let arrOne = ['a', 'b', 'c'];
-let arrTwo:any = [1, 2, 3];
-console.log(arrOne.concat(arrTwo));
+// //!Задание 3
+// //! Отсортируйте 5 случайных чисел от 1 до 10 в порядке возрастания и затем в порядке убывания. 
+// console.log("Task 3");
+// let randomNumbers:number[] = []
+// for (let i = 0; i < 5; i++) {
+//     randomNumbers.push(Math.trunc(Math.random() * 10))
+// }
+// console.log(randomNumbers.sort());
+// console.log(randomNumbers.reverse());
 
-//! Задание 5. Есть ли в этом массиве значение Banana?
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-console.log(fruits.includes("Banana"));
+// //! Задание 4 объеденить два массива:
+// console.log("Task 4");
+// let arrOne = ['a', 'b', 'c'];
+// let arrTwo:any = [1, 2, 3];
+// console.log(arrOne.concat(arrTwo));
 
-//! Задание 6
-//! Напишите программу, которая будет преобразовывать число от 1 до 12 
-//! в соответствующее название месяца (Январь, февраль, ...)
-console.log("Task 6");
-let month = [
-    "index_0", "January", "February", "March", "April", "May", "June", 
-    "July", "August", "September", "October", "November", "December"
-]
-month.find((index, el) => {
-    if (el > 0) {
-        console.log(el + "-" + index);
-    }
-})
+// //! Задание 5. Есть ли в этом массиве значение Banana?
+// const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// console.log(fruits.includes("Banana"));
 
-//! Задание 7. Получите Петю из массива arr.
-//! Посчитайте, сколько элементов находится в name. 
-console.log("Task 7");
-let obj = {
-    'name':['Вася', 'Петя', 'Коля'],
-    'age':[11, 30, 20],
-};
-console.log(obj.name[1])
-console.log(`В ключе 'name' находится ${obj.name.length} элемента`)
+// //! Задание 6
+// //! Напишите программу, которая будет преобразовывать число от 1 до 12 
+// //! в соответствующее название месяца (Январь, февраль, ...)
+// console.log("Task 6");
+// let month = [
+//     "January", "February", "March", "April", "May", "June", 
+//     "July", "August", "September", "October", "November", "December"
+// ]
+// month.find((el, index) => {
+//     if (index >= 0) {
+//         console.log(el + " - " + (index+1));
+//     }
+// })
+// console.log("__________Второй способ____________"); // Второй способ
+// month.forEach((el, index)=>console.log(`${el} - ${index+1}`));
 
-//! Задание 8. Получить объект у которого id=2.
-console.log("Task 8");
-let arr = [
-    {'id':'1','prop1':'val1'},
-    {'id':'2','prop1':'val2'}
-]
-console.log(arr.find(el => el.id == "2"));
 
-//! Задание 9. Добавьте элемент в конец массива.
-console.log("Task 9");
-let greetings = [ "Hi", "Hello", "Bonjour"]
-greetings.push("Hola")
-console.log(greetings);
+// //! Задание 7. Получите Петю из массива arr.
+// //! Посчитайте, сколько элементов находится в name. 
+// console.log("Task 7");
+// let obj = {
+//     'name':['Вася', 'Петя', 'Коля'],
+//     'age':[11, 30, 20],
+// };
+// console.log(JSON.stringify(obj).split('"').includes('Петя'))
+// console.log(`В ключе 'name' находится ${obj.name.length} элемента`)
+
+// //! Задание 8. Получить объект у которого id=2.
+// console.log("Task 8");
+// let arr = [
+//     {'id':'1','prop1':'val1'},
+//     {'id':'2','prop1':'val2'}
+// ]
+// console.log(arr.find(el => el.id == "2"));
+
+// //! Задание 9. Добавьте элемент в конец массива.
+// console.log("Task 9");
+// let greetings = [ "Hi", "Hello", "Bonjour"]
+// greetings.push("Hola")
+// console.log(greetings);
 
 //! Задание 10.
 //! У нас есть 3 товара. У каждого товара есть цена, название и стоимость доставки. 
 //! Стоимость доставки для всех товаров одинаковая.
 //! Выведите на экран общую стоимость всех товаров вместе со стоимостью доставки. 
 //! Сделайте так, чтобы меняя стоимость доставки в одном месте, общая стоимость автоматически пересчитывалась.
+// console.log("TASK 10");
 
-let salesReceipt = [
-    {name:"Hot dog", price: 3, delivery: 0.25},
-    {name:"Shawarma", price: 2.75, delivery: 0.25},
-    {name:"Burger", price: 4, delivery: 0.25},
-    {name:"Coca-cola", price: 1, delivery: 0.25},
-]
-let totalAmount = 0
-let totalDeliveryAmount = 0
-salesReceipt.forEach(el => totalAmount += el.price)
-salesReceipt.forEach(el => totalDeliveryAmount += el.price)
-let finalСheck = totalDeliveryAmount + totalAmount
-console.log(`Итоговая сумма чека: ${finalСheck}$`);
+// let salesReceipt = [
+//     {name:"Hot dog", price: 10, delivery: 0.25},
+//     {name:"Shawarma", price: 2.75, delivery: 0.25},
+//     {name:"Burger", price: 4, delivery: 0.25},
+//     {name:"Coca-cola", price: 1, delivery: 0.25},
+// ]
+// let totalAmount = 0
+// let totalDeliveryAmount = 0
+// salesReceipt.forEach(el => totalAmount += el.price)
+// salesReceipt.forEach(el => totalDeliveryAmount += el.price)
+// let finalСheck = totalDeliveryAmount + totalAmount
+// console.log(`Итоговая сумма чека: ${finalСheck}$`);
 
 //! Задание 11
 //! Создать массив, описывающий чек в магазине. Каждый элемент массива состоит из названия товара, 
@@ -1864,41 +1871,67 @@ console.log(`Итоговая сумма чека: ${finalСheck}$`);
 // 1. Распечатка чека на экран.
 // 2. Подсчет общей суммы покупки.
 // 3. Получение самой дорогой покупки в чеке.
-// 4. Подсчет средней стоимости одного товара в чеке.  
+// 4. Подсчет средней стоимости одного товара в чеке. 
+console.log("TASK 11");
 
-let check = [
+let check:any[] = [
     {name:"Хлеб", quantity: 3, price: 50},
     {name:"Молоко", quantity: 2, price: 100},
     {name:"Соль", quantity: 1, price: 35},
     {name:"Вода", quantity: 4, price: 50},
-]
+] 
+let unionaccum = 0
+let unionSum = check.forEach(el=>unionaccum+=el.price*el.quantity)
+console.log(unionaccum + " Общая стоимость покупки");
 
-let sumIdenticalGoods:number[] = []
-if (check.filter(el => el.name)) {
-    sumIdenticalGoods.push(check[0].quantity*check[0].price)
-}
-if (check.filter(el => el.name)) {
-    sumIdenticalGoods.push(check[1].quantity*check[1].price)
-}
-if (check.filter(el => el.name)) {
-    sumIdenticalGoods.push(check[2].quantity*check[2].price)
-}
-if (check.filter(el => el.name)) {
-    sumIdenticalGoods.push(check[3].quantity*check[3].price)
-}
+let maxPrice = check.map(el=>el.price*el.quantity)
+console.log("Самая дорогая покупка в чеке = " + Math.max(...maxPrice));
 
-let sumCheck = 0
-for (const el of sumIdenticalGoods) {
-    sumCheck += el
-}
-console.log(`Общая сумма чека: ${sumCheck} рублей`);
-console.log("Самая дорогая покупка в чеке вышла на: " + Math.max(...sumIdenticalGoods) + " рублей");
+let quantityProduct = 0
+check.forEach(el=>quantityProduct+=el.quantity)
+console.log(quantityProduct);
 
-let AverageCostGoods = 0
-AverageCostGoods = ((check[0].price+check[1].price+check[2].price+check[3].price)/check.length)
-console.log(`Средняя стоимость одного товара в чеке состовляет: ${AverageCostGoods} рублей`);
+let averagePrice = unionaccum / quantityProduct
+console.log(averagePrice + " средняя стоимость 1-го товара в чеке");
 
-document.getElementById("sumCheck").innerText = AverageCostGoods;
+
+// let product1 = document.getElementById('product1') as HTMLDivElement
+// product1.innerHTML = (check[0].name) // Вывод значения по ключу
+// let product2 = document.querySelector('#product2') as HTMLDivElement
+// product2.innerHTML = (check[1].name) // Вывод значения по ключу
+// let product3 = document.getElementById('product3') as HTMLDivElement
+// product3.innerHTML = (check[2].name) // Вывод значения по ключу
+// let product4 = document.getElementById('product4') as HTMLDivElement
+// product4.innerHTML = (check[3].name)
+// // product1.innerHTML = JSON.stringify(check) // Вывод массива
+
+// let sumIdenticalGoods = []
+// if (check.filter(el => el.name)) {
+//     sumIdenticalGoods.push(check[0].quantity*check[0].price)
+// }
+// if (check.filter(el => el.name)) {
+//     sumIdenticalGoods.push(check[1].quantity*check[1].price)
+// }
+// if (check.filter(el => el.name)) {
+//     sumIdenticalGoods.push(check[2].quantity*check[2].price)
+// }
+// if (check.filter(el => el.name)) {
+//     sumIdenticalGoods.push(check[3].quantity*check[3].price)
+// }
+
+// let sumCheck = 0
+// for (const el of sumIdenticalGoods) {
+//     sumCheck += el
+// }
+// console.log(`Общая сумма чека: ${sumCheck} рублей`);
+// console.log("Самая дорогая покупка в чеке вышла на: " + Math.max(...sumIdenticalGoods) + " рублей");
+
+// let AverageCostGoods = 0
+// AverageCostGoods = ((check[0].price+check[1].price+check[2].price+check[3].price)/check.length)
+// console.log(`Средняя стоимость одного товара в чеке состовляет: ${AverageCostGoods} рублей`);
+// sumCheck = document.querySelector('.sumCheck') as HTMLDivElement
+// sumCheck.innerHTML = (sumCheck)
+// console.log(check.length);
 
 
 
