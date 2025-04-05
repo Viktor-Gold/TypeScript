@@ -1872,27 +1872,27 @@ let array = [2, 5, 9, 15, 0, 4]
 // 2. Подсчет общей суммы покупки.
 // 3. Получение самой дорогой покупки в чеке.
 // 4. Подсчет средней стоимости одного товара в чеке. 
-console.log("TASK 11");
+// console.log("TASK 11");
 
-let check:any[] = [
-    {name:"Хлеб", quantity: 3, price: 50},
-    {name:"Молоко", quantity: 2, price: 100},
-    {name:"Соль", quantity: 1, price: 35},
-    {name:"Вода", quantity: 4, price: 50},
-] 
-let unionaccum = 0
-let unionSum = check.forEach(el=>unionaccum+=el.price*el.quantity)
-console.log(unionaccum + " Общая стоимость покупки");
+// let check:any[] = [
+//     {name:"Хлеб", quantity: 3, price: 50},
+//     {name:"Молоко", quantity: 2, price: 100},
+//     {name:"Соль", quantity: 1, price: 35},
+//     {name:"Вода", quantity: 4, price: 50},
+// ] 
+// let unionaccum = 0
+// let unionSum = check.forEach(el=>unionaccum+=el.price*el.quantity)
+// console.log(unionaccum + " Общая стоимость покупки");
 
-let maxPrice = check.map(el=>el.price*el.quantity)
-console.log("Самая дорогая покупка в чеке = " + Math.max(...maxPrice));
+// let maxPrice = check.map(el=>el.price*el.quantity)
+// console.log("Самая дорогая покупка в чеке = " + Math.max(...maxPrice));
 
-let quantityProduct = 0
-check.forEach(el=>quantityProduct+=el.quantity)
-console.log(quantityProduct);
+// let quantityProduct = 0
+// check.forEach(el=>quantityProduct+=el.quantity)
+// console.log(quantityProduct);
 
-let averagePrice = unionaccum / quantityProduct
-console.log(averagePrice + " средняя стоимость 1-го товара в чеке");
+// let averagePrice = unionaccum / quantityProduct
+// console.log(averagePrice + " средняя стоимость 1-го товара в чеке");
 
 
 // let product1 = document.getElementById('product1') as HTMLDivElement
@@ -1933,16 +1933,27 @@ console.log(averagePrice + " средняя стоимость 1-го товар
 // sumCheck.innerHTML = (sumCheck)
 // console.log(check.length);
 
+//! Home Work
+//! Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».  
+let text = "my-short-string";
+function camelize(userText:string) {
+    userText = userText.split("-").map(userText => userText[0].toUpperCase() + userText.slice(1)).join('')
+    console.log(userText);
+}
+camelize(text)
 
+//! Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет элементы со значениями больше или равными a и меньше 
+//! или равными b и возвращает результат в виде массива. 
+let arr = [5, 3, 8, 1] as any;
 
+function filterRange(massive:[], a:number, b:number) {
+    return massive.filter(el => el<=a && el<=b)
+}
+console.log(filterRange(arr, 5, 5));
 
-
-
-
-
-
-
-
+//! Сортировать в порядке по убыванию
+let mas = [5, 2, 1, -10, 8]; 
+console.log(mas.sort(el=>el));
 
 
 
