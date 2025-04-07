@@ -1942,18 +1942,25 @@ function camelize(userText:string) {
 }
 camelize(text)
 
-//! Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет элементы со значениями больше или равными a и меньше 
-//! или равными b и возвращает результат в виде массива. 
+//! Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет элементы со значениями 
+//! больше или равными a и меньше или равными b и возвращает результат в виде массива. 
 let arr = [5, 3, 8, 1] as any;
-
-function filterRange(massive:[], a:number, b:number) {
-    return massive.filter(el => el<=a && el<=b)
+function filterRange(arr:[], a:number, b:number) {
+    arr.forEach(el => {
+        if (el >= a && el <= b) {
+            console.log(el);
+        }
+    });
 }
-console.log(filterRange(arr, 5, 5));
+filterRange(arr, 1, 4)
+
+
+
+
 
 //! Сортировать в порядке по убыванию
 let mas = [5, 2, 1, -10, 8]; 
-console.log(mas.sort(el=>el));
+
 
 
 
