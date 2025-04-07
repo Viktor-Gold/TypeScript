@@ -1936,30 +1936,114 @@ let array = [2, 5, 9, 15, 0, 4]
 //! Home Work
 //! Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».  
 let text = "my-short-string";
-function camelize(userText:string) {
-    userText = userText.split("-").map(userText => userText[0].toUpperCase() + userText.slice(1)).join('')
-    console.log(userText);
+let text2 = "background-color"
+// function camelize(userText:string) {
+//     userText = userText.split("-").map(userText => userText[0].toUpperCase() + userText.slice(1)).join('')
+//     console.log(userText[0].toLowerCase() + userText.slice(1));
+// }
+// camelize(text)
+
+// Второй способ
+function camelize2(str:string) {
+    let splitStr = str.split("-")
+    let mass:string[] = []
+    for (let i = 0; i < splitStr.length; i++) {
+        mass.push(splitStr[i].slice(0, 1).toUpperCase(), splitStr[i].slice(1))
+    }
+    // return splitStr
+    let string = mass.join("")
+    return string[0].toLowerCase() + string.slice(1)
 }
-camelize(text)
+console.log(camelize2(text));
+
 
 //! Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет элементы со значениями 
 //! больше или равными a и меньше или равными b и возвращает результат в виде массива. 
-let arr = [5, 3, 8, 1] as any;
+let arr = [5, 3, 8, 1, 9, 6] as any;
 function filterRange(arr:[], a:number, b:number) {
+    let mass:number[] = []
     arr.forEach(el => {
         if (el >= a && el <= b) {
-            console.log(el);
+            mass.push(el);
+            // console.log(el);
         }
     });
+    return mass
 }
-filterRange(arr, 1, 4)
+console.log(filterRange(arr, 1, 5))
+
+let vasya = {name: "Вася", age: 25}
+let petya = {name: "Петя", age: 30}
+let masha = {name: "Маша", age: 28}
+
+let newArr = [vasya, petya, masha]
+console.log(...newArr.sort((a, b) => a.age - b.age));
+
+//! Средний возраст 
+// let accumAge = 0
+// console.log(...newArr.map(el=>(accumAgee+=el.age) / 3));
+// console.log(Math.trunc(accumAge/3));
+
+// Второй способ
+
+console.log((newArr.reduce((acc, el) => acc+=el.age, 0) / newArr.length).toFixed(1));
+
+let string = ["кришна", "кришна", "харе", "харе", "харе", "харе", "кришна", "кришна", ":-0"]
+let massiveUnicalelement:string[] = []
+
+for (let i = 0; i < string.length; i++) {
+    if (!massiveUnicalelement.includes(string[i])) {
+        massiveUnicalelement.push(string[i])
+    }
+}
+console.log(massiveUnicalelement);
+
+
+// Числа и строки
+let billion = 1000000000
+let billion2 = 1_000_000_000
+let billion3 = 1e+9
+
+console.log(billion);
+console.log(billion2);
+console.log(billion3);
+
+let mcs = 0.000001
+let mcs2 = 1e-6
+console.log(mcs);
+console.log(mcs2);
+
+let num = 2.55
+console.log(num.toString());
+console.log(255..toString());
+console.log(255.000.toString());
+console.log(255..toString(32));
+console.log(num.toFixed(1));
+
+console.log(0.1 + 0.2);
+
+// parseInt и parseFloat выводит цельные числа и дробные
+
+let width = "100px"
+console.log(width);
+console.log(parseInt(width));
+console.log(parseFloat(width));
+
+let height = "100.25px"
+console.log(parseInt(height));
+console.log(parseFloat(height));
 
 
 
 
 
-//! Сортировать в порядке по убыванию
-let mas = [5, 2, 1, -10, 8]; 
+
+
+
+
+
+
+
 
 
 
