@@ -1935,8 +1935,8 @@ let array = [2, 5, 9, 15, 0, 4]
 
 //! Home Work
 //! Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».  
-let text = "my-short-string";
-let text2 = "background-color"
+// let text = "my-short-string";
+// let text2 = "background-color"
 // function camelize(userText:string) {
 //     userText = userText.split("-").map(userText => userText[0].toUpperCase() + userText.slice(1)).join('')
 //     console.log(userText[0].toLowerCase() + userText.slice(1));
@@ -1944,40 +1944,40 @@ let text2 = "background-color"
 // camelize(text)
 
 // Второй способ
-function camelize2(str:string) {
-    let splitStr = str.split("-")
-    let mass:string[] = []
-    for (let i = 0; i < splitStr.length; i++) {
-        mass.push(splitStr[i].slice(0, 1).toUpperCase(), splitStr[i].slice(1))
-    }
-    // return splitStr
-    let string = mass.join("")
-    return string[0].toLowerCase() + string.slice(1)
-}
-console.log(camelize2(text));
+// function camelize2(str:string) {
+//     let splitStr = str.split("-")
+//     let mass:string[] = []
+//     for (let i = 0; i < splitStr.length; i++) {
+//         mass.push(splitStr[i].slice(0, 1).toUpperCase(), splitStr[i].slice(1))
+//     }
+//     // return splitStr
+//     let string = mass.join("")
+//     return string[0].toLowerCase() + string.slice(1)
+// }
+// console.log(camelize2(text));
 
 
 //! Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет элементы со значениями 
 //! больше или равными a и меньше или равными b и возвращает результат в виде массива. 
-let arr = [5, 3, 8, 1, 9, 6] as any;
-function filterRange(arr:[], a:number, b:number) {
-    let mass:number[] = []
-    arr.forEach(el => {
-        if (el >= a && el <= b) {
-            mass.push(el);
-            // console.log(el);
-        }
-    });
-    return mass
-}
-console.log(filterRange(arr, 1, 5))
+// let arr = [5, 3, 8, 1, 9, 6] as any;
+// function filterRange(arr:[], a:number, b:number) {
+//     let mass:number[] = []
+//     arr.forEach(el => {
+//         if (el >= a && el <= b) {
+//             mass.push(el);
+//             // console.log(el);
+//         }
+//     });
+//     return mass
+// }
+// console.log(filterRange(arr, 1, 5))
 
-let vasya = {name: "Вася", age: 25}
-let petya = {name: "Петя", age: 30}
-let masha = {name: "Маша", age: 28}
+// let vasya = {name: "Вася", age: 25}
+// let petya = {name: "Петя", age: 30}
+// let masha = {name: "Маша", age: 28}
 
-let newArr = [vasya, petya, masha]
-console.log(...newArr.sort((a, b) => a.age - b.age));
+// let newArr = [vasya, petya, masha]
+// console.log(...newArr.sort((a, b) => a.age - b.age));
 
 //! Средний возраст 
 // let accumAge = 0
@@ -1986,56 +1986,197 @@ console.log(...newArr.sort((a, b) => a.age - b.age));
 
 // Второй способ
 
-console.log((newArr.reduce((acc, el) => acc+=el.age, 0) / newArr.length).toFixed(1));
+// console.log((newArr.reduce((acc, el) => acc+=el.age, 0) / newArr.length).toFixed(1));
 
-let string = ["кришна", "кришна", "харе", "харе", "харе", "харе", "кришна", "кришна", ":-0"]
-let massiveUnicalelement:string[] = []
+// let string = ["кришна", "кришна", "харе", "харе", "харе", "харе", "кришна", "кришна", ":-0"]
+// let massiveUnicalelement:string[] = []
 
-for (let i = 0; i < string.length; i++) {
-    if (!massiveUnicalelement.includes(string[i])) {
-        massiveUnicalelement.push(string[i])
-    }
-}
-console.log(massiveUnicalelement);
+// for (let i = 0; i < string.length; i++) {
+//     if (!massiveUnicalelement.includes(string[i])) {
+//         massiveUnicalelement.push(string[i])
+//     }
+// }
+// console.log(massiveUnicalelement);
 
 
 // Числа и строки
-let billion = 1000000000
-let billion2 = 1_000_000_000
-let billion3 = 1e+9
+// let billion = 1000000000
+// let billion2 = 1_000_000_000
+// let billion3 = 1e+9
 
-console.log(billion);
-console.log(billion2);
-console.log(billion3);
+// console.log(billion);
+// console.log(billion2);
+// console.log(billion3);
 
-let mcs = 0.000001
-let mcs2 = 1e-6
-console.log(mcs);
-console.log(mcs2);
+// let mcs = 0.000001
+// let mcs2 = 1e-6
+// console.log(mcs);
+// console.log(mcs2);
 
-let num = 2.55
-console.log(num.toString());
-console.log(255..toString());
-console.log(255.000.toString());
-console.log(255..toString(32));
-console.log(num.toFixed(1));
+// let num = 2.55
+// console.log(num.toString());
+// console.log(255..toString());
+// console.log(255.000.toString());
+// console.log(255..toString(32));
+// console.log(num.toFixed(1));
 
-console.log(0.1 + 0.2);
+// console.log(0.1 + 0.2);
 
 // parseInt и parseFloat выводит цельные числа и дробные
 
-let width = "100px"
-console.log(width);
-console.log(parseInt(width));
-console.log(parseFloat(width));
+// let width = "100px"
+// console.log(width);
+// console.log(parseInt(width));
+// console.log(parseFloat(width));
 
-let height = "100.25px"
-console.log(parseInt(height));
-console.log(parseFloat(height));
-
-
+// let height = "100.25px"
+// console.log(parseInt(height));
+// console.log(parseFloat(height));
 
 
+//! Home Work
+//! 1. Написать функцию, которая принимает 2 строки и сравнивает их длину. 
+//! Функция возвращает 1, если в первой строке больше символов, чем во второй;
+// ! -1 – если во второй больше символов, чем в первой; или 0 – если строки одинаковой длины
+
+let stringOne = "String number one"
+let stringTwo = "String number two"
+function returnLengthString(str1:string, str2:string) {
+    if (str1.length > str2.length) {
+        return 1
+    }
+    else if (str1.length < str2.length) {
+        return -1
+    }
+    else if (str1.length == str2.length) {
+        return 0
+    }
+}
+console.log(returnLengthString(stringOne, stringTwo));
+
+//! 2. Написать функцию, которая переводит в верхний 
+//! регистр первый символ переданной строки.
+let stringLowerCase = "academy"
+function firstSymbolUpperCase(str:string) {
+    return str.split(""), str[0].toUpperCase() + str.slice(1)
+}
+console.log(firstSymbolUpperCase(stringLowerCase));
+
+//! 3. Написать функцию, которая считает количество гласных букв в переданной строке.
+
+let string = "Азбука"
+function calcQuantityVowels(str:string) {
+    str = str.toLowerCase()
+    let quantityVolwels = 0
+    let arrayVowels = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"]
+    for (let i = 0; i < str.length; i++) {
+        if (arrayVowels.includes(str[i])) {
+            quantityVolwels++
+        }
+    }
+    return(quantityVolwels);
+}
+console.log((calcQuantityVowels(string)));
+
+//! 4. Написать функцию для проверки спама в переданной строке. 
+//! Функция возвращает true, если строка содержит спам. 
+//! Спамом считать следующие слова: 100% бесплатно, увеличение продаж, 
+//! только сегодня, не удаляйте, ххх. Функция должна быть нечувствительна к регистру.
+
+let advertising = `Здравствуйте! только сегодня вы можете приобрести
+бытовую технику с 100% бесплатной доставкой`
+function searchSpam(str:string) {
+    str = str.toLowerCase().split(" ")
+    let spamWords = ["100%", "бесплатно", "увеличение", "продаж", "только", "сегодня", "не удаляйте", "ххх"]
+    for (let i = 0; i < str.length; i++) {
+        if (spamWords.includes(str[i])) {
+            return true;
+        }
+    }
+}
+console.log(searchSpam(advertising));
+
+//! 5. Написать функцию сокращения строки. Функция принимает строку и ее максимальную длину. 
+//! Если длина строки больше, чем максимальная, то необходимо отбросить лишние символы, 
+//! добавив вместо них троеточие. Например: truncate(“Hello, world!”, 8) должна вернуть “Hello...” 
+
+let textStr = "Hello, people! How do you like my assignment?"
+function truncate(str:string, maxLength:number) {
+    let treeDots = "..."
+    console.log(str.split("").splice(0, maxLength).join("") + treeDots);
+}
+truncate(textStr, 14)
+
+//! 6. Написать функцию, которая проверяет, является ли переданная строка палиндромом.
+let palindrome = "Лепс спел" // Леша на полке клопа нашел
+function palindromeTrueAndFalse(str:any) {
+    str = str.toLowerCase().split("")
+    let wholeString = str.join(" ")
+    let reverseStr = str.reverse()
+    let reverseWholeString = reverseStr.join(" ")
+
+    // console.log(str);
+    // console.log(wholeString);
+    // console.log(reverseStr);
+    // console.log(reverseWholeString);
+    
+    if (wholeString == reverseWholeString) {
+        return(`${palindrome} - палиндром!`);
+    }
+    else return `${palindrome} - не палиндром!`
+}
+console.log(palindromeTrueAndFalse(palindrome));
+
+//! 7. Написать функцию, которая считает количество слов в предложении. 
+let text = "Леша на полке клопа нашел"
+function quantityWords(str:any) {
+    console.log(`В вашем предложении ${str.split(" ").length} слов!`);
+}
+quantityWords(text)
+
+//! 8. Написать функцию, которая возвращает самое длинное слово из предложения.
+function returnLongestWord(str:any) {
+    str = str.split(" ");
+    let maxLength = Math.max(...str.map(str => str.length));
+    console.log(maxLength);
+    return str.filter(str => str.length == maxLength);
+}
+console.log(returnLongestWord(text));
+
+//! 9. Написать функцию, которая считает среднюю длину словаv в предложении. 
+function averageLengthWord(str:any) {
+    str = str.split(" ");
+    let arrayLengthWord = 0
+
+    for (let i = 0; i < str.length; i++) {
+        arrayLengthWord = (str[i].length+arrayLengthWord)
+    }
+    return (`Средняя длинна слова в предложении ${Math.round(arrayLengthWord/str.length)}`);
+}
+console.log(averageLengthWord(text));
+
+//! 10. Написать функцию, которая принимает строку и символ и выводит индексы, 
+//! по которым находится этот символ в строке. Также вывести, 
+//! сколько всего раз встречается этот символ в строке.  
+let stringSymbol = "Курс $ упал до 78 ₽ аналитики обещают вновь скоро подорожание $"
+function quantitySymbol(str:string, symbol:string) {
+    str = str.split(" ")
+    console.log(str);
+    let quantityRemoveSymbol = 0
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] == symbol) {
+            quantityRemoveSymbol++
+        }
+        if (str[i] == symbol) {
+            console.log(`Символ ${symbol} находится под индексом: ${i}`);
+        }
+        else if (str[i] == symbol) {
+            console.log(`Символ ${symbol} находится под индексом: ${i}`);
+        }
+    }
+    console.log(`Количество повторений символа: "${symbol}" = ${quantityRemoveSymbol}`);
+}
+quantitySymbol(stringSymbol, "$");
 
 
 
