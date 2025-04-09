@@ -2048,9 +2048,7 @@ function returnLengthString(str1:string, str2:string) {
     else if (str1.length < str2.length) {
         return -1
     }
-    else if (str1.length == str2.length) {
-        return 0
-    }
+    return 0
 }
 console.log(returnLengthString(stringOne, stringTwo));
 
@@ -2063,16 +2061,21 @@ function firstSymbolUpperCase(str:string) {
 console.log(firstSymbolUpperCase(stringLowerCase));
 
 //! 3. Написать функцию, которая считает количество гласных букв в переданной строке.
-
 let string = "Азбука"
 function calcQuantityVowels(str:string) {
     str = str.toLowerCase()
     let quantityVolwels = 0
-    let arrayVowels = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"]
+    let arrayVolwels = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"]
     for (let i = 0; i < str.length; i++) {
-        if (arrayVowels.includes(str[i])) {
-            quantityVolwels++
+        for (let j = 0; j < arrayVolwels.length; j++) {
+            if (str[i] == arrayVolwels[j]) {
+                quantityVolwels++
+            }
         }
+        // Второй способ
+        // if (arrayVolwels.includes(str[i])) {
+            // quantityVolwels++
+        // }
     }
     return(quantityVolwels);
 }
@@ -2083,16 +2086,22 @@ console.log((calcQuantityVowels(string)));
 //! Спамом считать следующие слова: 100% бесплатно, увеличение продаж, 
 //! только сегодня, не удаляйте, ххх. Функция должна быть нечувствительна к регистру.
 
-let advertising = `Здравствуйте! только сегодня вы можете приобрести
-бытовую технику с 100% бесплатной доставкой`
+let advertising = `Спамом считать следующие слова: 100% бесплатно`
 function searchSpam(str:string) {
-    str = str.toLowerCase().split(" ")
-    let spamWords = ["100%", "бесплатно", "увеличение", "продаж", "только", "сегодня", "не удаляйте", "ххх"]
-    for (let i = 0; i < str.length; i++) {
-        if (spamWords.includes(str[i])) {
-            return true;
+    let spamWords = ["100% бесплатно", "увеличение продаж", "только сегодня", "не удаляйте", "ххх"]
+    for (const el of spamWords) {
+        if (str.toLowerCase().includes(el)) {
+            return true
         }
     }
+    // Второй способ
+    // str = str.toLowerCase().split(" ")
+    // let spamWords = ["100%", "бесплатно", "увеличение", "продаж", "только", "сегодня", "не удаляйте", "ххх"]
+    // for (let i = 0; i < str.length; i++) {
+    //     if (spamWords.includes(str[i])) {
+    //         return true;
+    //     }
+    // }
 }
 console.log(searchSpam(advertising));
 
@@ -2102,44 +2111,32 @@ console.log(searchSpam(advertising));
 
 let textStr = "Hello, people! How do you like my assignment?"
 function truncate(str:string, maxLength:number) {
-    let treeDots = "..."
-    console.log(str.split("").splice(0, maxLength).join("") + treeDots);
+    return str.slice(0, maxLength) + "..."
 }
-truncate(textStr, 14)
+console.log(truncate(textStr, 5));
 
 //! 6. Написать функцию, которая проверяет, является ли переданная строка палиндромом.
 let palindrome = "Лепс спел" // Леша на полке клопа нашел
-function palindromeTrueAndFalse(str:any) {
-    str = str.toLowerCase().split("")
-    let wholeString = str.join(" ")
-    let reverseStr = str.reverse()
-    let reverseWholeString = reverseStr.join(" ")
-
-    // console.log(str);
-    // console.log(wholeString);
-    // console.log(reverseStr);
-    // console.log(reverseWholeString);
-    
-    if (wholeString == reverseWholeString) {
+function palindromeTrueAndFalse(str:string) {
+    let lowerStr = str.toLowerCase()
+    let reverseStr = lowerStr.split("").reverse().join("")
+    if (lowerStr == reverseStr) {
         return(`${palindrome} - палиндром!`);
     }
-    else return `${palindrome} - не палиндром!`
+    return (`${palindrome} - не палиндром!`);
 }
 console.log(palindromeTrueAndFalse(palindrome));
 
 //! 7. Написать функцию, которая считает количество слов в предложении. 
 let text = "Леша на полке клопа нашел"
-function quantityWords(str:any) {
+function quantityWords(str:string) {
     console.log(`В вашем предложении ${str.split(" ").length} слов!`);
 }
 quantityWords(text)
 
 //! 8. Написать функцию, которая возвращает самое длинное слово из предложения.
-function returnLongestWord(str:any) {
-    str = str.split(" ");
-    let maxLength = Math.max(...str.map(str => str.length));
-    console.log(maxLength);
-    return str.filter(str => str.length == maxLength);
+function returnLongestWord(str:string) { 
+    return str.split(" ").sort((a, b) => a.length - b.length).pop()
 }
 console.log(returnLongestWord(text));
 
@@ -2160,23 +2157,47 @@ console.log(averageLengthWord(text));
 //! сколько всего раз встречается этот символ в строке.  
 let stringSymbol = "Курс $ упал до 78 ₽ аналитики обещают вновь скоро подорожание $"
 function quantitySymbol(str:string, symbol:string) {
-    str = str.split(" ")
-    console.log(str);
-    let quantityRemoveSymbol = 0
+    let array = []
+    let accum = 0
     for (let i = 0; i < str.length; i++) {
         if (str[i] == symbol) {
-            quantityRemoveSymbol++
-        }
-        if (str[i] == symbol) {
-            console.log(`Символ ${symbol} находится под индексом: ${i}`);
-        }
-        else if (str[i] == symbol) {
-            console.log(`Символ ${symbol} находится под индексом: ${i}`);
+            accum++
+            array.push(i)
         }
     }
-    console.log(`Количество повторений символа: "${symbol}" = ${quantityRemoveSymbol}`);
+    return `Символ ${symbol} находится под индексом: ${array}. Количество повторений символа ${accum}`
+    // Второй способ 
+    // str = str.split(" ")
+    // console.log(str);
+    // let quantityRemoveSymbol = 0
+    // for (let i = 0; i < str.length; i++) {
+    //     if (str[i] == symbol) {
+    //         quantityRemoveSymbol++
+    //     }
+    //     if (str[i] == symbol) {
+    //         console.log(`Символ ${symbol} находится под индексом: ${i}`);
+    //     }
+    //     else if (str[i] == symbol) {
+    //         console.log(`Символ ${symbol} находится под индексом: ${i}`);
+    //     }
+    // }
+    // console.log(`Количество повторений символа: "${symbol}" = ${quantityRemoveSymbol}`);
 }
-quantitySymbol(stringSymbol, "$");
+console.log(quantitySymbol(stringSymbol, "$"));
+
+
+//! Строки 
+
+let str = "Hello"
+console.log(str.slice(0, 1) + "i");
+
+let str2 = "Hello my freind, how my are you?"
+console.log(str2.indexOf("aaa"));
+console.log(str2.indexOf("e", 2));
+console.log(str2.indexOf("my", 7));
+
+let date = "09/04/2025"
+console.log(date.replaceAll('/', '","'));
 
 
 
@@ -2190,6 +2211,4 @@ quantitySymbol(stringSymbol, "$");
 
 
 
-
- 
 
