@@ -2039,61 +2039,61 @@ let array = [2, 5, 9, 15, 0, 4]
 //! Функция возвращает 1, если в первой строке больше символов, чем во второй;
 // ! -1 – если во второй больше символов, чем в первой; или 0 – если строки одинаковой длины
 
-let stringOne = "String number one"
-let stringTwo = "String number two"
-function returnLengthString(str1:string, str2:string) {
-    if (str1.length > str2.length) {
-        return 1
-    }
-    else if (str1.length < str2.length) {
-        return -1
-    }
-    return 0
-}
-console.log(returnLengthString(stringOne, stringTwo));
+// let stringOne = "String number one"
+// let stringTwo = "String number two"
+// function returnLengthString(str1:string, str2:string) {
+//     if (str1.length > str2.length) {
+//         return 1
+//     }
+//     else if (str1.length < str2.length) {
+//         return -1
+//     }
+//     return 0
+// }
+// console.log(returnLengthString(stringOne, stringTwo));
 
 //! 2. Написать функцию, которая переводит в верхний 
 //! регистр первый символ переданной строки.
-let stringLowerCase = "academy"
-function firstSymbolUpperCase(str:string) {
-    return str.split(""), str[0].toUpperCase() + str.slice(1)
-}
-console.log(firstSymbolUpperCase(stringLowerCase));
+// let stringLowerCase = "academy"
+// function firstSymbolUpperCase(str:string) {
+//     return str.split(""), str[0].toUpperCase() + str.slice(1)
+// }
+// console.log(firstSymbolUpperCase(stringLowerCase));
 
 //! 3. Написать функцию, которая считает количество гласных букв в переданной строке.
-let string = "Азбука"
-function calcQuantityVowels(str:string) {
-    str = str.toLowerCase()
-    let quantityVolwels = 0
-    let arrayVolwels = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"]
-    for (let i = 0; i < str.length; i++) {
-        for (let j = 0; j < arrayVolwels.length; j++) {
-            if (str[i] == arrayVolwels[j]) {
-                quantityVolwels++
-            }
-        }
+// let string = "Азбука"
+// function calcQuantityVowels(str:string) {
+//     str = str.toLowerCase()
+//     let quantityVolwels = 0
+//     let arrayVolwels = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"]
+//     for (let i = 0; i < str.length; i++) {
+//         for (let j = 0; j < arrayVolwels.length; j++) {
+//             if (str[i] == arrayVolwels[j]) {
+//                 quantityVolwels++
+//             }
+//         }
         // Второй способ
         // if (arrayVolwels.includes(str[i])) {
             // quantityVolwels++
         // }
-    }
-    return(quantityVolwels);
-}
-console.log((calcQuantityVowels(string)));
+//     }
+//     return(quantityVolwels);
+// }
+// console.log((calcQuantityVowels(string)));
 
 //! 4. Написать функцию для проверки спама в переданной строке. 
 //! Функция возвращает true, если строка содержит спам. 
 //! Спамом считать следующие слова: 100% бесплатно, увеличение продаж, 
 //! только сегодня, не удаляйте, ххх. Функция должна быть нечувствительна к регистру.
 
-let advertising = `Спамом считать следующие слова: 100% бесплатно`
-function searchSpam(str:string) {
-    let spamWords = ["100% бесплатно", "увеличение продаж", "только сегодня", "не удаляйте", "ххх"]
-    for (const el of spamWords) {
-        if (str.toLowerCase().includes(el)) {
-            return true
-        }
-    }
+// let advertising = `Спамом считать следующие слова: 100% бесплатно`
+// function searchSpam(str:string) {
+//     let spamWords = ["100% бесплатно", "увеличение продаж", "только сегодня", "не удаляйте", "ххх"]
+//     for (const el of spamWords) {
+//         if (str.toLowerCase().includes(el)) {
+//             return true
+//         }
+//     }
     // Второй способ
     // str = str.toLowerCase().split(" ")
     // let spamWords = ["100%", "бесплатно", "увеличение", "продаж", "только", "сегодня", "не удаляйте", "ххх"]
@@ -2102,70 +2102,70 @@ function searchSpam(str:string) {
     //         return true;
     //     }
     // }
-}
-console.log(searchSpam(advertising));
+// }
+// console.log(searchSpam(advertising));
 
 //! 5. Написать функцию сокращения строки. Функция принимает строку и ее максимальную длину. 
 //! Если длина строки больше, чем максимальная, то необходимо отбросить лишние символы, 
 //! добавив вместо них троеточие. Например: truncate(“Hello, world!”, 8) должна вернуть “Hello...” 
 
-let textStr = "Hello, people! How do you like my assignment?"
-function truncate(str:string, maxLength:number) {
-    return str.slice(0, maxLength) + "..."
-}
-console.log(truncate(textStr, 5));
+// let textStr = "Hello, people! How do you like my assignment?"
+// function truncate(str:string, maxLength:number) {
+//     return str.slice(0, maxLength) + "..."
+// }
+// console.log(truncate(textStr, 5));
 
 //! 6. Написать функцию, которая проверяет, является ли переданная строка палиндромом.
-let palindrome = "Лепс спел" // Леша на полке клопа нашел
-function palindromeTrueAndFalse(str:string) {
-    let lowerStr = str.toLowerCase()
-    let reverseStr = lowerStr.split("").reverse().join("")
-    if (lowerStr == reverseStr) {
-        return(`${palindrome} - палиндром!`);
-    }
-    return (`${palindrome} - не палиндром!`);
-}
-console.log(palindromeTrueAndFalse(palindrome));
+// let palindrome = "Лепс спел" // Леша на полке клопа нашел
+// function palindromeTrueAndFalse(str:string) {
+//     let lowerStr = str.toLowerCase()
+//     let reverseStr = lowerStr.split("").reverse().join("")
+//     if (lowerStr == reverseStr) {
+//         return(`${palindrome} - палиндром!`);
+//     }
+//     return (`${palindrome} - не палиндром!`);
+// }
+// console.log(palindromeTrueAndFalse(palindrome));
 
 //! 7. Написать функцию, которая считает количество слов в предложении. 
-let text = "Леша на полке клопа нашел"
-function quantityWords(str:string) {
-    console.log(`В вашем предложении ${str.split(" ").length} слов!`);
-}
-quantityWords(text)
+// let text = "Леша на полке клопа нашел"
+// function quantityWords(str:string) {
+//     console.log(`В вашем предложении ${str.split(" ").length} слов!`);
+// }
+// quantityWords(text)
 
 //! 8. Написать функцию, которая возвращает самое длинное слово из предложения.
-function returnLongestWord(str:string) { 
-    return str.split(" ").sort((a, b) => a.length - b.length).pop()
-}
-console.log(returnLongestWord(text));
+// function returnLongestWord(str:string) { 
+//     return str.split(" ").sort((a, b) => a.length - b.length).pop()
+// }
+// console.log(returnLongestWord(text));
 
-//! 9. Написать функцию, которая считает среднюю длину словаv в предложении. 
-function averageLengthWord(str:any) {
-    str = str.split(" ");
-    let arrayLengthWord = 0
+//! 9. Написать функцию, которая считает среднюю длину слова в предложении. 
+// function averageLengthWord(str:any) {
+//     str = str.split(" ");
+//     let arrayLengthWord = 0
 
-    for (let i = 0; i < str.length; i++) {
-        arrayLengthWord = (str[i].length+arrayLengthWord)
-    }
-    return (`Средняя длинна слова в предложении ${Math.round(arrayLengthWord/str.length)}`);
-}
-console.log(averageLengthWord(text));
+//     for (let i = 0; i < str.length; i++) {
+//         arrayLengthWord = (str[i].length+arrayLengthWord)
+//     }
+//     return (`Средняя длинна слова в предложении ${Math.round(arrayLengthWord/str.length)}`);
+// }
+// console.log(averageLengthWord(text));
 
 //! 10. Написать функцию, которая принимает строку и символ и выводит индексы, 
 //! по которым находится этот символ в строке. Также вывести, 
 //! сколько всего раз встречается этот символ в строке.  
-let stringSymbol = "Курс $ упал до 78 ₽ аналитики обещают вновь скоро подорожание $"
-function quantitySymbol(str:string, symbol:string) {
-    let array = []
-    let accum = 0
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] == symbol) {
-            accum++
-            array.push(i)
-        }
-    }
-    return `Символ ${symbol} находится под индексом: ${array}. Количество повторений символа ${accum}`
+// let stringSymbol = "Курс $ упал до 78 ₽ аналитики обещают вновь скоро подорожание $"
+// function quantitySymbol(str:string, symbol:string) {
+//     let array = []
+//     let accum = 0
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] == symbol) {
+//             accum++
+//             array.push(i)
+//         }
+//     }
+//     return `Символ ${symbol} находится под индексом: ${array}. Количество повторений символа ${accum}`
     // Второй способ 
     // str = str.split(" ")
     // console.log(str);
@@ -2182,25 +2182,112 @@ function quantitySymbol(str:string, symbol:string) {
     //     }
     // }
     // console.log(`Количество повторений символа: "${symbol}" = ${quantityRemoveSymbol}`);
-}
-console.log(quantitySymbol(stringSymbol, "$"));
+// }
+// console.log(quantitySymbol(stringSymbol, "$"));
 
 
 //! Строки 
 
-let str = "Hello"
-console.log(str.slice(0, 1) + "i");
+// let str = "Hello"
+// console.log(str.slice(0, 1) + "i");
 
-let str2 = "Hello my freind, how my are you?"
-console.log(str2.indexOf("aaa"));
-console.log(str2.indexOf("e", 2));
-console.log(str2.indexOf("my", 7));
+// let str2 = "Hello my freind, how my are you?"
+// console.log(str2.indexOf("aaa"));
+// console.log(str2.indexOf("e", 2));
+// console.log(str2.indexOf("my", 7));
 
-let date = "09/04/2025"
-console.log(date.replaceAll('/', '","'));
+// let date = "09/04/2025"
+// console.log(date.replaceAll('/', '","'));
 
+//! Home Work 
+//! Напишите функцию, возвращающую строку с заглавным первым символом. 
+function ucFirst(str:string) {
+    return str.split(""), str[0].toUpperCase() + str.slice(1)
+}
+let name = "viktor"
+console.log(ucFirst(name));
 
+//! Напишите функцию checkSpam(str), возвращающую true, 
+//! если str содержит 'viagra' или 'XXX', а иначе false. 
+let text = "viagra"
+function checkSpam(str:string) {
+    let lowerStr = str.toLowerCase()
+    if (lowerStr == "viagra" || lowerStr == "xxx") {
+        return true
+    }
+    return false
+}
+console.log(checkSpam(text));
 
+//! Создайте функцию truncate(str, maxlength), которая проверяет длину строки str 
+//! и, если она превосходит maxlength, заменяет конец str на "…", 
+//! так, чтобы её длина стала равна maxlength. 
+let string = "Hello, my freinds! How do you like the weather today?"
+function truncate(str:string, maxLength:number) {
+    return str.slice(0, maxLength) + "..."
+}
+console.log(truncate(string, 17));
+
+//! Создайте функцию, которая будет из строки выделять числовое значение и возвращать его. 
+let summa = "$120"
+function extractCurrencyValue(str:any) {
+    let number = str.split("")
+    let returnNumber:[] = [] // Счетчик
+    for (let i = 0; i < array.length; i++) {
+        if (number[i] >= 0){
+            returnNumber+=number[i];
+        }
+    }
+    return returnNumber
+}
+console.log(extractCurrencyValue(summa));
+
+//! 1. Написать функцию, которая принимает строку и выводит статистику о ней: 
+//! количество букв, количество цифр и количество других знаков.  
+let stringInfo = "Количество нужных символов, в 505, 901 строке"
+function statisticsSymbol(str:string) {
+    let symbols = str.split("") // разбиваем по каждому символу
+    let quantityСommas = 0 //счетчик запятых
+    let quantityNumbers = 0 //счетчик цифр
+    for (let i = 0; i < symbols.length; i++) {
+        if (symbols[i] == ','){
+            quantityСommas++ 
+        }
+        if (parseFloat(symbols[i]) >= 0) {
+            quantityNumbers++
+        }
+    }
+    let letters = str.split(" ") // разбиваем по пробелам
+    let quantityLetters = 0 //счетчик всех символов
+    for (let i = 0; i < letters.length; i++) {
+        let lettersInside = letters[i]
+        for (let j = 0; j < lettersInside.length; j++) {
+            quantityLetters++
+        }
+    }
+    let result = quantityLetters - quantityNumbers - quantityСommas
+    
+    console.log(`Количество "," в тексте: ${quantityСommas}`);
+    console.log(`Количество цифр в тексте: ${quantityNumbers}`);
+    console.log(`Количество букв в тексте: ${result}`);
+}
+statisticsSymbol(stringInfo);
+
+//! 2. Написать функцию, которая принимает двузначное число
+//! и возвращает его в текстовом виде. Например: 
+//! 35 – тридцать пять, 89 – восемьдесят девять, 12 – двенадцать.  
+let num = 35
+function numParseString(num:any) {
+    let numStr = num.toString().split('')
+    let massiveNums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    for (let i = 0; i < massiveNums.length; i++) {
+        if (numStr[0] == massiveNums[i]) {
+        return numStr[0];
+        
+        }
+    }
+}
+console.log(numParseString(num));
 
 
 
