@@ -2244,50 +2244,123 @@ console.log(extractCurrencyValue(summa));
 
 //! 1. Написать функцию, которая принимает строку и выводит статистику о ней: 
 //! количество букв, количество цифр и количество других знаков.  
-let stringInfo = "Количество нужных символов, в 505, 901 строке"
-function statisticsSymbol(str:string) {
-    let symbols = str.split("") // разбиваем по каждому символу
-    let quantityСommas = 0 //счетчик запятых
-    let quantityNumbers = 0 //счетчик цифр
+let stringInfo = "Количество, 0951 строке" // 16 букв
+function showStatisticsString(str:any) {
+    let symbols = str.toLowerCase().split("")
+    let array = [] as any // строка без пробелов
+    let quantityLetters = 0 //счетчик букв
+    let quantitySymbols = 0 // символов
+    let quantityNums = 0 
     for (let i = 0; i < symbols.length; i++) {
-        if (symbols[i] == ','){
-            quantityСommas++ 
-        }
-        if (parseFloat(symbols[i]) >= 0) {
-            quantityNumbers++
-        }
-    }
-    let letters = str.split(" ") // разбиваем по пробелам
-    let quantityLetters = 0 //счетчик всех символов
-    for (let i = 0; i < letters.length; i++) {
-        let lettersInside = letters[i]
-        for (let j = 0; j < lettersInside.length; j++) {
+        if (symbols[i] >= "а" && symbols[i] <= "я") {
             quantityLetters++
         }
+        if (symbols[i] == " " || symbols[i] == ",") {
+            quantitySymbols++
+        }
     }
-    let result = quantityLetters - quantityNumbers - quantityСommas
+    return `
+    Количество букв: ${quantityLetters}
+    Количество символов: ${quantitySymbols}
+    Количество цифр: 
+    `
+    // return symbols
+    // let symbols = str.split("") // разбиваем по каждому символу
+    // let quantityСommas = 0 //счетчик запятых
+    // let quantityNumbers = 0 //счетчик цифр
+    // for (let i = 0; i < symbols.length; i++) {
+    //     if (symbols[i] == ','){
+    //         quantityСommas++ 
+    //     }
+    //     if (symbols[i] >= 0) {
+    //         quantityNumbers++
+    //     }
+    // }
+    // let letters = str.split(" ") // разбиваем по пробелам
+    // let quantityLetters = 0 //счетчик всех символов
+    // for (let i = 0; i < letters.length; i++) {
+    //     let lettersInside = letters[i]
+    //     for (let j = 0; j < lettersInside.length; j++) {
+    //         quantityLetters++
+    //     }
+    // }
+    // let result = quantityLetters - quantityNumbers - quantityСommas
     
-    console.log(`Количество "," в тексте: ${quantityСommas}`);
-    console.log(`Количество цифр в тексте: ${quantityNumbers}`);
-    console.log(`Количество букв в тексте: ${result}`);
+    // console.log(`Количество "," в тексте: ${quantityСommas}`);
+    // console.log(`Количество цифр в тексте: ${quantityNumbers}`);
+    // console.log(`Количество букв в тексте: ${result}`);
 }
-statisticsSymbol(stringInfo);
+console.log(showStatisticsString(stringInfo));
+
 
 //! 2. Написать функцию, которая принимает двузначное число
 //! и возвращает его в текстовом виде. Например: 
 //! 35 – тридцать пять, 89 – восемьдесят девять, 12 – двенадцать.  
-let num = 35
-function numParseString(num:any) {
-    let numStr = num.toString().split('')
-    let massiveNums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    for (let i = 0; i < massiveNums.length; i++) {
-        if (numStr[0] == massiveNums[i]) {
-        return numStr[0];
-        
-        }
+// 
+let numUser = 55
+function numParseString(numUser:any) {
+    let massiveNums1 = ["ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"]
+    let massiveNums2 = ["десять", "одиннадцать", "двенадцать", "тринадцать", "четырнадцать", "пятнадцать", "шестнадцать", "семнадцать", "восемнадцать", "девяднадцать"]
+    let massiveNums3 = ["двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто"]
+    if (numUser >= 0 && numUser <= 9) {
+        return massiveNums1[numUser]
+    }
+    if (numUser<19) {
+        return massiveNums2[numUser-10]
+    }
+    if (numUser<=100) {
+        let firstNum = numUser.toString()[0]
+        let secondNum = numUser.toString()[1]
+        return massiveNums3[firstNum-2] + " " + massiveNums1[secondNum]
     }
 }
-console.log(numParseString(num));
+console.log(numParseString(numUser));
+
+
+//! Методы объекта this
+let cat = {
+    name: "Вася",
+    age: "5",
+    say: function () { // Это функция
+        console.log("мяу");  
+    },
+    walk() { // Это метод
+        console.log("кот гуляет");
+    },
+    feed: feed
+}
+cat.say();
+
+function feed () {
+    console.log("покоромить кота");
+}
+feed()
+
+cat.color = "black"
+console.log(cat);
+
+cat.eat = function () {
+    return "кот поел"
+}
+
+cat.run = () => {
+    return "кот побежал"
+}
+
+
+//! Конструктор оператор "new"  
+function User (name:string, city:string) {
+    this.name = name;
+    this.group = "Web45";
+    this.city = "Sochi"
+} 
+
+let user1 = new User("Viktor")
+console.log(user1.group);
+
+let user2 = new User("Andrey")
+console.log(user2);
+
 
 
 
