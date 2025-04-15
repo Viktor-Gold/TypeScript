@@ -2196,8 +2196,7 @@ let array = [2, 5, 9, 15, 0, 4]
 // console.log(str2.indexOf("e", 2));
 // console.log(str2.indexOf("my", 7));
 
-// let date = "09/04/2025"
-// console.log(date.replaceAll('/', '","'));
+
 
 //! Home Work 
 //! Напишите функцию, возвращающую строку с заглавным первым символом. 
@@ -2262,7 +2261,7 @@ function showStatisticsString(str:any) {
     return `
     Количество букв: ${quantityLetters}
     Количество символов: ${quantitySymbols}
-    Количество цифр: 
+    Количество цифр: ${stringInfo.length - quantityLetters - quantitySymbols}
     `
     // return symbols
     // let symbols = str.split("") // разбиваем по каждому символу
@@ -2316,52 +2315,143 @@ function numParseString(numUser:any) {
 }
 console.log(numParseString(numUser));
 
+//! 3. Написать функцию, которая заменяет в полученной строке большие буквы на 
+//! маленькие, маленькие – на большие, а цифры – на знак нижнего подчеркивания.
+let string1 = "LCPD 58 police"
+function replacementSymbols(str:any) {
+    let result = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] >= 'A' && str[i] <= 'Z') {
+      result += str[i].toLowerCase();
+    } 
+    else if (str[i] >= 'a' && str[i] <= 'z') {
+      result += str[i].toUpperCase();
+    } 
+    else if (str[i] >= '0' && str[i] <= '9') {
+      result += '_';
+    } 
+    else {
+      result += str[i];
+    }
+  }
+  return result;
+}
+console.log(replacementSymbols(string1));
+
+//! 4. Написать функцию, которая преобразует названия cssстилей с дефисом в 
+//! название в СamelСase стиле: font-size в fontSize.
+
+let css = "font-size"
+function transformsСamelСase(str:string) {
+    str = str.split('-').map(str => str[0].toUpperCase() + str.slice(1)).join('')
+    return str[0].toLowerCase() + str.slice(1)
+}
+console.log(transformsСamelСase(css));
+
+//! 5. Написать функцию, которая принимает словосочетание и превращает его в аббревиатуру.  
+let css1 = "cascading style sheets"
+function createAnAbbreviation(str:string) {
+    return str.split(' ').map(str => str[0].toUpperCase()).join('')
+}
+console.log(createAnAbbreviation(css1));
+
+//! 6. Написать функцию, которая принимает любое количество строк, 
+//! объединяет их в одну длинную строку и возвращает ее.  
+let array3 = ["String", "_", 'number', "_", 'one', ] as any
+function contactStrings(arr:[]) {
+    return arr.join("")
+}
+console.log(contactStrings(array3));
+
+//! 7. Написать функцию – калькулятор. Функция принимает строку с примером, 
+//! определяет, какое действие необходимо выполнить (+ - * /), 
+//! переводит операнды в числа, решает пример и возвращает результат. 
+
+let example = "2+2*2"
+function calculator(str:any) {
+    let result = 0
+    let a = 0
+    let b = 0
+    let c = 0
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] >= 0) {
+            a = str[i]
+            console.log(a);
+            
+        }
+        if (str[i] == "+") {
+            result = str[i] + str[i]
+        }
+        else if (str[i] == "-") {
+            
+        }
+        else if (str[i] == '/') {
+            
+        }
+        else if (str[i] == "*") {
+            
+        }
+        
+        
+    }
+    console.log(result);
+    
+}
+console.log(calculator(example));
+
+
+//! 9. Написать функцию, которая принимает строку и разделитель и возвращает 
+//! массив подстрок, разбитых с помощью указанного разделителя. 
+let date = "09/04/2025"
+console.log('"' + date.replaceAll('/', '","') + '"');
+
 
 //! Методы объекта this
-let cat = {
-    name: "Вася",
-    age: "5",
-    say: function () { // Это функция
-        console.log("мяу");  
-    },
-    walk() { // Это метод
-        console.log("кот гуляет");
-    },
-    feed: feed
-}
-cat.say();
+// let cat = {
+//     name: "Вася",
+//     age: "5",
+//     say: function () { // Это функция
+//         console.log("мяу");  
+//     },
+//     walk() { // Это метод
+//         console.log("кот гуляет");
+//     },
+//     feed: feed
+// }
+// cat.say();
 
-function feed () {
-    console.log("покоромить кота");
-}
-feed()
+// function feed () {
+//     console.log("покоромить кота");
+// }
+// feed()
 
-cat.color = "black"
-console.log(cat);
+// cat.color = "black"
+// console.log(cat);
 
-cat.eat = function () {
-    return "кот поел"
-}
+// cat.eat = function () {
+//     return "кот поел"
+// }
 
-cat.run = () => {
-    return "кот побежал"
-}
-
-
-//! Конструктор оператор "new"  
-function User (name:string, city:string) {
-    this.name = name;
-    this.group = "Web45";
-    this.city = "Sochi"
-} 
-
-let user1 = new User("Viktor")
-console.log(user1.group);
-
-let user2 = new User("Andrey")
-console.log(user2);
+// cat.run = () => {
+//     return "кот побежал"
+// }
 
 
+// //! Конструктор оператор "new"  
+// function User (name:string, city:string) {
+//     this.name = name;
+//     this.group = "Web45";
+//     this.city = "Sochi"
+// } 
+
+// let user1 = new User("Viktor")
+// console.log(user1.group);
+
+// let user2 = new User("Andrey")
+// console.log(user2);
+
+
+//! Home Work 
 
 
 
