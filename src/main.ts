@@ -2321,27 +2321,36 @@ let string1 = "LCPD 58 police"
 function replacementSymbols(str:any) {
     let result = '';
   for (let i = 0; i < str.length; i++) {
-    if (str[i] >= 'A' && str[i] <= 'Z') {
-      result += str[i].toLowerCase();
-    } 
-    else if (str[i] >= 'a' && str[i] <= 'z') {
-      result += str[i].toUpperCase();
-    } 
-    else if (str[i] >= '0' && str[i] <= '9') {
+if (str[i] >= '0' && str[i] <= '9') {
       result += '_';
-    } 
-    else {
-      result += str[i];
-    }
-  }
-  return result;
+}else if (str[i] == str[i].toLowerCase()) {
+    result +=str[i].toUpperCase()
+} else if (str[i] == str[i].toUpperCase()) {
+    result +=str[i].toLowerCase()
 }
+}
+
+return result;
+}
+
+    // if (str[i] >= 'A' && str[i] <= 'Z') {
+    //   result += str[i].toLowerCase();
+    // } 
+    // else if (str[i] >= 'a' && str[i] <= 'z') {
+    //   result += str[i].toUpperCase();
+    // } 
+    // else if (str[i] >= '0' && str[i] <= '9') {
+    //   result += '_';
+    // } 
+    // else {
+    //   result += str[i];
+    // }
 console.log(replacementSymbols(string1));
 
 //! 4. Написать функцию, которая преобразует названия cssстилей с дефисом в 
 //! название в СamelСase стиле: font-size в fontSize.
 
-let css = "font-size"
+let css = "font-size-ret-tt"
 function transformsСamelСase(str:string) {
     str = str.split('-').map(str => str[0].toUpperCase() + str.slice(1)).join('')
     return str[0].toLowerCase() + str.slice(1)
@@ -2357,7 +2366,7 @@ console.log(createAnAbbreviation(css1));
 
 //! 6. Написать функцию, которая принимает любое количество строк, 
 //! объединяет их в одну длинную строку и возвращает ее.  
-let array3 = ["String", "_", 'number', "_", 'one', ] as any
+let array3 = ["String", "_", 'number', "_", 'one','werwser' ] as any
 function contactStrings(arr:[]) {
     return arr.join("")
 }
@@ -2367,7 +2376,7 @@ console.log(contactStrings(array3));
 //! определяет, какое действие необходимо выполнить (+ - * /), 
 //! переводит операнды в числа, решает пример и возвращает результат. 
 
-let example = "2+2*2"
+let example = "2213+342*454562"
 function calculator(str:any) {
     let result = 0
     let a = 0
@@ -2451,7 +2460,78 @@ console.log('"' + date.replaceAll('/', '","') + '"');
 // console.log(user2);
 
 
-//! Home Work 
+//! Стрелочные функции
+function showSum(x:number, y:number) {
+    
+    return x + y
+}
+console.log(showSum(3, 5));
+
+let summ = function showSum(x:number, y:number) {
+    
+    return x + y
+}
+console.log(summ(3, 5));
+
+// Короткий тип записи
+let nult = (b:number, a:number) => {
+    return b*a
+}
+console.log(nult(5, 5));
+
+// Когда один параметр, круглые скобки можно опускать!
+let letter = a => {
+    return a
+}
+console.log(letter("буква"));
+
+// Убирая return можно убрать и фигурные скобки
+let letter2 = x => x
+console.log(letter2("БУКВА"));
+
+let showArray = (mass:number[]) => {
+    return mass.reduce((acc, el)=>acc+el)
+}
+console.log(showArray([2, 6, 7]));
+
+let age = 20
+console.log(age >= 18 ? 'вы взрослый' : "вы ребёнок");
+
+
+//! Опциональная цепочка '?.'
+let car = {
+    country: "China",
+    year: 2024,
+    // extraInfo: {
+    //     color: 'white',
+    //     engine: '123 hourses'
+    // }
+}  
+console.log(car.extraInfo?.color);
+
+if (car.extraInfo) {
+    console.log(car.extraInfo.color);
+}
+else {
+    console.log(undefined);
+}
+
+//  Через тернарный оператор
+console.log(car.extraInfo ? car.extraInfo.color : undefined);
+
+console.log(`
+Страна: ${car.country},
+Год: ${car.year},
+Доп. инфо: ${car.extraInfo?.engine}
+`);
+
+
+
+
+
+
+
+
 
 
 
