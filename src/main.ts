@@ -2526,23 +2526,20 @@ console.log(`
 `);
 
 
-
-
-
-
-
-
+//! Home Work
+//! Домашка WEB-47
+//! Создать просто список дел, где пользователь может: Добавлять задачи (через prompt),
+//! Выводить список всех задач, удалять задачи по номеру.
+//! (Используйте переменные, объекты и условную конструкцию if else)
 
 // let todoList = {
 //     1: "уборка",
 //     2: "мойка авто",
 // }
-
 // let taskCount = Object.keys(todoList).length;
 
 // while (true) {
 //     let userTask = prompt("Напишите задачу... или напишите 'стоп', чтобы сохранить список задач: ");
-    
 //     if (userTask == 'стоп') {
 //         break
 //     }
@@ -2557,6 +2554,31 @@ console.log(`
 //     console.log(todoList);
 // }
 
+//! Конвертор валют. Реализовать программу, которая спрашивает у пользователя сумму в рублях
+//! и предлагает выбрать валюту для конвертации (доллар, евро). Хранить курсы валют в объекте.
+//! Добавить проверку на отрицательные числа
+
+// function currencyExchange(summa:number, currency:string) {
+//     let rate = {
+//         eur : 0.011,
+//         usd : 0.012,
+//     }
+//     summa = Number(prompt("Введите вашу сумму в рублях: "))
+//     currency = String(prompt("Введите валюту, которую хотите получить: USD; EUR?")).toLowerCase()
+//     if (currency == 'eur') {
+//         return `С ${summa} рублей вы получите: ${(summa * rate.eur).toFixed(2)} евро.`
+//     }
+//     else if (currency == 'usd') {
+//         return `С ${summa} рублей вы получите: ${(summa * rate.usd).toFixed(2)} долларов.`
+//     }
+//     else {
+//         "Введите одну из предложенных валют корректно и на английском языке!"
+//     }
+// }
+// console.log(currencyExchange());
+//! ___________________________________________
+
+//! Home Work WEB-45 
 //! Создайте объект calculator (калькулятор) с тремя методами:
 //! read() (читать) запрашивает два значения и сохраняет их как свойства объекта с именами a и b.
 //! sum() (суммировать) возвращает сумму сохранённых значений.
@@ -2605,15 +2627,15 @@ calc.mul(20, 5)
 //! Хранить «текущее значение» в свойстве value. Начальное значение устанавливается в аргументе конструктора startingValue.
 //! Метод read() должен использовать prompt для считывания нового числа и прибавления его к value. 
 
-function Accumulator(startingValue:number) {
-    let value = startingValue
-    this.read = function () {
-        this.value = Number(prompt("Сколько нужно добавить?: "))
-        console.log(value + this.value);
-    }
-}
-let accum = new Accumulator(1)
-accum.read()
+// function Accumulator(startingValue:number) {
+//     let value = startingValue
+//     this.read = function () {
+//         this.value = Number(prompt("Сколько нужно добавить?: "))
+//         console.log(value + this.value);
+//     }
+// }
+// let accum = new Accumulator(1)
+// accum.read()
 
 //! Замените код Function Expression стрелочной функцией:
 // function ask(question, yes, no) {
@@ -2625,11 +2647,40 @@ accum.read()
 //     function() { alert("Вы согласились."); },
 //     function() { alert("Вы отменили выполнение."); }
 //   );
-let ask = (question:string, yes:any, no:any) => {
-    confirm(question) ? yes() : no();
-  }
-  ask(
-    "Вы согласны?",
-    () => { alert("Вы согласились."); },
-    () => { alert("Вы отменили выполнение."); }
-  ); 
+// let ask = (question:string, yes:any, no:any) => {
+//     confirm(question) ? yes() : no();
+//   }
+//   ask(
+//     "Вы согласны?",
+//     () => { alert("Вы согласились."); },
+//     () => { alert("Вы отменили выполнение."); }
+//   ); 
+
+//   let a = 10
+//   console.log(a);
+
+
+//! Методы массивов ПОВТОРЕНИЕ!   
+const fruits = ['Список покупок:', 'Апельсин', 'Банан', 'Виноград', 'Арбуз', 'Хурма'];
+
+fruits.push('Итого: 3000 рублей'); // добавляет в конец массива
+fruits.unshift() // добавляет в начало массива
+fruits.shift() // удаляет в начале массива
+fruits.pop() // удаляет в конце массива
+// .splice(start, [deleteCount, item1, item2, ...]) - удаляет, добавляет эл-ы в любой части массива
+fruits.splice(1, 2); // Удаляем два элемента начиная с индекса 1
+fruits.splice(1, 0, '?', '?'); // Добавляем два новых элемента начиная с индекса 1
+fruits.splice(3, 2, '?', '?'); // Меняем два элемента начиная с индекса 3
+fruits.splice(2); // Удаляем все элементы начиная с индекса 2
+
+console.log(fruits);
+
+const animals = ['?', '?', '?', '?', '?'];
+// .slice() позволяет скопировать часть элементов в новый массив:
+// array.slice([start, end]);
+const wildAnimals = animals.slice(2, 4); // Формируем новый массив из диких животных
+const new_array = wildAnimals.concat(fruits) // объединяет несколько массивов в один 
+// и при необходимости позволяет добавить к ним любые дополнительные значения
+
+console.log(wildAnimals); // ['?', '?']
+console.log(new_array);
