@@ -2453,12 +2453,103 @@ console.log('"' + date.replaceAll('/', '","') + '"');
 
 //! Home Work 
 
+// let todoList = {
+//     1: "уборка",
+//     2: "мойка авто",
+// }
 
+// let taskCount = Object.keys(todoList).length;
 
+// while (true) {
+//     let userTask = prompt("Напишите задачу... или напишите 'стоп', чтобы сохранить список задач: ");
+    
+//     if (userTask == 'стоп') {
+//         break
+//     }
+//     taskCount++; 
+//     todoList[taskCount] = userTask;
+// }
+// console.log(todoList);
 
+// let deleteTask = Number(prompt("Введите номер задачи, которую нужно удалить: "))
+// if (deleteTask >= 1 ) {
+//     delete todoList[deleteTask]
+//     console.log(todoList);
+// }
 
+//! Создайте объект calculator (калькулятор) с тремя методами:
+//! read() (читать) запрашивает два значения и сохраняет их как свойства объекта с именами a и b.
+//! sum() (суммировать) возвращает сумму сохранённых значений.
+//! mul() (умножить) перемножает сохранённые значения и возвращает результат.
 
+let calculate = {
+  read (a:number, b:number) {
+    console.log(a, b);
+  },
+  sum (a:number, b:number) {
+    console.log(a + b);
+  },
+  mul (a:number, b:number) {
+    console.log(a * b);
+  },
+};
+calculate.read(5, 6);
+calculate.sum(5, 6)
+calculate.mul(5, 6);
 
+//! Создайте калькулятор при помощи конструктора, new Calculator 
+function Calculator() {
+    this.read = function (a:number, b:number) {
+      this.a = a;
+      this.b = b;
+      console.log(a, b);
+    };
+    this.sum = function (a:number, b:number) {
+        this.a = a;
+        this.b = b;
+        console.log(a + b);
+    }
+    this.mul = function (a:number, b:number) {
+        this.a = a;
+        this.b = b;
+        console.log(a * b);
+    }
+}
+let calc = new Calculator()
+calc.read(5, 8)
+calc.sum(10, 5)
+calc.mul(20, 5)
 
+//! Создайте функцию-конструктор Accumulator(startingValue).
+//! Объект, который она создаёт, должен уметь следующее:
+//! Хранить «текущее значение» в свойстве value. Начальное значение устанавливается в аргументе конструктора startingValue.
+//! Метод read() должен использовать prompt для считывания нового числа и прибавления его к value. 
 
+function Accumulator(startingValue:number) {
+    let value = startingValue
+    this.read = function () {
+        this.value = Number(prompt("Сколько нужно добавить?: "))
+        console.log(value + this.value);
+    }
+}
+let accum = new Accumulator(1)
+accum.read()
 
+//! Замените код Function Expression стрелочной функцией:
+// function ask(question, yes, no) {
+//     if (confirm(question)) yes()
+//     else no();
+//   }
+//   ask(
+//     "Вы согласны?",
+//     function() { alert("Вы согласились."); },
+//     function() { alert("Вы отменили выполнение."); }
+//   );
+let ask = (question:string, yes:any, no:any) => {
+    confirm(question) ? yes() : no();
+  }
+  ask(
+    "Вы согласны?",
+    () => { alert("Вы согласились."); },
+    () => { alert("Вы отменили выполнение."); }
+  ); 
