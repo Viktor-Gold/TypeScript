@@ -2684,3 +2684,110 @@ const new_array = wildAnimals.concat(fruits) // объединяет неско�
 
 console.log(wildAnimals); // ['?', '?']
 console.log(new_array);
+
+
+//! Конструктор оператор new
+function repared() {
+    console.log('Самолет отремонтирован!');
+}
+
+function Aircraft (model:any, age:number) {
+    this.model = model;
+    this.age = age; // динамические данные, меняются с каждой новой переменной
+    this.company = "Boeing"; // статические данные (не изменны)
+    this.country = "USA";
+    this.fuel = function () {
+        console.log('Самолет заправлен!');
+    }
+    this.fly = () => {
+        return "Самолет готов!"
+    };
+    repared:repared;
+}
+
+let aircraft1 = new Aircraft('Boeing 777', 12)
+console.log(aircraft1);
+let aircraft2 = new Aircraft('Boeing 999', 5)
+console.log(aircraft2);
+console.log(aircraft1);
+aircraft1.fuel()
+console.log(aircraft1.fly());
+repared();
+
+
+//! Классы: базовый синтаксис
+
+class Airplane {
+    country = "Russia";
+    city = 'Moscow'; // статические данные (не изменны)
+    constructor(model:any, year:number) {
+        this.model = model;
+        this.year = year; // динаимческие данные
+        
+    }
+    fly() { // метод
+        console.log(`Самолет ${this.model} в пути`);
+        
+    }
+    get year () {
+        return `${this._year}`
+    }
+    set year (value:any) {
+        if (value < 5) {
+            this._year = 'Самолет новый ' + value
+        }
+        else {
+            this._year = 'Самолет старый ' + value
+        }
+    }
+}
+
+let airplane1 = new Airplane('Boeing 777', 12)
+console.log(airplane1);
+console.log(airplane1.model);
+airplane1.fly();
+
+let airplane2 = new Airplane('Boeing 999', 5)
+airplane2.fly()
+
+console.log(typeof Airplane);
+console.log(Airplane.prototype.constructor == Airplane);
+
+
+//! Home Work
+//! Task 1 
+//! Реализовать класс описывающий маркер.
+let marker_text = document.getElementById("marker_text") 
+
+class Marker {
+    constructor (color:string, ink:number) {
+        this.color = color; // цвет маркера
+        this.ink = ink; // Насколько символов хватит чернил
+    }
+    print(text:any) {
+        // marker_text.style.color = this.color //! один из способов изменения css свойства
+        // let symbols = text.split('')
+
+        let numOpacity = this.ink
+        for (let i = 0; i < numOpacity; i++) {
+            console.log(1 - i/numOpacity);
+            marker_text.innerHTML += 
+            `<div style="color: ${this.color}; opacity: ${1 - i/numOpacity}"> ${text[i]}</div>`
+            marker_text.innerHTML += `</br>`
+        }
+    }
+}
+
+let marker1 = new Marker('Red', 20)
+marker1.print('12345678901234567890')
+
+let marker2 = new Marker('Green', 25)
+marker2.print("Текст от зеленого маркера")
+
+let marker3 = new Marker('Blue', 35)
+marker3.print("Текст от синего маркера под номером 3")
+
+
+
+
+

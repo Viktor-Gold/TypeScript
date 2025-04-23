@@ -45,3 +45,8 @@ body {
 #QRcode img {
     width: 150px;
 }
+
+/* Создание маркера */
+#head_marker {
+    text-align: center;
+}
