@@ -3025,8 +3025,12 @@ for (const key in car) {
     // Показывает все ключи, включая присвоенные
 }
 
-
 //! F.prototype 
+console.log(Object.prototype);
+console.log(Array.prototype); // Просмотор методов
+console.log(Number.prototype);
+console.log(String.prototype);
+console.log(car.__proto__ == transport);
 
 
 
