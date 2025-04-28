@@ -2200,69 +2200,69 @@ let array = [2, 5, 9, 15, 0, 4]
 
 //! Home Work 
 //! Напишите функцию, возвращающую строку с заглавным первым символом. 
-function ucFirst(str:string) {
-    return str.split(""), str[0].toUpperCase() + str.slice(1)
-}
-let name = "viktor"
-console.log(ucFirst(name));
+// function ucFirst(str:string) {
+//     return str.split(""), str[0].toUpperCase() + str.slice(1)
+// }
+// let name = "viktor"
+// console.log(ucFirst(name));
 
 //! Напишите функцию checkSpam(str), возвращающую true, 
 //! если str содержит 'viagra' или 'XXX', а иначе false. 
-let text = "viagra"
-function checkSpam(str:string) {
-    let lowerStr = str.toLowerCase()
-    if (lowerStr == "viagra" || lowerStr == "xxx") {
-        return true
-    }
-    return false
-}
-console.log(checkSpam(text));
+// let text = "viagra"
+// function checkSpam(str:string) {
+//     let lowerStr = str.toLowerCase()
+//     if (lowerStr == "viagra" || lowerStr == "xxx") {
+//         return true
+//     }
+//     return false
+// }
+// console.log(checkSpam(text));
 
 //! Создайте функцию truncate(str, maxlength), которая проверяет длину строки str 
 //! и, если она превосходит maxlength, заменяет конец str на "…", 
 //! так, чтобы её длина стала равна maxlength. 
-let string = "Hello, my freinds! How do you like the weather today?"
-function truncate(str:string, maxLength:number) {
-    return str.slice(0, maxLength) + "..."
-}
-console.log(truncate(string, 17));
+// let string = "Hello, my freinds! How do you like the weather today?"
+// function truncate(str:string, maxLength:number) {
+//     return str.slice(0, maxLength) + "..."
+// }
+// console.log(truncate(string, 17));
 
 //! Создайте функцию, которая будет из строки выделять числовое значение и возвращать его. 
-let summa = "$120"
-function extractCurrencyValue(str:any) {
-    let number = str.split("")
-    let returnNumber:[] = [] // Счетчик
-    for (let i = 0; i < array.length; i++) {
-        if (number[i] >= 0){
-            returnNumber+=number[i];
-        }
-    }
-    return returnNumber
-}
-console.log(extractCurrencyValue(summa));
+// let summa = "$120"
+// function extractCurrencyValue(str:any) {
+//     let number = str.split("")
+//     let returnNumber:[] = [] // Счетчик
+//     for (let i = 0; i < array.length; i++) {
+//         if (number[i] >= 0){
+//             returnNumber+=number[i];
+//         }
+//     }
+//     return returnNumber
+// }
+// console.log(extractCurrencyValue(summa));
 
 //! 1. Написать функцию, которая принимает строку и выводит статистику о ней: 
 //! количество букв, количество цифр и количество других знаков.  
-let stringInfo = "Количество, 0951 строке" // 16 букв
-function showStatisticsString(str:any) {
-    let symbols = str.toLowerCase().split("")
-    let array = [] as any // строка без пробелов
-    let quantityLetters = 0 //счетчик букв
-    let quantitySymbols = 0 // символов
-    let quantityNums = 0 
-    for (let i = 0; i < symbols.length; i++) {
-        if (symbols[i] >= "а" && symbols[i] <= "я") {
-            quantityLetters++
-        }
-        if (symbols[i] == " " || symbols[i] == ",") {
-            quantitySymbols++
-        }
-    }
-    return `
-    Количество букв: ${quantityLetters}
-    Количество символов: ${quantitySymbols}
-    Количество цифр: ${stringInfo.length - quantityLetters - quantitySymbols}
-    `
+// let stringInfo = "Количество, 0951 строке" // 16 букв
+// function showStatisticsString(str:any) {
+//     let symbols = str.toLowerCase().split("")
+//     let array = [] as any // строка без пробелов
+//     let quantityLetters = 0 //счетчик букв
+//     let quantitySymbols = 0 // символов
+//     let quantityNums = 0 
+//     for (let i = 0; i < symbols.length; i++) {
+//         if (symbols[i] >= "а" && symbols[i] <= "я") {
+//             quantityLetters++
+//         }
+//         if (symbols[i] == " " || symbols[i] == ",") {
+//             quantitySymbols++
+//         }
+//     }
+//     return `
+//     Количество букв: ${quantityLetters}
+//     Количество символов: ${quantitySymbols}
+//     Количество цифр: ${stringInfo.length - quantityLetters - quantitySymbols}
+//     `
     // return symbols
     // let symbols = str.split("") // разбиваем по каждому символу
     // let quantityСommas = 0 //счетчик запятых
@@ -2288,50 +2288,49 @@ function showStatisticsString(str:any) {
     // console.log(`Количество "," в тексте: ${quantityСommas}`);
     // console.log(`Количество цифр в тексте: ${quantityNumbers}`);
     // console.log(`Количество букв в тексте: ${result}`);
-}
-console.log(showStatisticsString(stringInfo));
+// }a
+// console.log(showStatisticsString(stringInfo));
 
 
 //! 2. Написать функцию, которая принимает двузначное число
 //! и возвращает его в текстовом виде. Например: 
 //! 35 – тридцать пять, 89 – восемьдесят девять, 12 – двенадцать.  
-// 
-let numUser = 55
-function numParseString(numUser:any) {
-    let massiveNums1 = ["ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"]
-    let massiveNums2 = ["десять", "одиннадцать", "двенадцать", "тринадцать", "четырнадцать", "пятнадцать", "шестнадцать", "семнадцать", "восемнадцать", "девяднадцать"]
-    let massiveNums3 = ["двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто"]
-    if (numUser >= 0 && numUser <= 9) {
-        return massiveNums1[numUser]
-    }
-    if (numUser<19) {
-        return massiveNums2[numUser-10]
-    }
-    if (numUser<=100) {
-        let firstNum = numUser.toString()[0]
-        let secondNum = numUser.toString()[1]
-        return massiveNums3[firstNum-2] + " " + massiveNums1[secondNum]
-    }
-}
-console.log(numParseString(numUser));
+// let numUser = 55
+// function numParseString(numUser:any) {
+//     let massiveNums1 = ["ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять"]
+//     let massiveNums2 = ["десять", "одиннадцать", "двенадцать", "тринадцать", "четырнадцать", "пятнадцать", "шестнадцать", "семнадцать", "восемнадцать", "девяднадцать"]
+//     let massiveNums3 = ["двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто"]
+//     if (numUser >= 0 && numUser <= 9) {
+//         return massiveNums1[numUser]
+//     }
+//     if (numUser<19) {
+//         return massiveNums2[numUser-10]
+//     }
+//     if (numUser<=100) {
+//         let firstNum = numUser.toString()[0]
+//         let secondNum = numUser.toString()[1]
+//         return massiveNums3[firstNum-2] + " " + massiveNums1[secondNum]
+//     }
+// }
+// console.log(numParseString(numUser));
 
 //! 3. Написать функцию, которая заменяет в полученной строке большие буквы на 
 //! маленькие, маленькие – на большие, а цифры – на знак нижнего подчеркивания.
-let string1 = "LCPD 58 police"
-function replacementSymbols(str:any) {
-    let result = '';
-  for (let i = 0; i < str.length; i++) {
-if (str[i] >= '0' && str[i] <= '9') {
-      result += '_';
-}else if (str[i] == str[i].toLowerCase()) {
-    result +=str[i].toUpperCase()
-} else if (str[i] == str[i].toUpperCase()) {
-    result +=str[i].toLowerCase()
-}
-}
+// let string1 = "LCPD 58 police"
+// function replacementSymbols(str:any) {
+//     let result = '';
+//   for (let i = 0; i < str.length; i++) {
+// if (str[i] >= '0' && str[i] <= '9') {
+//       result += '_';
+// }else if (str[i] == str[i].toLowerCase()) {
+//     result +=str[i].toUpperCase()
+// } else if (str[i] == str[i].toUpperCase()) {
+//     result +=str[i].toLowerCase()
+// }
+// }
 
-return result;
-}
+// return result;
+// }
 
     // if (str[i] >= 'A' && str[i] <= 'Z') {
     //   result += str[i].toLowerCase();
@@ -2345,74 +2344,74 @@ return result;
     // else {
     //   result += str[i];
     // }
-console.log(replacementSymbols(string1));
+// console.log(replacementSymbols(string1));
 
 //! 4. Написать функцию, которая преобразует названия cssстилей с дефисом в 
 //! название в СamelСase стиле: font-size в fontSize.
 
-let css = "font-size-ret-tt"
-function transformsСamelСase(str:string) {
-    str = str.split('-').map(str => str[0].toUpperCase() + str.slice(1)).join('')
-    return str[0].toLowerCase() + str.slice(1)
-}
-console.log(transformsСamelСase(css));
+// let css = "font-size-ret-tt"
+// function transformsСamelСase(str:string) {
+//     str = str.split('-').map(str => str[0].toUpperCase() + str.slice(1)).join('')
+//     return str[0].toLowerCase() + str.slice(1)
+// }
+// console.log(transformsСamelСase(css));
 
-//! 5. Написать функцию, которая принимает словосочетание и превращает его в аббревиатуру.  
-let css1 = "cascading style sheets"
-function createAnAbbreviation(str:string) {
-    return str.split(' ').map(str => str[0].toUpperCase()).join('')
-}
-console.log(createAnAbbreviation(css1));
+// //! 5. Написать функцию, которая принимает словосочетание и превращает его в аббревиатуру.  
+// let css1 = "cascading style sheets"
+// function createAnAbbreviation(str:string) {
+//     return str.split(' ').map(str => str[0].toUpperCase()).join('')
+// }
+// console.log(createAnAbbreviation(css1));
 
-//! 6. Написать функцию, которая принимает любое количество строк, 
-//! объединяет их в одну длинную строку и возвращает ее.  
-let array3 = ["String", "_", 'number', "_", 'one','werwser' ] as any
-function contactStrings(arr:[]) {
-    return arr.join("")
-}
-console.log(contactStrings(array3));
+// //! 6. Написать функцию, которая принимает любое количество строк, 
+// //! объединяет их в одну длинную строку и возвращает ее.  
+// let array3 = ["String", "_", 'number', "_", 'one','werwser' ] as any
+// function contactStrings(arr:[]) {
+//     return arr.join("")
+// }
+// console.log(contactStrings(array3));
 
 //! 7. Написать функцию – калькулятор. Функция принимает строку с примером, 
 //! определяет, какое действие необходимо выполнить (+ - * /), 
 //! переводит операнды в числа, решает пример и возвращает результат. 
 
-let example = "2213+342*454562"
-function calculator(str:any) {
-    let result = 0
-    let a = 0
-    let b = 0
-    let c = 0
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] >= 0) {
-            a = str[i]
-            console.log(a);
+// let example = "2213+342*454562"
+// function calculator(str:any) {
+//     let result = 0
+//     let a = 0
+//     let b = 0
+//     let c = 0
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] >= 0) {
+//             a = str[i]
+//             console.log(a);
             
-        }
-        if (str[i] == "+") {
-            result = str[i] + str[i]
-        }
-        else if (str[i] == "-") {
+//         }
+//         if (str[i] == "+") {
+//             result = str[i] + str[i]
+//         }
+//         else if (str[i] == "-") {
             
-        }
-        else if (str[i] == '/') {
+//         }
+//         else if (str[i] == '/') {
             
-        }
-        else if (str[i] == "*") {
+//         }
+//         else if (str[i] == "*") {
             
-        }
+//         }
         
         
-    }
-    console.log(result);
+//     }
+//     console.log(result);
     
-}
-console.log(calculator(example));
+// }
+// console.log(calculator(example));
 
 
 //! 9. Написать функцию, которая принимает строку и разделитель и возвращает 
 //! массив подстрок, разбитых с помощью указанного разделителя. 
-let date = "09/04/2025"
-console.log('"' + date.replaceAll('/', '","') + '"');
+// let date = "09/04/2025"
+// console.log('"' + date.replaceAll('/', '","') + '"');
 
 
 //! Методы объекта this
@@ -2461,69 +2460,69 @@ console.log('"' + date.replaceAll('/', '","') + '"');
 
 
 //! Стрелочные функции
-function showSum(x:number, y:number) {
+// function showSum(x:number, y:number) {
     
-    return x + y
-}
-console.log(showSum(3, 5));
+//     return x + y
+// }
+// console.log(showSum(3, 5));
 
-let summ = function showSum(x:number, y:number) {
+// let summ = function showSum(x:number, y:number) {
     
-    return x + y
-}
-console.log(summ(3, 5));
+//     return x + y
+// }
+// console.log(summ(3, 5));
 
-// Короткий тип записи
-let nult = (b:number, a:number) => {
-    return b*a
-}
-console.log(nult(5, 5));
+// // Короткий тип записи
+// let nult = (b:number, a:number) => {
+//     return b*a
+// }
+// console.log(nult(5, 5));
 
-// Когда один параметр, круглые скобки можно опускать!
-let letter = a => {
-    return a
-}
-console.log(letter("буква"));
+// // Когда один параметр, круглые скобки можно опускать!
+// let letter = a => {
+//     return a
+// }
+// console.log(letter("буква"));
 
-// Убирая return можно убрать и фигурные скобки
-let letter2 = x => x
-console.log(letter2("БУКВА"));
+// // Убирая return можно убрать и фигурные скобки
+// let letter2 = x => x
+// console.log(letter2("БУКВА"));
 
-let showArray = (mass:number[]) => {
-    return mass.reduce((acc, el)=>acc+el)
-}
-console.log(showArray([2, 6, 7]));
+// let showArray = (mass:number[]) => {
+//     return mass.reduce((acc, el)=>acc+el)
+// }
+// console.log(showArray([2, 6, 7]));
 
-let age = 20
-console.log(age >= 18 ? 'вы взрослый' : "вы ребёнок");
+// let age = 20
+// console.log(age >= 18 ? 'вы взрослый' : "вы ребёнок");
 
 
 //! Опциональная цепочка '?.'
-let car = {
-    country: "China",
-    year: 2024,
-    // extraInfo: {
-    //     color: 'white',
-    //     engine: '123 hourses'
-    // }
-}  
-console.log(car.extraInfo?.color);
+// let car = {
+//     country: "China",
+//     year: 2024,
+//     // extraInfo: {
+//     //     color: 'white',
+//     //     engine: '123 hourses'
+//     // }
+// }  
+// console.log(car.extraInfo?.color);
 
-if (car.extraInfo) {
-    console.log(car.extraInfo.color);
-}
-else {
-    console.log(undefined);
-}
+// if (car.extraInfo) {
+//     console.log(car.extraInfo.color);
+// }
+// else {
+//     console.log(undefined);
+// }
 
-//  Через тернарный оператор
-console.log(car.extraInfo ? car.extraInfo.color : undefined);
+// //  Через тернарный оператор
+// console.log(car.extraInfo ? car.extraInfo.color : undefined);
 
-console.log(`
-Страна: ${car.country},
-Год: ${car.year},
-Доп. инфо: ${car.extraInfo?.engine}
-`);
+// console.log(`
+// Страна: ${car.country},
+// Год: ${car.year},
+// Доп. инфо: ${car.extraInfo?.engine}
+// `);
 
 
 //! Home Work
@@ -2584,43 +2583,43 @@ console.log(`
 //! sum() (суммировать) возвращает сумму сохранённых значений.
 //! mul() (умножить) перемножает сохранённые значения и возвращает результат.
 
-let calculate = {
-  read (a:number, b:number) {
-    console.log(a, b);
-  },
-  sum (a:number, b:number) {
-    console.log(a + b);
-  },
-  mul (a:number, b:number) {
-    console.log(a * b);
-  },
-};
-calculate.read(5, 6);
-calculate.sum(5, 6)
-calculate.mul(5, 6);
+// let calculate = {
+//   read (a:number, b:number) {
+//     console.log(a, b);
+//   },
+//   sum (a:number, b:number) {
+//     console.log(a + b);
+//   },
+//   mul (a:number, b:number) {
+//     console.log(a * b);
+//   },
+// };
+// calculate.read(5, 6);
+// calculate.sum(5, 6)
+// calculate.mul(5, 6);
 
 //! Создайте калькулятор при помощи конструктора, new Calculator 
-function Calculator() {
-    this.read = function (a:number, b:number) {
-      this.a = a;
-      this.b = b;
-      console.log(a, b);
-    };
-    this.sum = function (a:number, b:number) {
-        this.a = a;
-        this.b = b;
-        console.log(a + b);
-    }
-    this.mul = function (a:number, b:number) {
-        this.a = a;
-        this.b = b;
-        console.log(a * b);
-    }
-}
-let calc = new Calculator()
-calc.read(5, 8)
-calc.sum(10, 5)
-calc.mul(20, 5)
+// function Calculator() {
+//     this.read = function (a:number, b:number) {
+//       this.a = a;
+//       this.b = b;
+//       console.log(a, b);
+//     };
+//     this.sum = function (a:number, b:number) {
+//         this.a = a;
+//         this.b = b;
+//         console.log(a + b);
+//     }
+//     this.mul = function (a:number, b:number) {
+//         this.a = a;
+//         this.b = b;
+//         console.log(a * b);
+//     }
+// }
+// let calc = new Calculator()
+// calc.read(5, 8)
+// calc.sum(10, 5)
+// calc.mul(20, 5)
 
 //! Создайте функцию-конструктор Accumulator(startingValue).
 //! Объект, который она создаёт, должен уметь следующее:
@@ -2661,29 +2660,29 @@ calc.mul(20, 5)
 
 
 //! Методы массивов ПОВТОРЕНИЕ!   
-const fruits = ['Список покупок:', 'Апельсин', 'Банан', 'Виноград', 'Арбуз', 'Хурма'];
+// const fruits = ['Список покупок:', 'Апельсин', 'Банан', 'Виноград', 'Арбуз', 'Хурма'];
 
-fruits.push('Итого: 3000 рублей'); // добавляет в конец массива
-fruits.unshift() // добавляет в начало массива
-fruits.shift() // удаляет в начале массива
-fruits.pop() // удаляет в конце массива
-// .splice(start, [deleteCount, item1, item2, ...]) - удаляет, добавляет эл-ы в любой части массива
-fruits.splice(1, 2); // Удаляем два элемента начиная с индекса 1
-fruits.splice(1, 0, '?', '?'); // Добавляем два новых элемента начиная с индекса 1
-fruits.splice(3, 2, '?', '?'); // Меняем два элемента начиная с индекса 3
-fruits.splice(2); // Удаляем все элементы начиная с индекса 2
+// fruits.push('Итого: 3000 рублей'); // добавляет в конец массива
+// fruits.unshift() // добавляет в начало массива
+// fruits.shift() // удаляет в начале массива
+// fruits.pop() // удаляет в конце массива
+// // .splice(start, [deleteCount, item1, item2, ...]) - удаляет, добавляет эл-ы в любой части массива
+// fruits.splice(1, 2); // Удаляем два элемента начиная с индекса 1
+// fruits.splice(1, 0, '?', '?'); // Добавляем два новых элемента начиная с индекса 1
+// fruits.splice(3, 2, '?', '?'); // Меняем два элемента начиная с индекса 3
+// fruits.splice(2); // Удаляем все элементы начиная с индекса 2
 
-console.log(fruits);
+// console.log(fruits);
 
-const animals = ['?', '?', '?', '?', '?'];
-// .slice() позволяет скопировать часть элементов в новый массив:
-// array.slice([start, end]);
-const wildAnimals = animals.slice(2, 4); // Формируем новый массив из диких животных
-const new_array = wildAnimals.concat(fruits) // объединяет несколько массивов в один 
-// и при необходимости позволяет добавить к ним любые дополнительные значения
+// const animals = ['?', '?', '?', '?', '?'];
+// // .slice() позволяет скопировать часть элементов в новый массив:
+// // array.slice([start, end]);
+// const wildAnimals = animals.slice(2, 4); // Формируем новый массив из диких животных
+// const new_array = wildAnimals.concat(fruits) // объединяет несколько массивов в один 
+// // и при необходимости позволяет добавить к ним любые дополнительные значения
 
-console.log(wildAnimals); // ['?', '?']
-console.log(new_array);
+// console.log(wildAnimals); // ['?', '?']
+// console.log(new_array);
 
 
 //! Конструктор оператор new
@@ -2788,6 +2787,156 @@ let marker3 = new Marker('Blue', 35)
 marker3.print("Текст от синего маркера под номером 3")
 
 
+//! Object.keys, values, entries
+//! Home Work
+//! Есть объект salaries с произвольным количеством свойств, содержащих заработные платы.
+//! Напишите функцию sumSalaries(salaries), которая возвращает сумму 
+//! всех зарплат с помощью метода Object.values и цикла for..of.
+//! Если объект salaries пуст, то результат должен быть 0. 
+let salaries = {
+    "John": 10_000,
+    "Pete": 30_000,
+    "Mary": 25_000,
+};
+
+function sumSalaries(obj:object) {
+    let sum = 0
+    for (const el of Object.values(obj)) {
+        sum += el
+    }
+    console.log(sum);
+}
+sumSalaries(salaries)
+
+//! Напишите функцию count(obj), которая возвращает количество свойств объекта:
+function count(obj:object) {
+    return `Количество свойств в объекте: ${Object.keys(obj).length}`
+}
+console.log(count(salaries));
 
 
+//! Деструктурирующее присваивание 
 
+let arr = ["Ilya", "Kantor"];
+// деструктурирующее присваивание
+// записывает firstName = arr[0]
+// и surname = arr[1]
+let [firstName, surname] = arr;
+console.log(firstName);
+console.log(surname);
+let userName = firstName
+console.log(userName);
+let Name1 = arr[0]
+console.log(Name1);
+
+
+let [trueName, forName] = "Viktor Gold".split(' ');
+console.log(forName);
+let user1 = trueName
+console.log(user1);
+
+// Нежелательные элементы массива также могут быть отброшены с помощью дополнительной запятой:
+// второй элемент не нужен
+let [name, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+console.log(title); // Consul
+
+let user = {};
+[user.name, user.surname] = "Ivan Ivanov".split(' ');
+console.log(user.name);
+console.log(user.surname);
+console.log(user);
+
+// В предыдущей главе мы видели метод Object.entries(obj).
+// Мы можем использовать его с деструктуризацией для цикличного перебора ключей и значений объекта:
+let user2 = {
+  name: "John",
+  age: 30
+};
+
+// цикл по ключам и значениям
+for (let [key, value] of Object.entries(user2)) {
+  console.log(`${key}:${value}`); // name:John, затем age:30
+}
+
+// Существует хорошо известный трюк для обмена значений двух переменных с использованием деструктурирующего присваивания:
+let guest = "Jane";
+let admin = "Pete";
+// Давайте поменяем местами значения: сделаем guest = "Pete", а admin = "Jane"
+[guest, admin] = [admin, guest];
+console.log(`${guest} ${admin}`); // Pete Jane (успешно заменено!)
+
+// Остаточные параметры "..."
+// Если мы хотим не просто получить первые значения, но и собрать все остальные, 
+// то мы можем добавить ещё один параметр, который получает остальные значения, 
+// используя оператор «остаточные параметры» – троеточие ("..."):
+let [name1, name2, ...rest] = ["Julius", "Caesar", "Consul", "Mikky"];
+// rest это массив элементов, начиная с 3-го
+console.log(rest[0]); // Consul
+console.log(rest[1]); // Mikky
+console.log(rest.length); // 2
+// Переменная rest является массивом из оставшихся элементов.
+// Вместо rest можно использовать любое другое название переменной, 
+// просто убедитесь, что перед переменной есть три точки и 
+// она стоит на последнем месте в деструктурирующем присваивании.
+
+let userName1 = 'Andrey'
+let [name3 = userName1, surname1 = "Anonymous"] = [];
+console.log(name3);
+
+let options = {
+    type: "Menu",
+    width: 100,
+    height: 200
+};
+let {type, width, height} = options;
+console.log(type); // Menu
+console.log(width); // 100
+console.log(height); // 200
+
+//Если мы хотим присвоить свойство объекта переменной с другим названием, 
+// например, свойство options.width присвоить переменной w, 
+// то мы можем использовать двоеточие:
+let options2 = {
+    type1: "Menu",
+    width: 100,
+    height: 200
+  };
+  // { sourceProperty: targetVariable }
+  let {width: w, height: h, type1} = options2;
+  // width -> w
+  // height -> h
+  // type1 -> type1
+  console.log(type1); // Menu
+  console.log(w); // 100
+  console.log(h); // 200 
+
+  let options3 = {
+    title1: "Menu"
+  };
+  let {width1 = 100, height1 = 200, title1} = options3;
+  console.log(width1);
+  console.log(height1);
+  console.log(title1);
+
+// В коде ниже prompt запросит width, но не title:
+let opt = {
+    title2: "Menu"
+};
+// let {width2 = prompt("width?"), title2 = prompt("title?")} = opt;
+console.log(width2); // Menu
+console.log(title2); // (результат prompt)
+// Мы также можем совмещать : и =:
+
+console.log('________________________');
+
+let opt1 = {
+  title3: "Menu"
+};
+let {width3: w1 = 100, height3: h1 = 200, title3} = opt1;
+console.log(title3); // Menu
+console.log(w1); // 100
+console.log(h1); // 200
+  
+  
+
+ 
