@@ -2777,14 +2777,62 @@ class Marker {
     }
 }
 
-let marker1 = new Marker('Red', 20)
-marker1.print('12345678901234567890')
+//! Task 2
+//! Реализовать класс PrintMachine
+let printMachine = document.getElementById("printMachine") as HTMLDivElement
 
-let marker2 = new Marker('Green', 25)
-marker2.print("Текст от зеленого маркера")
+class PrintMachine {
+    constructor(tag:any, color:string, fontFamily:string) {
+        this.tag = tag
+        this.color = color
+        this.fontFamily = fontFamily
+    }
+    print(text:any){
+        printMachine.innerHTML += `<${this.tag} span style= " 
+        color: ${this.color}; font-family: ${this.fontFamily};">${text}</${this.tag}>`
+        
+    }
+}  
 
-let marker3 = new Marker('Blue', 35)
-marker3.print("Текст от синего маркера под номером 3")
+let pencil = new PrintMachine('h1', 'green', 'monospace')
+pencil.print('TEXT_TESt')
+
+let pencil2 = new PrintMachine('h6', 'red', '')
+pencil2.print("NEW_TEXT")
+
+//! Task 3 
+class Button{
+    width
+    height // для того, чтобы TypeScript не подчеркивал
+    background 
+    constructor(width:number, height:number, background:string) {
+        this.width = width
+        this.height = height
+        this.background = background
+    }
+    showBtn(value:string) {
+        printMachine.innerHTML += `<button style="width: ${this.width}px; 
+        height: ${this.height}px; background: ${this.background};">${value}</button>`
+    }
+}
+
+let button1 = new Button(150, 50, 'red')
+button1.showBtn('Добавить')
+
+let button2 = new Button(80, 40, 'green')
+button2.showBtn('Удалить')
+
+let button3 = new Button(120, 60, 'gold')
+button3.showBtn('Переместить')
+
+// let marker1 = new Marker('Red', 20)
+// marker1.print('12345678901234567890')
+
+// let marker2 = new Marker('Green', 25)
+// marker2.print("Текст от зеленого маркера")
+
+// let marker3 = new Marker('Blue', 35)
+// marker3.print("Текст от синего маркера под номером 3")
 
 
 //! Object.keys, values, entries
@@ -2888,6 +2936,7 @@ let options = {
     width: 100,
     height: 200
 };
+
 let {type, width, height} = options;
 console.log(type); // Menu
 console.log(width); // 100
@@ -2923,8 +2972,8 @@ let opt = {
     title2: "Menu"
 };
 // let {width2 = prompt("width?"), title2 = prompt("title?")} = opt;
-console.log(width2); // Menu
-console.log(title2); // (результат prompt)
+console.log(width1); // Menu
+console.log(title1); // (результат prompt)
 // Мы также можем совмещать : и =:
 
 console.log('________________________');
@@ -2932,10 +2981,55 @@ console.log('________________________');
 let opt1 = {
   title3: "Menu"
 };
-let {width3: w1 = 100, height3: h1 = 200, title3} = opt1;
+let {width2: w1 = 100, height2: h1 = 200, title3} = opt1;
 console.log(title3); // Menu
 console.log(w1); // 100
 console.log(h1); // 200
+
+
+//! Прототипное наследование
+let transport = {
+    year: 5,
+    color: 'blue',
+    drive() {
+        console.log("Можем управлять");
+    },
+} 
+
+let bus = {
+    number: 105,
+}
+
+let car = {
+    doors: 4,
+    __proto__ : transport // Второй способ присвоения прототипа
+}
+
+bus.__proto__ = transport // Первый способ присвоения прототипа
+console.log(bus);
+
+car.__proto__ = transport
+console.log(car);
+
+if (car.year == 5 ) {
+    console.log("Совпадение");
+}
+
+console.log(car); // собственные свойства
+console.log(car.__proto__); // присвоенные свойства
+car.drive()
+
+console.log(Object.keys(car)); // Показывает только собственные ключи
+for (const key in car) {
+    console.log(key);
+    // Показывает все ключи, включая присвоенные
+}
+
+
+//! F.prototype 
+
+
+
   
   
 
