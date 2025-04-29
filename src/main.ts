@@ -2841,26 +2841,26 @@ button3.showBtn('Переместить')
 //! Напишите функцию sumSalaries(salaries), которая возвращает сумму 
 //! всех зарплат с помощью метода Object.values и цикла for..of.
 //! Если объект salaries пуст, то результат должен быть 0. 
-let salaries = {
-    "John": 10_000,
-    "Pete": 30_000,
-    "Mary": 25_000,
-};
+// let salaries = {
+//     "John": 10_000,
+//     "Pete": 30_000,
+//     "Mary": 25_000,
+// };
 
-function sumSalaries(obj:object) {
-    let sum = 0
-    for (const el of Object.values(obj)) {
-        sum += el
-    }
-    console.log(sum);
-}
-sumSalaries(salaries)
+// function sumSalaries(obj:object) {
+//     let sum = 0
+//     for (const el of Object.values(obj)) {
+//         sum += el
+//     }
+//     console.log(sum);
+// }
+// sumSalaries(salaries)
 
 //! Напишите функцию count(obj), которая возвращает количество свойств объекта:
 function count(obj:object) {
     return `Количество свойств в объекте: ${Object.keys(obj).length}`
 }
-console.log(count(salaries));
+// console.log(count(salaries));
 
 
 //! Деструктурирующее присваивание 
@@ -2885,26 +2885,26 @@ console.log(user1);
 
 // Нежелательные элементы массива также могут быть отброшены с помощью дополнительной запятой:
 // второй элемент не нужен
-let [name, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
-console.log(title); // Consul
+// let [name, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+// console.log(title); // Consul
 
-let user = {};
-[user.name, user.surname] = "Ivan Ivanov".split(' ');
-console.log(user.name);
-console.log(user.surname);
-console.log(user);
+// let user = {};
+// [user.name, user.surname] = "Ivan Ivanov".split(' ');
+// console.log(user.name);
+// console.log(user.surname);
+// console.log(user);
 
 // В предыдущей главе мы видели метод Object.entries(obj).
 // Мы можем использовать его с деструктуризацией для цикличного перебора ключей и значений объекта:
-let user2 = {
-  name: "John",
-  age: 30
-};
+// let user2 = {
+//   name: "John",
+//   age: 30
+// };
 
 // цикл по ключам и значениям
-for (let [key, value] of Object.entries(user2)) {
-  console.log(`${key}:${value}`); // name:John, затем age:30
-}
+// for (let [key, value] of Object.entries(user2)) {
+//   console.log(`${key}:${value}`); // name:John, затем age:30
+// }
 
 // Существует хорошо известный трюк для обмена значений двух переменных с использованием деструктурирующего присваивания:
 let guest = "Jane";
@@ -2986,6 +2986,47 @@ console.log(title3); // Menu
 console.log(w1); // 100
 console.log(h1); // 200
 
+//! Деструктурирующие присваивание ДОМАШНЯЯ РАБОТА
+// Напишите деструктурирующее присваивание, которое:
+// свойство name присвоит в переменную name.
+// свойство years присвоит в переменную age.
+// свойство isAdmin присвоит в переменную isAdmin (false, если нет такого свойства)
+let user3 = {
+    name: "John",
+    years: 30
+};
+
+let {name, years: age, isAdmin = false} = user3
+console.log(name);
+console.log(age);
+console.log(isAdmin);
+
+//! У нас есть объект salaries с зарплатами:
+//   Создайте функцию topSalary(salaries), которая возвращает имя самого высокооплачиваемого сотрудника.
+//   Если объект salaries пустой, то нужно вернуть null.
+//   Если несколько высокооплачиваемых сотрудников, можно вернуть любого из них.
+//   P.S. Используйте Object.entries и деструктурирование, чтобы перебрать пары ключ/значение. 
+
+let salaries = {
+    "John": 10000,
+    "Pete": 30000,
+    "Mary": 30000
+};
+
+function topSalary(list:{}) {
+    let maxSalary = 0
+    let stufName = null
+
+    for (const [name, num] of Object.entries(list)) {
+        if (num > maxSalary) {
+            maxSalary = num
+            stufName = name
+        }
+    }
+    return stufName
+}
+console.log(topSalary(salaries));
+
 
 //! Прототипное наследование
 let transport = {
@@ -3031,6 +3072,70 @@ console.log(Array.prototype); // Просмотор методов
 console.log(Number.prototype);
 console.log(String.prototype);
 console.log(car.__proto__ == transport);
+
+//!Prototype Домашняя Работа
+// С помощью свойства __proto__ задайте прототипы так, чтобы поиск любого свойства
+// выполнялся по следующему пути: pockets → bed → table → head. 
+// Например, pockets.pen должно возвращать значение 3 (найденное в table), 
+// а bed.glasses – значение 1 (найденное в head).
+let head = {
+    glasses: 1
+};
+
+let table = {
+  pen: 3,
+  __proto__ : head
+};
+
+let bed = {
+  sheet: 1,
+  pillow: 2,
+  __proto__ : table
+};
+
+let pockets = {
+  money: 2000,
+  __proto__ : bed
+};
+console.log(pockets.pen);
+console.log(bed.glasses);
+
+//! У нас есть два хомяка: шустрый (speedy) и ленивый (lazy); 
+//! оба наследуют от общего объекта hamster.
+// Когда мы кормим одного хомяка, второй тоже наедается. Почему? Как это исправить?
+
+let hamster = {
+  stomach: [],
+
+  eat(food) {
+    // this.stomach.push(food);
+    this.stomach = [food] 
+  }
+};
+
+let speedy = {
+  __proto__: hamster
+};
+
+let lazy = {
+  __proto__: hamster
+}; 
+
+speedy.eat('Яблоко')
+console.log(speedy.stomach);
+console.log(lazy.stomach);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
