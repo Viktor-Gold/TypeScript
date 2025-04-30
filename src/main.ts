@@ -3126,6 +3126,60 @@ console.log(speedy.stomach);
 console.log(lazy.stomach);
 
 
+// STASHCHUCK Объекты
+const product_1 = 'Milk'
+const product_2 = 'Bread'
+let myCity = {
+    city: 'Moscow',
+    product_1,
+    product_2,
+    cars: {
+        color: 'white',
+        model: 'KIA'
+    }
+}
+let popular = 'very big'
+myCity[popular] = 'New'
+
+console.log(myCity);
+console.log(popular);
+
+const town = myCity // ссылаемся на объект
+town.product_1 = 'chees' // изменив копию, мы изменяем изначальный объект 
+console.log(myCity.product_1);
+
+// Как изменить копию объекта, не изменяя изначальный объект
+const myCity_2 = Object.assign({}, myCity)
+myCity_2.product_1 = 'eggs'
+console.log(myCity.product_1);
+console.log(myCity_2.product_1);
+
+// Этот вариант подходит, если внутри изначального объекта нет вложенных объектов
+
+// Второй вариант так же для объекта без вложенных объектов внутри
+const town_2 = {...myCity}
+town_2.city = 'New-York'
+console.log(town_2.city);
+console.log(myCity.city);
+town_2.cars.color = 'blue'
+console.log(myCity.cars.color); // Мы видим, что вложенный объект тоже изменился
+
+// Вариант 3 позволяет создать копию объекта и полностью избежать мутаций.
+const city = JSON.parse(JSON.stringify(myCity)) 
+// Мы добиваемся того, что ссылки на вложенные объекты в изначальном объекте не сохраняются
+city.cars.color = 'red'
+console.log(myCity.cars.color); // Свойство во вложенном объекте не изменилось на 'red'
+
+// STASHCHUCK Функции
+function myFn(a:number, b:number) {
+    let c
+    a = a + 1
+    c = a + b 
+    return c
+}
+
+
+
 
 
 
