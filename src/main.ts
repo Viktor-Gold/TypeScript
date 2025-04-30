@@ -2686,77 +2686,78 @@ let array = [2, 5, 9, 15, 0, 4]
 
 
 //! Конструктор оператор new
-function repared() {
-    console.log('Самолет отремонтирован!');
-}
+// function repared() {
+//     console.log('Самолет отремонтирован!');
+// }
 
-function Aircraft (model:any, age:number) {
-    this.model = model;
-    this.age = age; // динамические данные, меняются с каждой новой переменной
-    this.company = "Boeing"; // статические данные (не изменны)
-    this.country = "USA";
-    this.fuel = function () {
-        console.log('Самолет заправлен!');
-    }
-    this.fly = () => {
-        return "Самолет готов!"
-    };
-    repared:repared;
-}
+// function Aircraft (model:any, age:number) {
+//     this.model = model;
+//     this.age = age; // динамические данные, меняются с каждой новой переменной
+//     this.company = "Boeing"; // статические данные (не изменны)
+//     this.country = "USA";
+//     this.fuel = function () {
+//         console.log('Самолет заправлен!');
+//     }
+//     this.fly = () => {
+//         return "Самолет готов!"
+//     };
+//     repared:repared;
+// }
 
-let aircraft1 = new Aircraft('Boeing 777', 12)
-console.log(aircraft1);
-let aircraft2 = new Aircraft('Boeing 999', 5)
-console.log(aircraft2);
-console.log(aircraft1);
-aircraft1.fuel()
-console.log(aircraft1.fly());
-repared();
+// let aircraft1 = new Aircraft('Boeing 777', 12)
+// console.log(aircraft1);
+// let aircraft2 = new Aircraft('Boeing 999', 5)
+// console.log(aircraft2);
+// console.log(aircraft1);
+// aircraft1.fuel()
+// console.log(aircraft1.fly());
+// repared();
 
 
-//! Классы: базовый синтаксис
+// //! Классы: базовый синтаксис
 
-class Airplane {
-    country = "Russia";
-    city = 'Moscow'; // статические данные (не изменны)
-    constructor(model:any, year:number) {
-        this.model = model;
-        this.year = year; // динаимческие данные
+// class Airplane {
+//     country = "Russia";
+//     city = 'Moscow'; // статические данные (не изменны)
+//     constructor(model:any, year:number) {
+//         this.model = model;
+//         this.year = year; // динаимческие данные
         
-    }
-    fly() { // метод
-        console.log(`Самолет ${this.model} в пути`);
+//     }
+//     fly() { // метод
+//         console.log(`Самолет ${this.model} в пути`);
         
-    }
-    get year () {
-        return `${this._year}`
-    }
-    set year (value:any) {
-        if (value < 5) {
-            this._year = 'Самолет новый ' + value
-        }
-        else {
-            this._year = 'Самолет старый ' + value
-        }
-    }
-}
+//     }
+//     get year () {
+//         return `${this._year}`
+//     }
+//     set year (value:any) {
+//         if (value < 5) {
+//             this._year = 'Самолет новый ' + value
+//         }
+//         else {
+//             this._year = 'Самолет старый ' + value
+//         }
+//     }
+// }
 
-let airplane1 = new Airplane('Boeing 777', 12)
-console.log(airplane1);
-console.log(airplane1.model);
-airplane1.fly();
+// let airplane1 = new Airplane('Boeing 777', 12)
+// console.log(airplane1);
+// console.log(airplane1.model);
+// airplane1.fly();
 
-let airplane2 = new Airplane('Boeing 999', 5)
-airplane2.fly()
+// let airplane2 = new Airplane('Boeing 999', 5)
+// airplane2.fly()
 
-console.log(typeof Airplane);
-console.log(Airplane.prototype.constructor == Airplane);
+// console.log(typeof Airplane);
+// console.log(Airplane.prototype.constructor == Airplane);
 
 
 //! Home Work
 //! Task 1 
 //! Реализовать класс описывающий маркер.
 let marker_text = document.getElementById("marker_text") 
+let info_about_marker = document.getElementById('info_about_marker') as HTMLDivElement
 
 class Marker {
     constructor (color:string, ink:number) {
@@ -2768,18 +2769,38 @@ class Marker {
         // let symbols = text.split('')
 
         let numOpacity = this.ink
-        for (let i = 0; i < numOpacity; i++) {
+        for (let i = 0; i < text.length; i++) {
             console.log(1 - i/numOpacity);
             marker_text.innerHTML += 
-            `<div style="color: ${this.color}; opacity: ${1 - i/numOpacity}"> ${text[i]}</div>`
-            marker_text.innerHTML += `</br>`
+            `<div style="color: ${this.color}; opacity: ${1 - i/numOpacity}"> ${text[i]}<br></div> <br>`
         }
+
+        info_about_marker.innerHTML += `<br>
+        Количество напечатанных символов: ${text.length} <br>
+        Количество символов в чернилах: ${this.ink} <br>
+        Цвет маркера: <span style="color:${this.color}">${this.color}</span> <br>
+        <div id="battery">
+             <div id="inner_battery" style="background-color: ${this.color}; height: 30px; width: ${this.ink}px;"></div>
+         </div>
+        `
     }
 }
+
+let marker1 = new Marker('red', 25)
+marker1.print('New text')
+
+let marker2 = new Marker('green', 40)
+marker2.print('My city - Sochi')
+
+let marker3 = new Marker('blue', 90)
+marker3.print('My city - Sochi. I from is Rostov-On-Don')
+
 
 //! Task 2
 //! Реализовать класс PrintMachine
 let printMachine = document.getElementById("printMachine") as HTMLDivElement
+// let info_about_marker = document.querySelector('#info_about_marker') //! один из способов выввода информации в HTML файл
+
 
 class PrintMachine {
     constructor(tag:any, color:string, fontFamily:string) {
@@ -2790,7 +2811,6 @@ class PrintMachine {
     print(text:any){
         printMachine.innerHTML += `<${this.tag} span style= " 
         color: ${this.color}; font-family: ${this.fontFamily};">${text}</${this.tag}>`
-        
     }
 }  
 
@@ -2799,6 +2819,7 @@ pencil.print('TEXT_TESt')
 
 let pencil2 = new PrintMachine('h6', 'red', '')
 pencil2.print("NEW_TEXT")
+
 
 //! Task 3 
 class Button{
@@ -2824,6 +2845,7 @@ button2.showBtn('Удалить')
 
 let button3 = new Button(120, 60, 'gold')
 button3.showBtn('Переместить')
+
 
 // let marker1 = new Marker('Red', 20)
 // marker1.print('12345678901234567890')
@@ -3066,12 +3088,6 @@ for (const key in car) {
     // Показывает все ключи, включая присвоенные
 }
 
-//! F.prototype 
-console.log(Object.prototype);
-console.log(Array.prototype); // Просмотор методов
-console.log(Number.prototype);
-console.log(String.prototype);
-console.log(car.__proto__ == transport);
 
 //!Prototype Домашняя Работа
 // С помощью свойства __proto__ задайте прототипы так, чтобы поиск любого свойства
@@ -3170,13 +3186,79 @@ const city = JSON.parse(JSON.stringify(myCity))
 city.cars.color = 'red'
 console.log(myCity.cars.color); // Свойство во вложенном объекте не изменилось на 'red'
 
-// STASHCHUCK Функции
-function myFn(a:number, b:number) {
-    let c
-    a = a + 1
-    c = a + b 
-    return c
+
+//! Прототипы, наследование
+//! Встроенные прототипы
+//! Object.prototype
+console.log(Object.prototype);
+console.log(Array.prototype); // Просмотор методов
+console.log(Number.prototype);
+console.log(String.prototype);
+console.log(Date.prototype);
+
+let person = {
+    name : 'Петя',
+    age : 20,
 }
+
+let mass = [1, 2, 3]
+
+console.log(person.__proto__ == Object.prototype);
+console.log(person);
+console.log(mass.toString());
+
+let number = 5
+console.log(number);
+Number.prototype.show = () => {
+    console.log("Создали новый метод");
+}
+number.show()
+let string = 'Строка'
+console.log(string.length);
+
+
+//! Наследование классов
+//! Ключевое слово extends
+class City {
+    name
+    age
+    constructor(name = "Sochi", age = 286) {
+        this.name = name
+        this.age = age
+    }
+    welcome() {
+        return "Добро пожаловать в " + this.name;
+    }
+
+}
+let city_1 = new City()
+console.log(city_1.welcome());
+
+class Country extends City{
+    countryName
+    constructor(name:string, age:number, countryName:string) {
+        super(name, age)
+        this.countryName = countryName
+    }
+    population(people:number) {
+        return `${super.welcome()} Население города ${this.name} = ${people}` // Возвращаем родительский метод
+        //! super работает ТОЛЬКО ВНУТРИ КОНСТРУКТОРА! 
+    }
+    welcome() { // Перезаписали метод
+        return "Приветствуем вас в городе " + this.name;
+    }
+}
+
+let country = new Country('Moscow', 1000, "Russia")
+console.log(country.welcome());
+console.log(country.population(13_000_000));
+
+
+
+
+
+
+
 
 
 
