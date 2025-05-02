@@ -2798,7 +2798,7 @@ marker3.print('My city - Sochi. I from is Rostov-On-Don')
 
 //! Task 2
 //! Реализовать класс PrintMachine
-let printMachine = document.getElementById("printMachine") as HTMLDivElement
+let btn = document.getElementById("btn") as HTMLDivElement
 // let info_about_marker = document.querySelector('#info_about_marker') //! один из способов выввода информации в HTML файл
 
 
@@ -2809,7 +2809,7 @@ class PrintMachine {
         this.fontFamily = fontFamily
     }
     print(text:any){
-        printMachine.innerHTML += `<${this.tag} span style= " 
+        btn.innerHTML += `<${this.tag} span style= " 
         color: ${this.color}; font-family: ${this.fontFamily};">${text}</${this.tag}>`
     }
 }  
@@ -2821,30 +2821,8 @@ let pencil2 = new PrintMachine('h6', 'red', '')
 pencil2.print("NEW_TEXT")
 
 
-//! Task 3 
-class Button{
-    width
-    height // для того, чтобы TypeScript не подчеркивал
-    background 
-    constructor(width:number, height:number, background:string) {
-        this.width = width
-        this.height = height
-        this.background = background
-    }
-    showBtn(value:string) {
-        printMachine.innerHTML += `<button style="width: ${this.width}px; 
-        height: ${this.height}px; background: ${this.background};">${value}</button>`
-    }
-}
+// let css1 = new CssClass('MyCss',)
 
-let button1 = new Button(150, 50, 'red')
-button1.showBtn('Добавить')
-
-let button2 = new Button(80, 40, 'green')
-button2.showBtn('Удалить')
-
-let button3 = new Button(120, 60, 'gold')
-button3.showBtn('Переместить')
 
 
 // let marker1 = new Marker('Red', 20)
@@ -3254,8 +3232,100 @@ console.log(country.welcome());
 console.log(country.population(13_000_000));
 
 
+//! STASHCHUCK Функции
+let building = {
+    name : 'ЖК Новый Сочи',
+    constructionPeriod : 5,
+}
+function increase(obj:any) {
+    const updatedBuilding = Object.assign({}, obj) // Таким образом мы НЕ меняем внешний объект, а создаем новый, копируя свойства прежнего объекта
+    updatedBuilding.constructionPeriod += 1
+    return updatedBuilding
+} // Внутри функции не рекомендуется менять внешние объекты
+console.log(increase(building));
 
 
+//! Task 3 
+//! Реализовать класс Button, который содержит ширину, высоту, текст кнопки 
+//! и метод showBtn(), который выводит кнопку на экран с помощью тега button
+class Button{
+    width
+    height // для того, чтобы TypeScript не подчеркивал
+    background 
+    constructor(width:number, height:number, background:string) {
+        this.width = width
+        this.height = height
+        this.background = background
+    }
+    showBtn(value:string) {
+        btn.innerHTML += `<button style="width: ${this.width}px; 
+        height: ${this.height}px; background: ${this.background};">${value}</button>`
+    }
+}
+
+let button1 = new Button(150, 50, 'red')
+button1.showBtn('Добавить')
+
+let button2 = new Button(80, 40, 'green')
+button2.showBtn('Удалить')
+
+let button3 = new Button(120, 60, 'gold')
+button3.showBtn('Переместить')
+
+//! Реализовать класс BootstrapButton, унаследовав его от класса 
+//! Button. Добавить поле color и переопределить метод showBtn() 
+//! так, чтобы кнопка выводилась со стилями и указанным цветом. 
+
+class BootstrapButton extends Button {
+    color
+   constructor (width:number, height:number, background:string, color:string) {
+    super(width, height, background)
+    this.color = color
+   }
+   showBtn(value:string) {
+        btn.innerHTML += `<button style="width: ${this.width}px; 
+        height: ${this.height}px; background: ${this.background};
+        color: ${this.color}">${value}</button>`
+    }
+}
+
+let button4 = new BootstrapButton(200, 100, 'Black', 'gold')
+button4.showBtn("VIKTOR_GOLD")
+
+//! Task 4. Реализовать класс, который описывает css класс. 
+//! Класс CssClass должен содержать внутри себя:
+//! ■ название css класса;
+//! ■ массив стилей;
+//! ■ метод для установки стиля;
+//! ■ метод для удаления стиля;
+//! ■ метод getCss(), который возвращает css код в виде строки.
+let classCss = document.getElementById('classCss') as HTMLDivElement
+class CssClass {
+    name
+    styleArray;
+    constructor(name: string, style: string, property: any) {
+        this.name = name;
+        this.styleArray = [style, ":", property];
+        // console.log(this.styleArray.join(' '));
+    }
+
+    showStyle(value: string) {
+        let styleString = this.styleArray.join(' ');
+        classCss.innerHTML += `<span style="${styleString}">${value}</span>`;
+    }
+    deleteStyle(style:string) {
+        style = delete this.styleArray[0]
+        console.log(style);
+    }
+    getCss() {
+        console.log(this.styleArray.join(' '));
+    }
+}
+
+let myClass = new CssClass('My_css', 'color', 'green');
+myClass.showStyle('Мой новый css стиль');
+myClass.getCss()
+myClass.deleteStyle('color')
 
 
 
