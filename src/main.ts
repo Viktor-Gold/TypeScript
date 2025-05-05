@@ -3289,7 +3289,7 @@ class BootstrapButton extends Button {
     }
 }
 
-let button4 = new BootstrapButton(200, 100, 'Black', 'gold')
+let button4 = new BootstrapButton(200, 80, 'black', 'gold')
 button4.showBtn("VIKTOR_GOLD")
 
 //! Task 4. Реализовать класс, который описывает css класс. 
@@ -3300,32 +3300,76 @@ button4.showBtn("VIKTOR_GOLD")
 //! ■ метод для удаления стиля;
 //! ■ метод getCss(), который возвращает css код в виде строки.
 let classCss = document.getElementById('classCss') as HTMLDivElement
+let newString = ''
+let newString2 = ''
 class CssClass {
     name
-    styleArray;
-    constructor(name: string, style: string, property: any) {
+    cssArray
+    constructor(name: string, cssArray:any[]) {
         this.name = name;
-        this.styleArray = [style, ":", property];
-        // console.log(this.styleArray.join(' '));
+        this.cssArray = cssArray
+        
     }
-
-    showStyle(value: string) {
-        let styleString = this.styleArray.join(' ');
-        classCss.innerHTML += `<span style="${styleString}">${value}</span>`;
+    setStyle(value:string) {
+        for (const el of this.cssArray) {
+            for (const key in el) {
+                newString += key + ': ' + el[key] + '; '
+                newString2 += key + ': ' + el[key] + '; ' + '<br>'
+            }
+            
+        }
+        classCss.innerHTML += `<div class="${this.name}" style="${newString}">${value}</div>`
     }
-    deleteStyle(style:string) {
-        style = delete this.styleArray[0]
-        console.log(style);
+    deleteStyle(num:number) {
+        delete this.cssArray[num]
     }
     getCss() {
-        console.log(this.styleArray.join(' '));
+        console.log(newString);
+        classCss.innerHTML += newString2 + "<br>"
     }
 }
 
-let myClass = new CssClass('My_css', 'color', 'green');
-myClass.showStyle('Мой новый css стиль');
+let myClass = new CssClass('myClass', [
+    {background : 'gray'},
+    {color : 'orange'},
+    {width : '200px'},
+    {height : '80px'},
+    {'font-size' : '30px'},
+]);
+myClass.deleteStyle(1)
+console.log(...myClass.cssArray);
+console.log(myClass.setStyle('Новый стиль'));
 myClass.getCss()
-myClass.deleteStyle('color')
+
+
+//! Data
+let dates = new Date()
+console.log(dates.getMilliseconds());
+console.log(dates.toLocaleString());
+console.log(dates.toLocaleTimeString());
+
+let dateOfBirth = new Date('1999-03-02')
+console.log(dateOfBirth);
+console.log(Date.prototype);
+
+console.log(dates.getTime());
+console.log(Date.now());
+
+
+function getWeekyDay(dat1:any) {
+    let array1 = ["Вс", 'Пн', "Вт", "Ср", "Чт", "Пт", "Сб"]
+    console.log(array1[dat1.getDay()]);
+}
+getWeekyDay(new Date(2012, 0, 3))
+getWeekyDay(new Date(2025, 4, 5))
+
+
+
+
+
+
+ 
+
 
 
 
