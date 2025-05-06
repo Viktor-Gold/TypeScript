@@ -166,7 +166,7 @@
 //     case "2":
 //         alert("Под цифрой: " + symbol + " находится символ: '@'")
 //         break;
-        
+
 //     case "3":
 //         alert("Под цифрой: " + symbol + " находится символ: '#'")
 //         break;
@@ -738,11 +738,11 @@
 // while (y > 0) {
 //     console.log(y);
 //     y--
-    
+
 // }
 
 // do while (condition) {
-    
+
 // }
 
 //  (  Началo; условие; шаг)
@@ -895,14 +895,14 @@
 //     if (mass[i]%2==0) {
 //         even++
 //         console.log(mass[i]);
-        
+
 //     }
 // }
 // console.log(`Количество положительны эл-ов: ${pos}
 //             Количество отрицательных эл-ов ${10-pos}`);
 
 
- 
+
 //! Задания для самостоятельной работы
 //! Task 1
 
@@ -940,7 +940,7 @@
 //     money += money * bet
 //     year++
 //     if (money >= doubleMoney) break
-    
+
 // }
 // let year5 = "лет"
 // let year2 = "года"
@@ -1006,7 +1006,7 @@
 //     } 
 //     else return "Введите число!"
 
-    // return x > y ? y : x тоже решение через тернарный оператор
+// return x > y ? y : x тоже решение через тернарный оператор
 // }
 // console.log(equality(1, 21));
 
@@ -1045,10 +1045,10 @@
 
 //         case "-":
 //             return a - b
-    
+
 //         case "/":
 //             return a / b
-            
+
 //         case "*":
 //             return a * b
 
@@ -1060,31 +1060,31 @@
 
 
 //! 4. Написать функцию, которая проверяет, является ли переданное ей число простым
-    // function numberPrime(a:number) {
-    //     if (a < 2) {
-    //         return "Число не простое";
-    //     }
-    //     for (let i = 2; i <= Math.sqrt(a); i++) {
-    //         if (a % i == 0) {
-    //             return "Число составное";
-    //         }
-    //     }
-    //     return "Число простое";
-    // }
-    // console.log(numberPrime(9));
+// function numberPrime(a:number) {
+//     if (a < 2) {
+//         return "Число не простое";
+//     }
+//     for (let i = 2; i <= Math.sqrt(a); i++) {
+//         if (a % i == 0) {
+//             return "Число составное";
+//         }
+//     }
+//     return "Число простое";
+// }
+// console.log(numberPrime(9));
 
-    //! Решение 2-ым способом
-    // function numberPrime(a:number) {
-    //     let accum = 0
-    //     for (let i = 2; i < a; i++) {
-    //         if (a%i == 0) {
-    //             accum++
-    //         }
-    //     }
-    //     return accum > 0 ? "Число сложное" : "Число простое"
-    // }
-    // console.log(numberPrime(13));
-    
+//! Решение 2-ым способом
+// function numberPrime(a:number) {
+//     let accum = 0
+//     for (let i = 2; i < a; i++) {
+//         if (a%i == 0) {
+//             accum++
+//         }
+//     }
+//     return accum > 0 ? "Число сложное" : "Число простое"
+// }
+// console.log(numberPrime(13));
+
 
 //! 5. Написать функцию, которая принимает число и выводит таблицу умножения 
 //! для этого числа. Вызовите функцию для всех чисел от 2 до 9. 
@@ -1115,7 +1115,7 @@
 // let b = "true"
 // for (let min = 0; min < max; min--) {
 //     if (b == "true") {
-        
+
 //     }        
 // }
 
@@ -1223,7 +1223,7 @@
 //        if (bool == true) {
 //         if (i % 2 == 0){
 //             console.log(i);
-            
+
 //         }
 //        }
 //        else {
@@ -1258,7 +1258,7 @@
 //         day += 1
 //         return "Завтра: " + day + "." + month + "." + year
 //     }
-    
+
 // }
 
 // //! Последний день 30-дневных месяцев
@@ -1367,7 +1367,7 @@
 
 //! 3. Написать функцию, которая выводит переданное ей число задом наперед. 
 //! Например: число 1234 вывести как 4321.
-    
+
 // function reversNumber(d:number):number {
 //     if (d < 10){
 //         return d
@@ -1433,7 +1433,7 @@
 //         return time
 //     }
 //     else if (distance %400==0) {
-        
+
 //     }
 //     return time + " часов"  
 // }
@@ -1542,11 +1542,11 @@
 // //! 2. Функция принимает массив и выводит только четные элементы.
 // numberArray = [2, 3, 5, 10, 8, 9, 24]
 // function showEvenNumbers(array:number[]) {
-    // for (let i = 0; i < array.length; i++) {
-    //     if (array[i] % 2 == 0) {
-    //         console.log(array[i]);
-    //     }
-    // }
+// for (let i = 0; i < array.length; i++) {
+//     if (array[i] % 2 == 0) {
+//         console.log(array[i]);
+//     }
+// }
 // 2-ой способ
 //     for (const el of array) {
 //         if (el % 2 == 0) {
@@ -1608,7 +1608,7 @@
 //! выведите на экран столбец тех элементов массива, которые больше 3-х, но меньше 10.   
 // console.log("Первое задание");
 
-let array = [2, 5, 9, 15, 0, 4]
+// let array = [2, 5, 9, 15, 0, 4]
 // for (let i = 0; i < array.length; i++) {
 //     if (array[i] > 3 && array[i] < 10) {
 //         console.log(array[i]);
@@ -2072,10 +2072,10 @@ let array = [2, 5, 9, 15, 0, 4]
 //                 quantityVolwels++
 //             }
 //         }
-        // Второй способ
-        // if (arrayVolwels.includes(str[i])) {
-            // quantityVolwels++
-        // }
+// Второй способ
+// if (arrayVolwels.includes(str[i])) {
+// quantityVolwels++
+// }
 //     }
 //     return(quantityVolwels);
 // }
@@ -2094,14 +2094,14 @@ let array = [2, 5, 9, 15, 0, 4]
 //             return true
 //         }
 //     }
-    // Второй способ
-    // str = str.toLowerCase().split(" ")
-    // let spamWords = ["100%", "бесплатно", "увеличение", "продаж", "только", "сегодня", "не удаляйте", "ххх"]
-    // for (let i = 0; i < str.length; i++) {
-    //     if (spamWords.includes(str[i])) {
-    //         return true;
-    //     }
-    // }
+// Второй способ
+// str = str.toLowerCase().split(" ")
+// let spamWords = ["100%", "бесплатно", "увеличение", "продаж", "только", "сегодня", "не удаляйте", "ххх"]
+// for (let i = 0; i < str.length; i++) {
+//     if (spamWords.includes(str[i])) {
+//         return true;
+//     }
+// }
 // }
 // console.log(searchSpam(advertising));
 
@@ -2166,22 +2166,22 @@ let array = [2, 5, 9, 15, 0, 4]
 //         }
 //     }
 //     return `Символ ${symbol} находится под индексом: ${array}. Количество повторений символа ${accum}`
-    // Второй способ 
-    // str = str.split(" ")
-    // console.log(str);
-    // let quantityRemoveSymbol = 0
-    // for (let i = 0; i < str.length; i++) {
-    //     if (str[i] == symbol) {
-    //         quantityRemoveSymbol++
-    //     }
-    //     if (str[i] == symbol) {
-    //         console.log(`Символ ${symbol} находится под индексом: ${i}`);
-    //     }
-    //     else if (str[i] == symbol) {
-    //         console.log(`Символ ${symbol} находится под индексом: ${i}`);
-    //     }
-    // }
-    // console.log(`Количество повторений символа: "${symbol}" = ${quantityRemoveSymbol}`);
+// Второй способ 
+// str = str.split(" ")
+// console.log(str);
+// let quantityRemoveSymbol = 0
+// for (let i = 0; i < str.length; i++) {
+//     if (str[i] == symbol) {
+//         quantityRemoveSymbol++
+//     }
+//     if (str[i] == symbol) {
+//         console.log(`Символ ${symbol} находится под индексом: ${i}`);
+//     }
+//     else if (str[i] == symbol) {
+//         console.log(`Символ ${symbol} находится под индексом: ${i}`);
+//     }
+// }
+// console.log(`Количество повторений символа: "${symbol}" = ${quantityRemoveSymbol}`);
 // }
 // console.log(quantitySymbol(stringSymbol, "$"));
 
@@ -2263,31 +2263,31 @@ let array = [2, 5, 9, 15, 0, 4]
 //     Количество символов: ${quantitySymbols}
 //     Количество цифр: ${stringInfo.length - quantityLetters - quantitySymbols}
 //     `
-    // return symbols
-    // let symbols = str.split("") // разбиваем по каждому символу
-    // let quantityСommas = 0 //счетчик запятых
-    // let quantityNumbers = 0 //счетчик цифр
-    // for (let i = 0; i < symbols.length; i++) {
-    //     if (symbols[i] == ','){
-    //         quantityСommas++ 
-    //     }
-    //     if (symbols[i] >= 0) {
-    //         quantityNumbers++
-    //     }
-    // }
-    // let letters = str.split(" ") // разбиваем по пробелам
-    // let quantityLetters = 0 //счетчик всех символов
-    // for (let i = 0; i < letters.length; i++) {
-    //     let lettersInside = letters[i]
-    //     for (let j = 0; j < lettersInside.length; j++) {
-    //         quantityLetters++
-    //     }
-    // }
-    // let result = quantityLetters - quantityNumbers - quantityСommas
-    
-    // console.log(`Количество "," в тексте: ${quantityСommas}`);
-    // console.log(`Количество цифр в тексте: ${quantityNumbers}`);
-    // console.log(`Количество букв в тексте: ${result}`);
+// return symbols
+// let symbols = str.split("") // разбиваем по каждому символу
+// let quantityСommas = 0 //счетчик запятых
+// let quantityNumbers = 0 //счетчик цифр
+// for (let i = 0; i < symbols.length; i++) {
+//     if (symbols[i] == ','){
+//         quantityСommas++ 
+//     }
+//     if (symbols[i] >= 0) {
+//         quantityNumbers++
+//     }
+// }
+// let letters = str.split(" ") // разбиваем по пробелам
+// let quantityLetters = 0 //счетчик всех символов
+// for (let i = 0; i < letters.length; i++) {
+//     let lettersInside = letters[i]
+//     for (let j = 0; j < lettersInside.length; j++) {
+//         quantityLetters++
+//     }
+// }
+// let result = quantityLetters - quantityNumbers - quantityСommas
+
+// console.log(`Количество "," в тексте: ${quantityСommas}`);
+// console.log(`Количество цифр в тексте: ${quantityNumbers}`);
+// console.log(`Количество букв в тексте: ${result}`);
 // }a
 // console.log(showStatisticsString(stringInfo));
 
@@ -2332,18 +2332,18 @@ let array = [2, 5, 9, 15, 0, 4]
 // return result;
 // }
 
-    // if (str[i] >= 'A' && str[i] <= 'Z') {
-    //   result += str[i].toLowerCase();
-    // } 
-    // else if (str[i] >= 'a' && str[i] <= 'z') {
-    //   result += str[i].toUpperCase();
-    // } 
-    // else if (str[i] >= '0' && str[i] <= '9') {
-    //   result += '_';
-    // } 
-    // else {
-    //   result += str[i];
-    // }
+// if (str[i] >= 'A' && str[i] <= 'Z') {
+//   result += str[i].toLowerCase();
+// } 
+// else if (str[i] >= 'a' && str[i] <= 'z') {
+//   result += str[i].toUpperCase();
+// } 
+// else if (str[i] >= '0' && str[i] <= '9') {
+//   result += '_';
+// } 
+// else {
+//   result += str[i];
+// }
 // console.log(replacementSymbols(string1));
 
 //! 4. Написать функцию, которая преобразует названия cssстилей с дефисом в 
@@ -2385,25 +2385,25 @@ let array = [2, 5, 9, 15, 0, 4]
 //         if (str[i] >= 0) {
 //             a = str[i]
 //             console.log(a);
-            
+
 //         }
 //         if (str[i] == "+") {
 //             result = str[i] + str[i]
 //         }
 //         else if (str[i] == "-") {
-            
+
 //         }
 //         else if (str[i] == '/') {
-            
+
 //         }
 //         else if (str[i] == "*") {
-            
+
 //         }
-        
-        
+
+
 //     }
 //     console.log(result);
-    
+
 // }
 // console.log(calculator(example));
 
@@ -2461,13 +2461,13 @@ let array = [2, 5, 9, 15, 0, 4]
 
 //! Стрелочные функции
 // function showSum(x:number, y:number) {
-    
+
 //     return x + y
 // }
 // console.log(showSum(3, 5));
 
 // let summ = function showSum(x:number, y:number) {
-    
+
 //     return x + y
 // }
 // console.log(summ(3, 5));
@@ -2722,11 +2722,11 @@ let array = [2, 5, 9, 15, 0, 4]
 //     constructor(model:any, year:number) {
 //         this.model = model;
 //         this.year = year; // динаимческие данные
-        
+
 //     }
 //     fly() { // метод
 //         console.log(`Самолет ${this.model} в пути`);
-        
+
 //     }
 //     get year () {
 //         return `${this._year}`
@@ -2756,23 +2756,23 @@ let array = [2, 5, 9, 15, 0, 4]
 //! Home Work
 //! Task 1 
 //! Реализовать класс описывающий маркер.
-let marker_text = document.getElementById("marker_text") 
+let marker_text = document.getElementById("marker_text")
 let info_about_marker = document.getElementById('info_about_marker') as HTMLDivElement
 
 class Marker {
-    constructor (color:string, ink:number) {
+    constructor(color: string, ink: number) {
         this.color = color; // цвет маркера
         this.ink = ink; // Насколько символов хватит чернил
     }
-    print(text:any) {
+    print(text: any) {
         // marker_text.style.color = this.color //! один из способов изменения css свойства
         // let symbols = text.split('')
 
         let numOpacity = this.ink
         for (let i = 0; i < text.length; i++) {
-            console.log(1 - i/numOpacity);
-            marker_text.innerHTML += 
-            `<div style="color: ${this.color}; opacity: ${1 - i/numOpacity}"> ${text[i]}<br></div> <br>`
+            console.log(1 - i / numOpacity);
+            marker_text.innerHTML +=
+                `<div style="color: ${this.color}; opacity: ${1 - i / numOpacity}"> ${text[i]}<br></div> <br>`
         }
 
         info_about_marker.innerHTML += `<br>
@@ -2803,16 +2803,19 @@ let btn = document.getElementById("btn") as HTMLDivElement
 
 
 class PrintMachine {
-    constructor(tag:any, color:string, fontFamily:string) {
+    tag
+    color
+    fontFamily
+    constructor(tag: any, color: string, fontFamily: string) {
         this.tag = tag
         this.color = color
         this.fontFamily = fontFamily
     }
-    print(text:any){
+    print(text: any) {
         btn.innerHTML += `<${this.tag} span style= " 
         color: ${this.color}; font-family: ${this.fontFamily};">${text}</${this.tag}>`
     }
-}  
+}
 
 let pencil = new PrintMachine('h1', 'green', 'monospace')
 pencil.print('TEXT_TESt')
@@ -2857,31 +2860,31 @@ pencil2.print("NEW_TEXT")
 // sumSalaries(salaries)
 
 //! Напишите функцию count(obj), которая возвращает количество свойств объекта:
-function count(obj:object) {
-    return `Количество свойств в объекте: ${Object.keys(obj).length}`
-}
+// function count(obj:object) {
+//     return `Количество свойств в объекте: ${Object.keys(obj).length}`
+// }
 // console.log(count(salaries));
 
 
 //! Деструктурирующее присваивание 
 
-let arr = ["Ilya", "Kantor"];
+// let arr = ["Ilya", "Kantor"];
 // деструктурирующее присваивание
 // записывает firstName = arr[0]
 // и surname = arr[1]
-let [firstName, surname] = arr;
-console.log(firstName);
-console.log(surname);
-let userName = firstName
-console.log(userName);
-let Name1 = arr[0]
-console.log(Name1);
+// let [firstName, surname] = arr;
+// console.log(firstName);
+// console.log(surname);
+// let userName = firstName
+// console.log(userName);
+// let Name1 = arr[0]
+// console.log(Name1);
 
 
-let [trueName, forName] = "Viktor Gold".split(' ');
-console.log(forName);
-let user1 = trueName
-console.log(user1);
+// let [trueName, forName] = "Viktor Gold".split(' ');
+// console.log(forName);
+// let user1 = trueName
+// console.log(user1);
 
 // Нежелательные элементы массива также могут быть отброшены с помощью дополнительной запятой:
 // второй элемент не нужен
@@ -2907,99 +2910,99 @@ console.log(user1);
 // }
 
 // Существует хорошо известный трюк для обмена значений двух переменных с использованием деструктурирующего присваивания:
-let guest = "Jane";
-let admin = "Pete";
-// Давайте поменяем местами значения: сделаем guest = "Pete", а admin = "Jane"
-[guest, admin] = [admin, guest];
-console.log(`${guest} ${admin}`); // Pete Jane (успешно заменено!)
+// let guest = "Jane";
+// let admin = "Pete";
+// // Давайте поменяем местами значения: сделаем guest = "Pete", а admin = "Jane"
+// [guest, admin] = [admin, guest];
+// console.log(`${guest} ${admin}`); // Pete Jane (успешно заменено!)
 
 // Остаточные параметры "..."
 // Если мы хотим не просто получить первые значения, но и собрать все остальные, 
 // то мы можем добавить ещё один параметр, который получает остальные значения, 
 // используя оператор «остаточные параметры» – троеточие ("..."):
-let [name1, name2, ...rest] = ["Julius", "Caesar", "Consul", "Mikky"];
-// rest это массив элементов, начиная с 3-го
-console.log(rest[0]); // Consul
-console.log(rest[1]); // Mikky
-console.log(rest.length); // 2
+// let [name1, name2, ...rest] = ["Julius", "Caesar", "Consul", "Mikky"];
+// // rest это массив элементов, начиная с 3-го
+// console.log(rest[0]); // Consul
+// console.log(rest[1]); // Mikky
+// console.log(rest.length); // 2
 // Переменная rest является массивом из оставшихся элементов.
 // Вместо rest можно использовать любое другое название переменной, 
 // просто убедитесь, что перед переменной есть три точки и 
 // она стоит на последнем месте в деструктурирующем присваивании.
 
-let userName1 = 'Andrey'
-let [name3 = userName1, surname1 = "Anonymous"] = [];
-console.log(name3);
+// let userName1 = 'Andrey'
+// let [name3 = userName1, surname1 = "Anonymous"] = [];
+// console.log(name3);
 
-let options = {
-    type: "Menu",
-    width: 100,
-    height: 200
-};
+// let options = {
+//     type: "Menu",
+//     width: 100,
+//     height: 200
+// };
 
-let {type, width, height} = options;
-console.log(type); // Menu
-console.log(width); // 100
-console.log(height); // 200
+// let {type, width, height} = options;
+// console.log(type); // Menu
+// console.log(width); // 100
+// console.log(height); // 200
 
 //Если мы хотим присвоить свойство объекта переменной с другим названием, 
 // например, свойство options.width присвоить переменной w, 
 // то мы можем использовать двоеточие:
-let options2 = {
-    type1: "Menu",
-    width: 100,
-    height: 200
-  };
-  // { sourceProperty: targetVariable }
-  let {width: w, height: h, type1} = options2;
-  // width -> w
-  // height -> h
-  // type1 -> type1
-  console.log(type1); // Menu
-  console.log(w); // 100
-  console.log(h); // 200 
+// let options2 = {
+//     type1: "Menu",
+//     width: 100,
+//     height: 200
+//   };
+// { sourceProperty: targetVariable }
+//   let {width: w, height: h, type1} = options2;
+// width -> w
+// height -> h
+// type1 -> type1
+//   console.log(type1); // Menu
+//   console.log(w); // 100
+//   console.log(h); // 200 
 
-  let options3 = {
-    title1: "Menu"
-  };
-  let {width1 = 100, height1 = 200, title1} = options3;
-  console.log(width1);
-  console.log(height1);
-  console.log(title1);
+//   let options3 = {
+//     title1: "Menu"
+//   };
+//   let {width1 = 100, height1 = 200, title1} = options3;
+//   console.log(width1);
+//   console.log(height1);
+//   console.log(title1);
 
 // В коде ниже prompt запросит width, но не title:
-let opt = {
-    title2: "Menu"
-};
-// let {width2 = prompt("width?"), title2 = prompt("title?")} = opt;
-console.log(width1); // Menu
-console.log(title1); // (результат prompt)
-// Мы также можем совмещать : и =:
+// let opt = {
+//     title2: "Menu"
+// };
+// // let {width2 = prompt("width?"), title2 = prompt("title?")} = opt;
+// console.log(width1); // Menu
+// console.log(title1); // (результат prompt)
+// // Мы также можем совмещать : и =:
 
-console.log('________________________');
+// console.log('________________________');
 
-let opt1 = {
-  title3: "Menu"
-};
-let {width2: w1 = 100, height2: h1 = 200, title3} = opt1;
-console.log(title3); // Menu
-console.log(w1); // 100
-console.log(h1); // 200
+// let opt1 = {
+//   title3: "Menu"
+// };
+// let {width2: w1 = 100, height2: h1 = 200, title3} = opt1;
+// console.log(title3); // Menu
+// console.log(w1); // 100
+// console.log(h1); // 200
 
 //! Деструктурирующие присваивание ДОМАШНЯЯ РАБОТА
 // Напишите деструктурирующее присваивание, которое:
 // свойство name присвоит в переменную name.
 // свойство years присвоит в переменную age.
 // свойство isAdmin присвоит в переменную isAdmin (false, если нет такого свойства)
-let user3 = {
-    name: "John",
-    years: 30
-};
+// let user3 = {
+//     name: "John",
+//     years: 30
+// };
 
-let {name, years: age, isAdmin = false} = user3
-console.log(name);
-console.log(age);
-console.log(isAdmin);
+// let {name, years: age, isAdmin = false} = user3
+// console.log(name);
+// console.log(age);
+// console.log(isAdmin);
 
 //! У нас есть объект salaries с зарплатами:
 //   Создайте функцию topSalary(salaries), которая возвращает имя самого высокооплачиваемого сотрудника.
@@ -3007,64 +3010,64 @@ console.log(isAdmin);
 //   Если несколько высокооплачиваемых сотрудников, можно вернуть любого из них.
 //   P.S. Используйте Object.entries и деструктурирование, чтобы перебрать пары ключ/значение. 
 
-let salaries = {
-    "John": 10000,
-    "Pete": 30000,
-    "Mary": 30000
-};
+// let salaries = {
+//     "John": 10000,
+//     "Pete": 30000,
+//     "Mary": 30000
+// };
 
-function topSalary(list:{}) {
-    let maxSalary = 0
-    let stufName = null
+// function topSalary(list:{}) {
+//     let maxSalary = 0
+//     let stufName = null
 
-    for (const [name, num] of Object.entries(list)) {
-        if (num > maxSalary) {
-            maxSalary = num
-            stufName = name
-        }
-    }
-    return stufName
-}
-console.log(topSalary(salaries));
+//     for (const [name, num] of Object.entries(list)) {
+//         if (num > maxSalary) {
+//             maxSalary = num
+//             stufName = name
+//         }
+//     }
+//     return stufName
+// }
+// console.log(topSalary(salaries));
 
 
 //! Прототипное наследование
-let transport = {
-    year: 5,
-    color: 'blue',
-    drive() {
-        console.log("Можем управлять");
-    },
-} 
+// let transport = {
+//     year: 5,
+//     color: 'blue',
+//     drive() {
+//         console.log("Можем управлять");
+//     },
+// } 
 
-let bus = {
-    number: 105,
-}
+// let bus = {
+//     number: 105,
+// }
 
-let car = {
-    doors: 4,
-    __proto__ : transport // Второй способ присвоения прототипа
-}
+// let car = {
+//     doors: 4,
+//     __proto__ : transport // Второй способ присвоения прототипа
+// }
 
-bus.__proto__ = transport // Первый способ присвоения прототипа
-console.log(bus);
+// bus.__proto__ = transport // Первый способ присвоения прототипа
+// console.log(bus);
 
-car.__proto__ = transport
-console.log(car);
+// car.__proto__ = transport
+// console.log(car);
 
-if (car.year == 5 ) {
-    console.log("Совпадение");
-}
+// if (car.year == 5 ) {
+//     console.log("Совпадение");
+// }
 
-console.log(car); // собственные свойства
-console.log(car.__proto__); // присвоенные свойства
-car.drive()
+// console.log(car); // собственные свойства
+// console.log(car.__proto__); // присвоенные свойства
+// car.drive()
 
-console.log(Object.keys(car)); // Показывает только собственные ключи
-for (const key in car) {
-    console.log(key);
-    // Показывает все ключи, включая присвоенные
-}
+// console.log(Object.keys(car)); // Показывает только собственные ключи
+// for (const key in car) {
+//     console.log(key);
+//     // Показывает все ключи, включая присвоенные
+// }
 
 
 //!Prototype Домашняя Работа
@@ -3072,127 +3075,127 @@ for (const key in car) {
 // выполнялся по следующему пути: pockets → bed → table → head. 
 // Например, pockets.pen должно возвращать значение 3 (найденное в table), 
 // а bed.glasses – значение 1 (найденное в head).
-let head = {
-    glasses: 1
-};
+// let head = {
+//     glasses: 1
+// };
 
-let table = {
-  pen: 3,
-  __proto__ : head
-};
+// let table = {
+//   pen: 3,
+//   __proto__ : head
+// };
 
-let bed = {
-  sheet: 1,
-  pillow: 2,
-  __proto__ : table
-};
+// let bed = {
+//   sheet: 1,
+//   pillow: 2,
+//   __proto__ : table
+// };
 
-let pockets = {
-  money: 2000,
-  __proto__ : bed
-};
-console.log(pockets.pen);
-console.log(bed.glasses);
+// let pockets = {
+//   money: 2000,
+//   __proto__ : bed
+// };
+// console.log(pockets.pen);
+// console.log(bed.glasses);
 
 //! У нас есть два хомяка: шустрый (speedy) и ленивый (lazy); 
 //! оба наследуют от общего объекта hamster.
 // Когда мы кормим одного хомяка, второй тоже наедается. Почему? Как это исправить?
 
-let hamster = {
-  stomach: [],
+// let hamster = {
+//   stomach: [],
 
-  eat(food) {
-    // this.stomach.push(food);
-    this.stomach = [food] 
-  }
-};
+//   eat(food) {
+//     // this.stomach.push(food);
+//     this.stomach = [food] 
+//   }
+// };
 
-let speedy = {
-  __proto__: hamster
-};
+// let speedy = {
+//   __proto__: hamster
+// };
 
-let lazy = {
-  __proto__: hamster
-}; 
+// let lazy = {
+//   __proto__: hamster
+// }; 
 
-speedy.eat('Яблоко')
-console.log(speedy.stomach);
-console.log(lazy.stomach);
+// speedy.eat('Яблоко')
+// console.log(speedy.stomach);
+// console.log(lazy.stomach);
 
 
 // STASHCHUCK Объекты
-const product_1 = 'Milk'
-const product_2 = 'Bread'
-let myCity = {
-    city: 'Moscow',
-    product_1,
-    product_2,
-    cars: {
-        color: 'white',
-        model: 'KIA'
-    }
-}
-let popular = 'very big'
-myCity[popular] = 'New'
+// const product_1 = 'Milk'
+// const product_2 = 'Bread'
+// let myCity = {
+//     city: 'Moscow',
+//     product_1,
+//     product_2,
+//     cars: {
+//         color: 'white',
+//         model: 'KIA'
+//     }
+// }
+// let popular = 'very big'
+// myCity[popular] = 'New'
 
-console.log(myCity);
-console.log(popular);
+// console.log(myCity);
+// console.log(popular);
 
-const town = myCity // ссылаемся на объект
-town.product_1 = 'chees' // изменив копию, мы изменяем изначальный объект 
-console.log(myCity.product_1);
+// const town = myCity // ссылаемся на объект
+// town.product_1 = 'chees' // изменив копию, мы изменяем изначальный объект 
+// console.log(myCity.product_1);
 
 // Как изменить копию объекта, не изменяя изначальный объект
-const myCity_2 = Object.assign({}, myCity)
-myCity_2.product_1 = 'eggs'
-console.log(myCity.product_1);
-console.log(myCity_2.product_1);
+// const myCity_2 = Object.assign({}, myCity)
+// myCity_2.product_1 = 'eggs'
+// console.log(myCity.product_1);
+// console.log(myCity_2.product_1);
 
 // Этот вариант подходит, если внутри изначального объекта нет вложенных объектов
 
 // Второй вариант так же для объекта без вложенных объектов внутри
-const town_2 = {...myCity}
-town_2.city = 'New-York'
-console.log(town_2.city);
-console.log(myCity.city);
-town_2.cars.color = 'blue'
-console.log(myCity.cars.color); // Мы видим, что вложенный объект тоже изменился
+// const town_2 = {...myCity}
+// town_2.city = 'New-York'
+// console.log(town_2.city);
+// console.log(myCity.city);
+// town_2.cars.color = 'blue'
+// console.log(myCity.cars.color); // Мы видим, что вложенный объект тоже изменился
 
 // Вариант 3 позволяет создать копию объекта и полностью избежать мутаций.
-const city = JSON.parse(JSON.stringify(myCity)) 
-// Мы добиваемся того, что ссылки на вложенные объекты в изначальном объекте не сохраняются
-city.cars.color = 'red'
-console.log(myCity.cars.color); // Свойство во вложенном объекте не изменилось на 'red'
+// const city = JSON.parse(JSON.stringify(myCity)) 
+// // Мы добиваемся того, что ссылки на вложенные объекты в изначальном объекте не сохраняются
+// city.cars.color = 'red'
+// console.log(myCity.cars.color); // Свойство во вложенном объекте не изменилось на 'red'
 
 
 //! Прототипы, наследование
 //! Встроенные прототипы
 //! Object.prototype
-console.log(Object.prototype);
-console.log(Array.prototype); // Просмотор методов
-console.log(Number.prototype);
-console.log(String.prototype);
-console.log(Date.prototype);
+// console.log(Object.prototype);
+// console.log(Array.prototype); // Просмотор методов
+// console.log(Number.prototype);
+// console.log(String.prototype);
+// console.log(Date.prototype);
 
-let person = {
-    name : 'Петя',
-    age : 20,
-}
+// let person = {
+//     name : 'Петя',
+//     age : 20,
+// }
 
-let mass = [1, 2, 3]
+// let mass = [1, 2, 3]
 
-console.log(person.__proto__ == Object.prototype);
-console.log(person);
-console.log(mass.toString());
+// console.log(person.__proto__ == Object.prototype);
+// console.log(person);
+// console.log(mass.toString());
 
-let number = 5
-console.log(number);
-Number.prototype.show = () => {
-    console.log("Создали новый метод");
-}
-number.show()
-let string = 'Строка'
-console.log(string.length);
+// let number = 5
+// console.log(number);
+// Number.prototype.show = () => {
+//     console.log("Создали новый метод");
+// }
+// number.show()
+// let string = 'Строка'
+// console.log(string.length);
 
 
 //! Наследование классов
@@ -3212,13 +3215,13 @@ class City {
 let city_1 = new City()
 console.log(city_1.welcome());
 
-class Country extends City{
+class Country extends City {
     countryName
-    constructor(name:string, age:number, countryName:string) {
+    constructor(name: string, age: number, countryName: string) {
         super(name, age)
         this.countryName = countryName
     }
-    population(people:number) {
+    population(people: number) {
         return `${super.welcome()} Население города ${this.name} = ${people}` // Возвращаем родительский метод
         //! super работает ТОЛЬКО ВНУТРИ КОНСТРУКТОРА! 
     }
@@ -3234,10 +3237,10 @@ console.log(country.population(13_000_000));
 
 //! STASHCHUCK Функции
 let building = {
-    name : 'ЖК Новый Сочи',
-    constructionPeriod : 5,
+    name: 'ЖК Новый Сочи',
+    constructionPeriod: 5,
 }
-function increase(obj:any) {
+function increase(obj: any) {
     const updatedBuilding = Object.assign({}, obj) // Таким образом мы НЕ меняем внешний объект, а создаем новый, копируя свойства прежнего объекта
     updatedBuilding.constructionPeriod += 1
     return updatedBuilding
@@ -3248,16 +3251,16 @@ console.log(increase(building));
 //! Task 3 
 //! Реализовать класс Button, который содержит ширину, высоту, текст кнопки 
 //! и метод showBtn(), который выводит кнопку на экран с помощью тега button
-class Button{
+class Button {
     width
     height // для того, чтобы TypeScript не подчеркивал
-    background 
-    constructor(width:number, height:number, background:string) {
+    background
+    constructor(width: number, height: number, background: string) {
         this.width = width
         this.height = height
         this.background = background
     }
-    showBtn(value:string) {
+    showBtn(value: string) {
         btn.innerHTML += `<button style="width: ${this.width}px; 
         height: ${this.height}px; background: ${this.background};">${value}</button>`
     }
@@ -3278,11 +3281,11 @@ button3.showBtn('Переместить')
 
 class BootstrapButton extends Button {
     color
-   constructor (width:number, height:number, background:string, color:string) {
-    super(width, height, background)
-    this.color = color
-   }
-   showBtn(value:string) {
+    constructor(width: number, height: number, background: string, color: string) {
+        super(width, height, background)
+        this.color = color
+    }
+    showBtn(value: string) {
         btn.innerHTML += `<button style="width: ${this.width}px; 
         height: ${this.height}px; background: ${this.background};
         color: ${this.color}">${value}</button>`
@@ -3305,22 +3308,22 @@ let newString2 = ''
 class CssClass {
     name
     cssArray
-    constructor(name: string, cssArray:any[]) {
+    constructor(name: string, cssArray: any[]) {
         this.name = name;
         this.cssArray = cssArray
-        
+
     }
-    setStyle(value:string) {
+    setStyle(value: string) {
         for (const el of this.cssArray) {
             for (const key in el) {
                 newString += key + ': ' + el[key] + '; '
                 newString2 += key + ': ' + el[key] + '; ' + '<br>'
             }
-            
+
         }
         classCss.innerHTML += `<div class="${this.name}" style="${newString}">${value}</div>`
     }
-    deleteStyle(num:number) {
+    deleteStyle(num: number) {
         delete this.cssArray[num]
     }
     getCss() {
@@ -3330,11 +3333,11 @@ class CssClass {
 }
 
 let myClass = new CssClass('myClass', [
-    {background : 'gray'},
-    {color : 'orange'},
-    {width : '200px'},
-    {height : '80px'},
-    {'font-size' : '30px'},
+    { background: 'gray' },
+    { color: 'orange' },
+    { width: '200px' },
+    { height: '80px' },
+    { 'font-size': '30px' },
 ]);
 myClass.deleteStyle(1)
 console.log(...myClass.cssArray);
@@ -3356,7 +3359,7 @@ console.log(dates.getTime());
 console.log(Date.now());
 
 
-function getWeekyDay(dat1:any) {
+function getWeekyDay(dat1: any) {
     let array1 = ["Вс", 'Пн', "Вт", "Ср", "Чт", "Пт", "Сб"]
     console.log(array1[dat1.getDay()]);
 }
@@ -3364,11 +3367,35 @@ getWeekyDay(new Date(2012, 0, 3))
 getWeekyDay(new Date(2025, 4, 5))
 
 
+//! Реализовать класс описывающий новость (Заголовок, текст, массив тегов, 
+//! дата публикации). В классе необходимо реализовать один метод print,
+//! который выводит всю информацию в таком виде, как на рисунке 1.
+let new_post = document.getElementById('new_post') as HTMLDivElement
+class NewPost {
+    tag
+    tagArr = ['<h1>', '</h1>', '<p>', '</p>']
+    constructor(tag: string) {
+        this.tag = tag
+    }
+    print(text: any) {
+        if (this.tag == 'h1') {
+            new_post.innerHTML += `${this.tagArr[0]} ${text} ${this.tagArr[1]}`
+        }
+        if (this.tag == 'p') {
+            new_post.innerHTML += `${this.tagArr[2]} ${text} ${this.tagArr[3]}`
+        }
+    }
+}
+
+let user = new NewPost('h1')
+user.print('Я пишу новый пост о чем-то');
+
+let user1 = new NewPost('p')
+user1.print('loremLorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis sit nam aliquam perferendis corrupti minima nesciunt voluptatibus alias reprehenderit doloribus eum fugiat quo quia quisquam laboriosam dicta, voluptate aut provident?');
 
 
 
 
- 
 
 
 
@@ -3389,7 +3416,7 @@ getWeekyDay(new Date(2025, 4, 5))
 
 
 
-  
-  
 
- 
+
+
+

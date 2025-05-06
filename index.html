@@ -1,120 +1,122 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="check.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Кассовый чек</title>
-  </head>
-  <body>
-    <div id="check">
-      <h2>кассовый чек</h2>
-      <h2>ооо Ромашка</h2>
-      <h2>инн 77045040504</h2>
-      <h2>г.Сочи,ул Виноградная д.21</h2>
-      <div id="checkInfo">
-        <div>
-          <div>чек</div>
-          <div>2</div>
-        </div>
-        <div>1.04.2025</div>
-        <div>
-          <div>смена</div>
-          <div>5</div>
-        </div>
-        <div>приход</div>
-        <div>
-          <div>сно</div>
-          <div>усн</div>
-        </div>
-        <div>
-          <div>кассир</div>
-          <div>Иванова В.Н.</div>
-        </div>
-        <div>
-          <div>РН ккт</div>
-          <div>00123458584222844</div>
-        </div>
-      </div>
 
-      <div id="shoppingList">
-        <div id="product1">Название товара</div>
-        <div id="product2">Название товара</div>
-        <div id="product3">Название товара</div>
-        <div id="product4">Название товара</div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="check.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кассовый чек</title>
+</head>
+
+<body>
+  <div id="check">
+    <h2>кассовый чек</h2>
+    <h2>ооо Ромашка</h2>
+    <h2>инн 77045040504</h2>
+    <h2>г.Сочи,ул Виноградная д.21</h2>
+    <div id="checkInfo">
+      <div>
+        <div>чек</div>
+        <div>2</div>
       </div>
-      <p>Итого: <span class="sumCheck">=100</span></p>
-      <div id="checkFoot">
-        <div>
-          <div>наличными</div>
-          <div class="sumCheck">=100</div>
-        </div>
-        <div>
-          <div>Получено</div>
-          <div class="sumCheck">=100</div>
-        </div>
-        <div>
-          <div>Сумма без НДС</div>
-          <div class="sumCheck">=100</div>
-        </div>
-        <div>
-          <div>ФД</div>
-          <div>235</div>
-        </div>
-        <div>
-          <div>ФН</div>
-          <div>9990445554044455</div>
-        </div>
-        <div>
-          <div>ФП</div>
-          <div>2545263780</div>
-        </div>
+      <div>1.04.2025</div>
+      <div>
+        <div>смена</div>
+        <div>5</div>
       </div>
-      <div id="QRcode">
-         <div><img src="public/QR-cod1.png" alt=""></div>
-         <div>Спасибо!</div>
+      <div>приход</div>
+      <div>
+        <div>сно</div>
+        <div>усн</div>
+      </div>
+      <div>
+        <div>кассир</div>
+        <div>Иванова В.Н.</div>
+      </div>
+      <div>
+        <div>РН ккт</div>
+        <div>00123458584222844</div>
       </div>
     </div>
 
-    <h1 id="head_marker">Создание маркера</h1>
-    <div style="display: flex; font-size: 35px" id="marker_text"></div>
-    <div id="info_about_marker"></div>
-    
-    <div id="battery">
-      <div id="inner_battery" style="background-color: green; height: 30px; width: 20px;"></div>
+    <div id="shoppingList">
+      <div id="product1">Название товара</div>
+      <div id="product2">Название товара</div>
+      <div id="product3">Название товара</div>
+      <div id="product4">Название товара</div>
     </div>
+    <p>Итого: <span class="sumCheck">=100</span></p>
+    <div id="checkFoot">
+      <div>
+        <div>наличными</div>
+        <div class="sumCheck">=100</div>
+      </div>
+      <div>
+        <div>Получено</div>
+        <div class="sumCheck">=100</div>
+      </div>
+      <div>
+        <div>Сумма без НДС</div>
+        <div class="sumCheck">=100</div>
+      </div>
+      <div>
+        <div>ФД</div>
+        <div>235</div>
+      </div>
+      <div>
+        <div>ФН</div>
+        <div>9990445554044455</div>
+      </div>
+      <div>
+        <div>ФП</div>
+        <div>2545263780</div>
+      </div>
+    </div>
+    <div id="QRcode">
+      <div><img src="public/QR-cod1.png" alt=""></div>
+      <div>Спасибо!</div>
+    </div>
+  </div>
 
-    <style>
-      #battery {
-        border: 2px solid white; 
-        width: 100px; 
-        height: 30px; 
-        margin-top: 10px; 
-        position: relative;
-      }
+  <h1 id="head_marker">Создание маркера</h1>
+  <div style="display: flex; font-size: 35px" id="marker_text"></div>
+  <div id="info_about_marker"></div>
 
-      #battery::after{
-        content: '';
-        position: absolute;
-        border: 2px solid white;
-        border-radius: 0px 5px 5px 0px;
-        margin-left: 100px;
-        margin-top: -21.5px;
-        height: 10px;
-        width: 8px;
-        border-left:2px solid rgb(250, 222, 39);
-      }
+  <div id="battery">
+    <div id="inner_battery" style="background-color: green; height: 30px; width: 20px;"></div>
+  </div>
 
-      #inner_battery {
-        background-color: green;
-        height: 30px;
-        width: 0px;
-        transition: 3s;
-        animation: changeBattery 3s forwards;
-      }
+  <style>
+    #battery {
+      border: 2px solid white;
+      width: 100px;
+      height: 30px;
+      margin-top: 10px;
+      position: relative;
+    }
 
-      /* @keyframes changeBattery {
+    #battery::after {
+      content: '';
+      position: absolute;
+      border: 2px solid white;
+      border-radius: 0px 5px 5px 0px;
+      margin-left: 100px;
+      margin-top: -21.5px;
+      height: 10px;
+      width: 8px;
+      border-left: 2px solid rgb(250, 222, 39);
+    }
+
+    #inner_battery {
+      background-color: green;
+      height: 30px;
+      width: 0px;
+      transition: 3s;
+      animation: changeBattery 3s forwards;
+    }
+
+    /* @keyframes changeBattery {
         from{
 
         }
@@ -122,12 +124,14 @@
           width: 50px;
         }
       } */
-    </style>
+  </style>
 
 
-    <div id="btn"></div>
-    <div id="classCss"></div>
-  
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  <div id="btn"></div>
+  <div id="classCss"></div>
+  <div id="new_post" style="max-width: 500px;"></div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
