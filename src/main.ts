@@ -3383,6 +3383,7 @@ class NewPost {
         }
         if (this.tag == 'p') {
             new_post.innerHTML += `${this.tagArr[2]} ${text} ${this.tagArr[3]}`
+            // new_post.innerHTML += `<${this.tag}></${this.tag}>`
         }
     }
 }
@@ -3392,6 +3393,117 @@ user.print('Я пишу новый пост о чем-то');
 
 let user1 = new NewPost('p')
 user1.print('loremLorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis sit nam aliquam perferendis corrupti minima nesciunt voluptatibus alias reprehenderit doloribus eum fugiat quo quia quisquam laboriosam dicta, voluptate aut provident?');
+
+//! Task 2. Реализуйте класс ExtendedDate. 
+//! Метод для вывода даты (числа и месяца) текстом.
+//! Метод для проверки - прошедшая (false) или будущая и текущая дата (true) 
+//! Метод для проверки високосный год или нет
+//! Метод возвращает следующую дату.
+//! Выведите на экран результат работы   
+let today = new Date()
+class ExtendedDate {
+    year
+    month
+    day
+    constructor(year:number, month:number, day:number) {
+        this.year = year
+        this.month = month
+        this.day = day
+    }
+    // Метод для вывода даты (числа и месяца) текстом.
+    printDate(){
+        let days = ["первое", "второе", "третье", "четвертое", "пятое", 
+                    "шестое", "седьмое", "восьмое", "девятое", "десятое",
+                    "одиннадцатое", "двенадцатое", "тринадцатое", "четырнадцатое",
+                    "пятнадцатое", "шестнадцатое", "семнадцатое", "восемнадцатое",
+                    "девятнадцатое", "двадцатое"]
+        let months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", 
+                      "августа", "сентября", "октября", "ноября", "декабря"]
+
+        if (this.day >= 1 && this.day <= 20) {
+            console.log(days[this.day-1], months[this.month-1]);
+        }
+        else if (this.day < 30) {
+            console.log(`двадцать ${days[this.day-21] + " " + months[this.month-1]}`);
+        }
+        else if(this.day == 30) {
+            console.log(`тридцатое ` + months[this.month-1]);
+        }
+        else if(this.day == 31) {
+            console.log(`тридцать первое ` + months[this.month-1]);
+        }
+        else {
+            console.log("Введите корректные данные!");
+        }
+    }
+    // Метод для проверки - прошедшая (false) или будущая и текущая дата (true) 
+    checkDate() {
+        let dateStr = `${this.year}${this.month<10 ? 0 + '' + this.month : this.month}${this.day<10 ? 0 + '' + this.day : this.day}`
+        // console.log(dateStr);
+        let todayStr = `${today.getFullYear()}0${today.getMonth()+1}${today.getDate()<10 ? 0 + '' + today.getDate() : today.getDate()}`
+        // console.log(todayStr);
+        console.log(todayStr>=dateStr ? 'Дата прошедшая' : "Дата будущая");
+    }
+    // Метод для проверки високосный год или нет
+    checkLeapYear() {
+        this.year%4==0 ? console.log('Год високосный') : console.log("Год не високосный");
+    }
+} 
+let day1 = new ExtendedDate(2025, 12, 26)
+day1.printDate()
+day1.checkDate()
+day1.checkLeapYear()
+
+
+//! Планирование: setTimeout и setinterval
+setTimeout(() => {
+    console.log('Hello');
+}, 2000);
+
+setTimeout(() => {
+   function test() {
+    console.log('test');
+   } 
+   test()
+}, 2000);
+
+// setInterval(() => { // выводится постоянно через определенный интервал
+//     alert("Не удали")
+// }, 2000)
+
+setTimeout(() => {
+    new_post.style.display = 'none'
+}, 3000);
+
+setTimeout(() => {
+    new_post.style.display = 'block'
+}, 5000);
+
+function hi() {
+    console.log('Привет');
+}
+setTimeout(() => { // Первый способ вызова функции
+    hi()
+}, 2000);
+
+setTimeout(hi, 2000) // Второй способ вызова функции ! не рекомендуется !
+
+// Отмена через clearTimeout
+let timeId = setInterval(() => console.log('tick'), 2000);
+// Отсановить вывод
+setTimeout(() => {clearInterval(timeId); console.log('stop');}, 5000)
+
+// let acc = 0
+// let stop = setInterval(() => {
+//     acc++
+//     console.log(acc);
+// }, 1000);
+
+// setTimeout(() => {
+//    clearInterval(1000); console.log(stop), 4000;
+    
+// }, 6000);
+
 
 
 
