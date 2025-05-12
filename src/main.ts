@@ -3370,29 +3370,65 @@ getWeekyDay(new Date(2025, 4, 5))
 //! Реализовать класс описывающий новость (Заголовок, текст, массив тегов, 
 //! дата публикации). В классе необходимо реализовать один метод print,
 //! который выводит всю информацию в таком виде, как на рисунке 1.
+let today1 = new Date()
 let new_post = document.getElementById('new_post') as HTMLDivElement
 class NewPost {
+    header
     tag
-    tagArr = ['<h1>', '</h1>', '<p>', '</p>']
-    constructor(tag: string) {
+    date
+    constructor(header:any, tag:string, date:any) {
+        this.header = header
         this.tag = tag
+        this.date = date
     }
-    print(text: any) {
-        if (this.tag == 'h1') {
-            new_post.innerHTML += `${this.tagArr[0]} ${text} ${this.tagArr[1]}`
+    print(nameHeader:any, text:any) {
+        let day = today1.toLocaleDateString()
+        let todayString = day.split('.').reverse().join("") as any;
+        let userDay = this.date.split(', ').join("")
+        console.log(todayString);
+        console.log(userDay);
+
+        let newsDate = '' //! дата публикаци новости
+
+        if (todayString-userDay == 0) {
+            newsDate = 'Сегодня'
         }
-        if (this.tag == 'p') {
-            new_post.innerHTML += `${this.tagArr[2]} ${text} ${this.tagArr[3]}`
-            // new_post.innerHTML += `<${this.tag}></${this.tag}>`
+        else if(todayString-userDay <= 7) {
+            newsDate = `${todayString-userDay} ${todayString-userDay <= 4 ? 'дня' : 'дней'}`
         }
+        else if(todayString-userDay > 7){
+            newsDate = this.date.split(', ').reverse().join('.')
+        }
+        
+        new_post.innerHTML += `<${this.header}>${nameHeader}</${this.header}>
+        <p>${newsDate}</p>
+        <${this.tag}>${text}</${this.tag}>`
+        
     }
+    // tag
+    // tagArr = ['<h1>', '</h1>', '<p>', '</p>']
+    // constructor(tag: string) {
+    //     this.tag = tag
+    // }
+    // print(text: any) {
+    //     if (this.tag == 'h1') {
+    //         new_post.innerHTML += `${this.tagArr[0]} ${text} ${this.tagArr[1]}`
+    //     }
+    //     if (this.tag == 'p') {
+    //         new_post.innerHTML += `${this.tagArr[2]} ${text} ${this.tagArr[3]}`
+    //         // new_post.innerHTML += `<${this.tag}></${this.tag}>`
+    //     }
+    // }
 }
 
-let user = new NewPost('h1')
-user.print('Я пишу новый пост о чем-то');
+let new1 = new NewPost('h1', 'p', '2025, 05, 12')
+new1.print('Новость первая', "Сегодняшняя новость")
 
-let user1 = new NewPost('p')
-user1.print('loremLorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis sit nam aliquam perferendis corrupti minima nesciunt voluptatibus alias reprehenderit doloribus eum fugiat quo quia quisquam laboriosam dicta, voluptate aut provident?');
+let new2 = new NewPost('h1', 'p', '2025, 05, 9')
+new2.print("Новость вторая", "На параде 9 мая присутсвовала техника с ближнего востока")
+
+let new3 = new NewPost('h1', 'p', '2025, 03, 9')
+new3.print("Новость третья", "Что произошло в марте?")
 
 //! Task 2. Реализуйте класс ExtendedDate. 
 //! Метод для вывода даты (числа и месяца) текстом.
@@ -3456,42 +3492,42 @@ day1.checkLeapYear()
 
 
 //! Планирование: setTimeout и setinterval
-setTimeout(() => {
-    console.log('Hello');
-}, 2000);
+// setTimeout(() => {
+//     console.log('Hello');
+// }, 2000);
 
-setTimeout(() => {
-   function test() {
-    console.log('test');
-   } 
-   test()
-}, 2000);
+// setTimeout(() => {
+//    function test() {
+//     console.log('test');
+//    } 
+//    test()
+// }, 2000);
 
 // setInterval(() => { // выводится постоянно через определенный интервал
 //     alert("Не удали")
 // }, 2000)
 
-setTimeout(() => {
-    new_post.style.display = 'none'
-}, 3000);
+// setTimeout(() => {
+//     new_post.style.display = 'none'
+// }, 3000);
 
-setTimeout(() => {
-    new_post.style.display = 'block'
-}, 5000);
+// setTimeout(() => {
+//     new_post.style.display = 'block'
+// }, 5000);
 
-function hi() {
-    console.log('Привет');
-}
-setTimeout(() => { // Первый способ вызова функции
-    hi()
-}, 2000);
+// function hi() {
+//     console.log('Привет');
+// }
+// setTimeout(() => { // Первый способ вызова функции
+//     hi()
+// }, 2000);
 
-setTimeout(hi, 2000) // Второй способ вызова функции ! не рекомендуется !
+// setTimeout(hi, 2000) // Второй способ вызова функции ! не рекомендуется !
 
-// Отмена через clearTimeout
-let timeId = setInterval(() => console.log('tick'), 2000);
-// Отсановить вывод
-setTimeout(() => {clearInterval(timeId); console.log('stop');}, 5000)
+// // Отмена через clearTimeout
+// let timeId = setInterval(() => console.log('tick'), 2000);
+// // Отсановить вывод
+// setTimeout(() => {clearInterval(timeId); console.log('stop');}, 5000)
 
 // let acc = 0
 // let stop = setInterval(() => {
@@ -3501,9 +3537,8 @@ setTimeout(() => {clearInterval(timeId); console.log('stop');}, 5000)
 
 // setTimeout(() => {
 //    clearInterval(1000); console.log(stop), 4000;
-    
-// }, 6000);
 
+// }, 6000);
 
 
 
