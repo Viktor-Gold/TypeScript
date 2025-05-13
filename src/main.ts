@@ -3618,8 +3618,132 @@ document.querySelector('#closeModalWindow').onclick = function() {
     document.getElementById("overlay").style.display = 'none'
 }
 
+//! Реализовать класс, описывающий геометрическую фигуру со 
+//! свойствами и методами: 
+//! ■ get-свойство для получения названия фигуры;
+//! ■ метод для вывода информации о фигуре (стороны и их длина);
+//! ■ метод для вычисления площади фигуры; 
+//! ■ метод для вычисления периметра фигуры.
 
+class Figure {
+    name
+    side = 0
+    length = 0
+    perimeter = 0
+    area = 0
+    constructor(name:string, side:number, length:number) {
+        this.name = name
+        this.length = length
+        this.side = side
+    }
+    get showNameFigure() : any {
+        return `Фигура: ${this.name}`
+    }
+    showInfoFigure() {
+        return (`Количество сторон у фигуры: "${this.name}" = ${this.side}; 
+Длина одной стороны = ${this.length}`)
+        }
+        // площадь
+        figureArea(radius:number) { 
+            this.area = Math.PI * radius*radius
+            return `Площадь круга = ${this.area.toFixed(1)}`
+        }
+        // периметр
+        figurePerimeter() {
+            return `Периметр фигуры = ${this.length}`
+        }
+        
+    }
+    
+    let circle_0 = new Figure('круг', 1, 60)
+    console.log(circle_0.showNameFigure);
+    console.log(circle_0.showInfoFigure());
+    console.log(circle_0.figureArea(2));
+    console.log(circle_0.figurePerimeter());
 
+//! Реализуйте классы-наследники: квадрат, прямоугольник и треугольник. 
+//! Переопределите методы вывода и вычислений в классах-наследниках.
+
+    //! Квадрат
+    class Square extends Figure {
+        width
+        constructor(name:string, side:number, length:number, width:number) {
+            super(name, side, length)
+            this.width = width
+        }
+        // Площадь
+        figureArea() { 
+            this.area = this.length*this.width
+            return `Площадь фигуры: "${this.name}" = ${this.area}`
+        }
+        // Периметр
+        figurePerimeter() {
+            this.perimeter = this.length+this.length+this.width+this.width
+            return `Периметр фигуры: "${this.name}" = ${this.perimeter}`
+        }
+    }
+    
+    let square = new Square('Квадрат', 4, 5, 5)
+    console.log(square.showNameFigure);
+    console.log(square.showInfoFigure());
+    console.log(square.figureArea());
+    console.log(square.figurePerimeter());
+    
+    //! Прямоугольник
+    class Rectangle extends Square {
+        constructor(name:string, side:number, length:number, width:number) {
+            super(name, side, length, width)
+        }
+        showInfoFigure() {
+            return (`Стороны фигуры: "${this.name}" = ${this.side}; 
+                Длина стороны = ${this.length}
+                Ширина стороны = ${this.width}`)
+            }
+        }
+        
+        let rectangle = new Rectangle('Прямоугольник', 4, 10, 8)
+        console.log(rectangle.showNameFigure);
+        console.log(rectangle.showInfoFigure());
+        console.log(rectangle.figureArea());
+        console.log(rectangle.figurePerimeter());
+        
+//! Треугольник
+class Triangle extends Figure {
+    height
+    constructor(name:string, side:number, length:number, height:number){
+        super(name, side, length)
+        this.height = height
+    }
+    // площадь
+    figureArea() { 
+        this.area = this.height*this.length/2
+        return `Площадь треугольника = ${this.area.toFixed(1)}`
+    }
+    // периметр
+    figurePerimeter(side2:number, side3:number) {
+        this.perimeter = this.side + side2 + side3
+        return `Периметр треугольника = ${this.perimeter}`
+    }
+}
+
+let triangle = new Triangle('Треугольник', 3, 7, 9)
+console.log(triangle.showNameFigure);
+console.log(triangle.showInfoFigure());
+console.log(triangle.figureArea());
+console.log(triangle.figurePerimeter(8, 10));
+
+//! Создайте массив с различными фигурами и выведите информацию о каждой фигуре, включая площадь и периметр. 
+let figuresArray = [circle_0, triangle, square, rectangle]
+console.log(figuresArray[0]);
+console.log(figuresArray[1]);
+console.log(figuresArray[2]);
+console.log(figuresArray[3]);
+
+        
+        
+        
+        
+        
 
 
 
