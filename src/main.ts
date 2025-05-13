@@ -3541,6 +3541,78 @@ day1.checkLeapYear()
 // }, 6000);
 
 
+//! Get and Set
+//! Задача на геттер и сеттер
+//! Реализовать класс, описывающий окружность. В классе должны быть следующие компоненты:
+//! ■ поле, хранящее радиус окружности;
+//! ■ get-свойство, возвращающее радиус окружности;
+//! ■ set-свойство, устанавливающее радиус окружности;
+//! ■ get-свойство, возвращающее диаметр окружности;
+//! ■ метод, вычисляющий площадь окружности;
+//! ■ метод, вычисляющий длину окружности.
+//! Продемонстрировать работу свойств и методов.
+
+class Circle {
+    radius
+    diameter = 0
+    area = 0
+    length = 0
+    constructor(radius:number) {
+        this.radius = radius
+    }
+    
+    get circleRadius() : any {
+        return `Радиус окружности = ${this.radius}`
+    }
+    set circleRadius(radius:number) {
+        this.radius = radius
+    }
+
+    // диаметер
+    get circleDiameter() { 
+        this.diameter = this.radius*2
+        return `Диаметр окружности = ${this.diameter}`
+    }
+
+    // площадь
+    cirlceArea() { 
+        this.area = Math.PI * this.radius*this.radius
+        return `Площадь окружности = ${this.area.toFixed(1)}`
+    }
+
+    // длина
+    circleLength() {
+        this.length = Math.PI * this.diameter
+        return `Длина окружности = ${this.length.toFixed(1)}`
+    }
+    
+}
+
+let circle = new Circle(8)
+console.log(circle.circleRadius); 
+circle.circleRadius = 10; // меняем радиус с помощью Set
+console.log(circle.circleDiameter); // диаметер
+console.log(circle.cirlceArea()); // площадь
+console.log(circle.circleLength()); // длина
+
+//! Задача на setTimeout и setInterval
+//! При перезагрузке страницы у пользователя выскакивает реклама (модальное окно).
+//! Задание:
+//! - сделать так, чтобы пользователь мог закрыть рекламу по прошествии 10 секунд (выскакивает крестик).
+//! - в модальном окне реализовать таймер, который будет отсчитывать время 
+let closeWindow = document.getElementById('timer') as HTMLDivElement
+for (let i = 10; i >= 1; i--) {
+    setTimeout(() => {
+        closeWindow.innerHTML = 'Закрыть через ' + i + ' секунд' 
+    }, (10 - i) * 1000);
+}
+setTimeout(() => {
+    document.getElementById('timer').style.display = 'none'
+}, 9990);
+
+setTimeout(() => {
+    document.getElementById('closeModalWindow').style.display = 'flex'
+}, 10000);
 
 
 
@@ -3567,3 +3639,7 @@ day1.checkLeapYear()
 
 
 
+
+
+
+    
