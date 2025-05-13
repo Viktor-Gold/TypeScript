@@ -3614,6 +3614,10 @@ setTimeout(() => {
     document.getElementById('closeModalWindow').style.display = 'flex'
 }, 10000);
 
+document.querySelector('#closeModalWindow').onclick = function() {
+    document.getElementById("overlay").style.display = 'none'
+}
+
 
 
 
