@@ -52,7 +52,6 @@ body {
 }
 
 /*! Modal Window  */
-
 #modal{
     position: absolute;
     top: 0px;
@@ -115,3 +114,198 @@ body {
     background-color: gold;
     cursor: pointer;
 }
+
+/*! Космический корабль  */
+#spaceship {
+    width: 1360px;
+    background-image: url(/public/space_3.png);
+    /* background-size: cover; */
+    color: lightgray;
+    /* height: 750px; */
+    padding: 10px;
+    animation: starsMove 30s linear infinite;
+}
+
+/* @keyframes starsMove {
+    from {
+        
+    }
+
+    to {
+        background-position: -1350px;
+    }
+} */
+
+#spaceShipImg {
+    opacity: 0;
+    transform: rotate(90deg);
+    position: absolute;
+    margin-top: 160px;
+    margin-left: 10px;
+}
+#spaceShipImg img {
+    width: 100px;
+}
+
+#name {
+    text-align: center;
+}
+
+#events {
+    margin-top: 485px;
+    font-size: 20px;
+    opacity: 0;
+}
+
+/*! Панель управления кораблем*/
+#ship_control_panel {
+    position: sticky;
+    top: 800px;
+    border: 1px solid rgb(177, 200, 7);
+    background: linear-gradient(to right, black, rgb(2, 2, 39));
+    /* margin-top: 500px; */
+    padding: 5px;
+}
+#ship_control_panel h3 {
+    text-align: center;
+    color: gold;
+    margin-top: 5px;
+    text-shadow: 1px 1px 1px rgb(114, 97, 1);
+}
+#control_buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 160px;
+    opacity: 0;
+}
+/* Кнопки управления */
+#control_buttons img {
+    width: 35px;
+}
+#control_buttons button {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 183, 0);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px gold;
+}
+#control_buttons button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 10px lightgreen;
+}
+#control_buttons button:active {
+    background-color: lightgreen;
+    box-shadow: none;
+}
+#up img {
+    transform: rotate(-90deg);
+    display: flex;
+    margin-left: 1px;
+}
+#left img {
+    transform: rotate(180deg);
+}
+#down img {
+    transform: rotate(90deg);
+    display: flex;
+    margin-left: -1.8px
+}
+#right img {
+    margin-top: 4px;
+}
+
+/* Информация */
+.containers{
+    opacity: 0;
+}
+
+#info {
+    width: 200px;
+    height: 60px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: gold;
+    box-shadow: 1px 1px 10px gold;
+}
+
+#info:hover {
+    cursor: pointer;
+    color: white;
+}
+
+/* Заправка */
+#refuel {
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    margin-left: 102px;
+    background-color: gold;
+    font-size: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px gold;
+    /* transition: 1s; */
+}
+#refuel:hover {
+    cursor: pointer;
+    /* background-color: red; */
+}
+#refuel:active {
+    background-color: red;
+    box-shadow: none;
+    transition: 0s;
+}
+/* Шкала топлива */
+#fuel_level {
+    opacity: 0;
+    width: 250px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gold;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 2px solid white;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+#fuel_level img {
+    width: 20px;
+    margin-top: 5px;
+}
+#fuel_block {
+    width: 0px;
+    height: 30px;
+    transition: 0s;
+    /* background-color: green; */
+}
+#stripe_fuel {
+    overflow: hidden;
+    opacity: 0;
+    border: 2px solid #000;
+    width: 200px;
+    height: 0px;
+    /* transition: 2s; */
+}
+
+/* Запуск */
+#start {
+    width: 100px;
+    height: 100px;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 10px;
+    /* margin-left: -180px; */
+    margin-top: 2px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#start:hover {
+    cursor: pointer;
+}
+/* #start:active {
+    background-color: gold;
+} */

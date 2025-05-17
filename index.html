@@ -131,7 +131,7 @@
   <div id="classCss"></div>
   <div id="new_post" style="max-width: 500px;"></div>
 
-  <div id="modal">
+  <!-- <div id="modal">
     <div id="overlay">
         <div id="modal_window">
             <div>
@@ -148,6 +148,44 @@
                 corporis quibusdam rerum dolorem unde magni quo quas a.</p>
         </div>
     </div>
+</div> -->
+
+<div id="spaceship">
+  <h1 id="name"></h1>
+  <div id="contain_stars">
+    <div id="spaceShipImg"><img src="/public/spaceShip3.png" alt="Космический корабль"></div>
+  </div>
+  <p id="events">События:</p>
+  <!-- Панель управления кораблем -->
+  <div id="ship_control_panel">
+    <h3>Панель управления кораблем</h3>
+    <div style="display: flex; justify-content: space-between; gap: 10px;">
+      <div id="control_buttons">
+        <div></div>
+        <div><button id="up"><img src="/public/Array.png" alt="стрелка"></button></div>
+        <div></div>
+        <div><button id="left"><img src="/public/Array.png" alt="стрелка"></button></div>
+        <div><button id="down"><img src="/public/Array.png" alt="стрелка"></button></div>
+        <div><button button id="right"><img src="/public/Array.png" alt="стрелка"></button></div>
+      </div>
+      <div id="start">Запуск</div>
+      <div class="containers"><button id="info">Информация</button></div>
+      <div>
+        <div class="containers"><button id="refuel">Заправить корабль</button></div>
+        <div id="fuel_level">
+        <div>
+          <div id="stripe_fuel">
+            <div id="fuel_block"></div>
+          </div>
+        </div>
+      <div>
+      </div>
+          <img src="/public/fuel_P.png" alt="fuel">
+        </div>
+      </div>
+    </div>
+    
+  </div>
 </div>
 
   <script type="module" src="/src/main.ts"></script>

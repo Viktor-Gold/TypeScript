@@ -3600,23 +3600,23 @@ console.log(circle.circleLength()); // длина
 //! Задание:
 //! - сделать так, чтобы пользователь мог закрыть рекламу по прошествии 10 секунд (выскакивает крестик).
 //! - в модальном окне реализовать таймер, который будет отсчитывать время 
-let closeWindow = document.getElementById('timer') as HTMLDivElement
-for (let i = 10; i >= 1; i--) {
-    setTimeout(() => {
-        closeWindow.innerHTML = 'Закрыть через ' + i + ' секунд' 
-    }, (10 - i) * 1000);
-}
-setTimeout(() => {
-    document.getElementById('timer').style.display = 'none'
-}, 9990);
+// let closeWindow = document.getElementById('timer') as HTMLDivElement
+// for (let i = 10; i >= 1; i--) {
+//     setTimeout(() => {
+//         closeWindow.innerHTML = 'Закрыть через ' + i + ' секунд' 
+//     }, (10 - i) * 1000);
+// }
+// setTimeout(() => {
+//     document.getElementById('timer').style.display = 'none'
+// }, 9990);
 
-setTimeout(() => {
-    document.getElementById('closeModalWindow').style.display = 'flex'
-}, 10000);
+// setTimeout(() => {
+//     document.getElementById('closeModalWindow').style.display = 'flex'
+// }, 10000);
 
-document.querySelector('#closeModalWindow').onclick = function() {
-    document.getElementById("overlay").style.display = 'none'
-}
+// document.querySelector('#closeModalWindow').onclick = function() {
+//     document.getElementById("overlay").style.display = 'none'
+// }
 
 //! Реализовать класс, описывающий геометрическую фигуру со 
 //! свойствами и методами: 
@@ -3741,10 +3741,234 @@ console.log(figuresArray[3]);
 
         
         
-        
-        
-        
+//! Создайте класс Spaceship с характеристиками:
+//! name — название корабля (публичное поле)
+//! fuel — уровень топлива (приватное поле, начальное значение = 100).
+//! speed — текущая скорость (приватное поле, начальное значение = 0).
 
+//! Методы:
+//! launch() — увеличивает скорость до 50 и уменьшает топливо на 10.
+//! refuel() — добавляет топливо (не больше 100)
+//! getStatus — возвращает строку состояния ("Корабль [X] летит на
+//! скорости [Y] с топливом [Z]%").  
+let nameShip = document.getElementById('name') as HTMLElement
+let fuel_block = document.getElementById("fuel_block") as HTMLDivElement
+let events = document.getElementById('events') as HTMLElement
+
+class Spaceship {
+    name
+    fuel = 200
+    speed = 0
+    distance = 0
+    height = 300_000
+    constructor(name:string, fuel = 200, speed = 0, distance = 0, height = 300_000) {
+        this.name = name
+        this.fuel = fuel
+        this.speed = speed
+        this.distance = distance
+        this.height = height
+        nameShip.innerHTML = this.name
+    }
+
+    // Движение и топливо корабля
+    launch() { 
+        if (this.speed >= 0 && this.speed < 1000 && this.fuel > 1) {
+            this.speed += 50
+            this.distance = this.distance + this.speed*60 // Пройденная дистанция
+            if (this.fuel < 10) {
+                this.fuel -= this.fuel;
+            } // Ранее когда топлива оставалось 5 единиц, бак автоматически пополнялся
+            else {
+                this.fuel -= 10
+            }
+            fuel_block.style.backgroundColor = 'transparent'
+            events.innerHTML = `События: Повышение скорости на: 50, скорость: ${this.speed}`
+            fuel_block.innerHTML = `<div style="background-color: rgb(1, 183, 1); height: 30px; width: ${this.fuel}px;"></div>`
+        }
+        else if (this.speed >= 1000) {
+            events.innerHTML = "События: Достигнута максимальная скорость!"
+        }
+        return this.colorFuel(), this.lowFuelLevel() // Анимация и информация о топливе
+        // console.log(this.speed);
+        // console.log(this.fuel);
+    }
+
+    // Понизить скорость корабля
+    reduceSpeed() {
+        if (this.speed > 0 && this.fuel > 0) {
+            this.speed = Math.max(this.speed-50, 0)
+            this.distance = this.distance + this.speed*20 // Пройденная дистанция (тормозной путь)
+            console.log(this.distance);
+            this.fuel = this.fuel-5
+            stripe_fuel.style.transition = 'none'
+            stripe_fuel.style.background = 'none'
+            fuel_block.innerHTML = `<div style="background-color: rgb(1, 183, 1); height: 30px; width: ${this.fuel}px;"></div>`
+            events.innerHTML = `События: Снижаем скорость на: 50, скорость: ${this.speed}`
+        } 
+        return this.lowFuelLevel(), this.colorFuel() // Анимация и информация о топливе
+    }
+
+    // Заправка корабля
+    refuel() {
+        if (this.fuel < 200) {
+            this.fuel = Math.min(this.fuel + 50, 200)
+            if (this.fuel == 200) {
+                events.innerHTML = 'События: Топливо полное!';
+            }
+            events.innerHTML = `Заправлено ${this.fuel}/200`
+            fuel_block.innerHTML = `<div style="background-color: rgb(1, 183, 1); height: 30px; width: ${this.fuel}px;"></div>`
+        }
+        else if(this.fuel >= 200) {
+            events.innerHTML = 'События: Топливо полное!';
+        }
+        return this.colorFuel()
+    }
+
+    // Цвет уровня топлива
+    colorFuel() {
+        if (this.fuel >= 61 && this.fuel <= 120) {
+            fuel_block.innerHTML = `<div style="background-color: rgb(183, 183, 1); height: 30px; width: ${this.fuel}px;"></div>`
+        }
+        if (this.fuel >= 0 && this.fuel <= 60) {
+            fuel_block.innerHTML = `<div style="background-color: rgb(183, 1, 1); height: 30px; width: ${this.fuel}px;"></div>`
+        }
+    }
+
+    // Низкий уровень топлива
+    lowFuelLevel() {
+        if (this.fuel > 0 && this.fuel <= 60) {
+            events.innerHTML += `<span style="color: red;"> — Внимание: Осталось менее ${this.fuel/2}% топлива!!!</span>`
+        }
+        else if (this.fuel <= 1) {
+            // this.fuel = 0
+            events.innerHTML = `<span style="color: red;"> У нас не осталось топлива!!!</span>`
+        }
+    }
+
+    get status() : string {
+        return `Космический корабль: '${this.name}' летит на скорости ${this.speed}км/с. Уровень топлива: ${this.fuel}%. Пройденная дистанция: ${this.distance}км`
+    }
+    
+}
+
+let spaceship = new Spaceship('Dead Space')
+
+// Кнопка набора скорости
+let moveShip = document.getElementById('right') as HTMLElement
+moveShip.addEventListener('click', function () {
+    spaceship.launch()
+})
+// Кнопка сброса скорости
+let reduceSpeedShip = document.getElementById('left') as HTMLElement
+reduceSpeedShip.addEventListener('click', function () {
+    spaceship.reduceSpeed()
+})
+// Кнопка заправки топливом
+let refuelShip = document.getElementById('refuel') as HTMLElement
+refuelShip.addEventListener('click', function () {
+    spaceship.refuel()
+})
+// Кнопка информации о корабле
+let info = document.getElementById('info') as HTMLElement
+info.addEventListener('click', function () {
+    return events.innerHTML = `<div style="color: red;">
+    Информация: ${spaceship.status}</div>`
+})
+
+// Контейнеры кнопок
+let containers = document.querySelectorAll('.containers') 
+// Космический корабль
+let spaceIMGship = document.getElementById('spaceShipImg') as HTMLElement
+
+// Кнопка запуска
+let control_buttons = document.getElementById('control_buttons') as HTMLElement
+let fuel_level = document.getElementById('fuel_level') as HTMLElement
+let stripe_fuel = document.getElementById('stripe_fuel') as HTMLElement
+let start = document.getElementById('start') as HTMLElement
+let stopStart = false
+start.addEventListener('click', function () {
+    if (stopStart == false) {
+        start.innerHTML = `<div style="
+    background-color: rgb(201, 4, 4);; 
+    width: 100px; 
+    height: 100px;
+    display: flex; justify-content: center; 
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px red;
+    font-size: 18px;">Отключить</div>`
+    
+    spaceIMGship.style.opacity = '1'
+    spaceIMGship.style.transition = '1.5s'
+    events.style.opacity = '1'
+    events.style.transition = '2s'
+
+    containers.forEach(el => {
+        el.style.opacity = '1';
+        el.style.transition = '4s';
+    });
+    
+    
+
+    stripe_fuel.style.opacity = '1'
+
+    if (fuel_block.style.width <= '60px') { // Топливный бак при запуске
+        fuel_block.style.backgroundColor = 'rgb(183, 1, 1)'
+    }
+
+    setTimeout(() => { // Задержка показа уровня топлива
+        stripe_fuel.style.height = '30px' // Бордер индикатора
+        stripe_fuel.style.transition = '2s'
+        fuel_block.style.transition = '2s'// Индикатор
+        // fuel_block.style.transition = '0s' //! Второй вид индикатора
+        fuel_block.style.backgroundColor = 'green'
+        fuel_block.style.width = '200px'
+        
+    }, 2000);
+
+    
+    control_buttons.style.opacity = '1' // Появление кнопок при запуске
+    control_buttons.style.transition = '2s'
+    // setTimeout(() => {
+    //     refuelShip.style.opacity = '1'
+    // }, 2000);
+    fuel_level.style.opacity = '1'
+    fuel_level.style.transition = '6s'
+    stopStart = true
+    }
+    
+    else {
+        start.innerHTML = 'Запуск'
+        spaceIMGship.style.opacity = '0'
+        events.style.opacity = '0'
+        control_buttons.style.opacity = '0'
+        control_buttons.style.transition = '1s'
+        containers.forEach(contain => {
+            contain.style.opacity = '0';
+            contain.style.transition = '2s';
+        });
+        fuel_level.style.opacity = '0'
+        fuel_level.style.transition = '1s'
+    }
+})
+// let stop = document.getElementById('start') as HTMLElement
+// stop.addEventListener('click', function () {
+//     // start.innerHTML = `<button style="display: none;"></button>`
+//     start.innerHTML = `<div style="
+//     background-color: lightgreen; 
+//     width: 100px; 
+//     height: 100px;
+//     display: flex; justify-content: center; 
+//     align-items: center;
+//     border-radius: 10px;">Старт</div>`
+// })
+
+
+// spaceship.ReduceSpeed()
+// console.log(spaceship.status);
+
+// spaceship.refuel();
+// spaceship.refuel();
 
 
 
