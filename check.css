@@ -118,17 +118,16 @@ body {
 }
 
 /*! Космический корабль  */
+/* Фон (космос) */
 #spaceship {
-    overflow: hidden;
-    /* width: 1360px; */
+    min-width: 750px;
     background-image: url(/public/space_3.png);
     background-size: cover;
     color: lightgray;
-    /* height: 700px; */
     padding: 10px;
     animation: starsMove 57s linear infinite paused;
 }
-
+/* Смещение фона */
 @keyframes starsMove {
     from {
         
@@ -139,6 +138,7 @@ body {
     }
 }
 
+/* Иконка космического корабля */
 #spaceShipImg {
     opacity: 0;
     transform: rotate(90deg);
@@ -147,26 +147,43 @@ body {
     margin-left: 10px;
     transition: 0.3s;
 }
-
 #spaceShipImg img {
     width: 100px;
 }
 
+/* Первичная информация для пользователя */
 #spaceship h1 {
     color: gold;
     text-align: center;
 }
 
+/* input */
 #name_ship {
     color: gold;
     background-color: black;
     height: 30px;
     width: 200px;
+    border: 1px solid rgba(255, 217, 0, 0.326);
 }
 #name_ship::placeholder {
     color: rgba(255, 217, 0, 0.326);
 }
 
+/* Кнопка Enter для пользователя */
+#btnEnter {
+    background-color: black;
+    color: gold;
+    box-shadow: 1px 1px 10px gold;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+}
+#btnEnter:active {
+    box-shadow: 1px 1px 10px aquamarine;
+    color: aquamarine;
+}
+
+/* Строка событий (при вызове кнопки "информация" */
 #events {
     margin-top: 430px;
     font-size: 20px;
@@ -174,6 +191,7 @@ body {
 }
 
 /*! Панель управления кораблем*/
+/* Вся панель */
 #ship_control_panel {
     position: sticky;
     top: 800px;
@@ -184,24 +202,42 @@ body {
     transition: 4s;
 }
 
-
+/* Заголовок панели */
 #ship_control_panel h3 {
     text-align: center;
     color: gold;
     margin-top: 5px;
     text-shadow: 1px 1px 1px rgb(114, 97, 1);
 }
+
+/* Запуск */
+#start {
+    width: 100px;
+    height: 100px;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 10px;
+    margin-top: 2px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#start:hover {
+    cursor: pointer;
+}
+
+/* Кнопки управления космолетом */
 #control_buttons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 160px;
     opacity: 0;
 }
-/* Кнопки управления */
-#control_buttons img {
+#control_buttons img { /* Стрелки внутри кнопок */
     width: 35px;
 }
-#control_buttons button {
+#control_buttons button { /* Стили к кнопкам управления */
     width: 50px;
     height: 50px;
     background-color: rgb(255, 183, 0);
@@ -216,6 +252,8 @@ body {
     background-color: lightgreen;
     box-shadow: none;
 }
+
+/* Стили стрелок внутри кнопок */
 #up img {
     transform: rotate(-90deg);
     display: flex;
@@ -233,11 +271,12 @@ body {
     margin-top: 4px;
 }
 
-/* Информация */
+/* Контейнер (class) для кнопок: "информация" и "Заправить топливо" */
 .containers{
     opacity: 0;
 }
 
+/* Кнопка "Информация" */
 #info {
     width: 200px;
     height: 60px;
@@ -266,17 +305,16 @@ body {
     font-size: 15px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px gold;
-    /* transition: 1s; */
 }
 #refuel:hover {
     cursor: pointer;
-    /* background-color: red; */
 }
 #refuel:active {
     background-color: red;
     box-shadow: none;
     transition: 0s;
 }
+
 /* Шкала топлива */
 #fuel_level {
     opacity: 0;
@@ -292,42 +330,24 @@ body {
     margin-top: 10px;
     margin-right: 5px;
 }
-#fuel_level img {
+#fuel_level img { /* Иконка заправки */
     width: 20px;
     margin-top: 5px;
 }
+
+/* Бегущая шкала топлива */
 #fuel_block {
     width: 0px;
     height: 30px;
     transition: 0s;
     /* background-color: green; */
 }
+
+/* border шкалы топлива */
 #stripe_fuel {
     overflow: hidden;
     opacity: 0;
     border: 2px solid #000;
     width: 200px;
     height: 0px;
-    /* transition: 2s; */
 }
-
-/* Запуск */
-#start {
-    width: 100px;
-    height: 100px;
-    color: black;
-    background-color: lightgreen;
-    border-radius: 10px;
-    /* margin-left: -180px; */
-    margin-top: 2px;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#start:hover {
-    cursor: pointer;
-}
-/* #start:active {
-    background-color: gold;
-} */

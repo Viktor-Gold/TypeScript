@@ -6,7 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <link rel="stylesheet" href="check.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Кассовый чек</title>
+  <title>Космический корабль</title>
 </head>
 
 <body>
@@ -150,19 +150,22 @@
     </div>
 </div> -->
 
+<!--! Космический корабль  -->
 <div id="spaceship">
   <h1 id="name">
     Назовите ваш космический корабль
   </h1>
-  <h1><input placeholder="Имя корабля" id="name_ship" type="text"></h1>
-  <div id="contain_stars">
-    <div id="spaceShipImg"><img src="/public/spaceShip3.png" alt="Космический корабль"></div>
-  </div>
+  <!-- Поле ввода для пользователя + кнопка -->
+  <h1><input placeholder="Имя корабля" id="name_ship" type="text"> <button id="btnEnter">Enter</button></h1>
+  <!-- Иконка космического корабля -->
+  <div id="spaceShipImg"><img src="/public/spaceShip3.png" alt="Космический корабль"></div>
+  <!-- Строка событий -->
   <p id="events">События:</p>
   <!-- Панель управления кораблем -->
   <div id="ship_control_panel">
     <h3>Панель управления кораблем</h3>
     <div style="display: flex; justify-content: space-between; gap: 10px;">
+      <!-- Кнопки управления -->
       <div id="control_buttons">
         <div></div>
         <div><button id="up"><img src="/public/Array.png" alt="стрелка"></button></div>
@@ -171,19 +174,26 @@
         <div><button id="down"><img src="/public/Array.png" alt="стрелка"></button></div>
         <div><button button id="right"><img src="/public/Array.png" alt="стрелка"></button></div>
       </div>
+      <!-- Запуск двигателя, активизация панели управления -->
       <div id="start">Запуск</div>
+      <!-- Кнопка информации -->
       <div class="containers"><button id="info">Информация</button></div>
+      <!-- Уровень топлив + кнопка заправки -->
       <div>
-        <div class="containers"><button id="refuel">Заправить корабль</button></div>
+        <!-- Кнопка -->
+        <div class="containers"><button id="refuel">Заправить корабль</button></div> 
+        <!-- Индикатор топлива -->
         <div id="fuel_level">
           <div>
+            <!-- border топливной линии -->
             <div id="stripe_fuel">
+              <!-- Бегущий индикатор -->
               <div id="fuel_block"></div>
             </div>
           </div>
         <div>
       </div>
-          <img src="/public/fuel_P.png" alt="fuel">
+          <img src="/public/fuel_P.png" alt="fuel"> <!-- Иконка индикатора топлива -->
         </div>
       </div>
     </div>
