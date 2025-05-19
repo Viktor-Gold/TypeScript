@@ -3942,12 +3942,39 @@ up.addEventListener('click', function () {
 })
 
 //! Подключение кнопок клавиатуры!? 
-// spaceShipImg.addEventListener('keydown', function (event) {
-//     if (event.key === 'ArrowUp') {
-//         event.preventDefault()
-//         spaceShipImg.style.marginTop = moveUp + 'px'
-//     }
-// })
+let yAcc = 0
+let xAcc = 0
+document.addEventListener('keydown', function (event) {
+    if (event.key == 'ArrowUp') {
+        event.preventDefault()
+        yAcc-=10
+        spaceShipImg.style.marginTop = yAcc + 'px'
+        console.log(yAcc);
+        
+    }
+    if (event.key == 'ArrowDown') {
+        event.preventDefault()
+        yAcc+=10
+        spaceShipImg.style.marginTop = yAcc + 'px'
+        console.log(yAcc);
+        
+    }
+    if (event.key == 'ArrowLeft') {
+        event.preventDefault()
+        xAcc-=10
+        spaceShipImg.style.marginLeft = xAcc + 'px'
+        console.log(event.key);
+        
+    }
+    if (event.key == 'ArrowRight') {
+        event.preventDefault()
+        xAcc+=10
+        spaceShipImg.style.marginLeft = xAcc + 'px'
+        console.log(xAcc);
+        // spaceShipImg.style.top
+        // spaceShipImg.style.left
+    }
+})
 
 // Движение корабля вниз
 let down = document.getElementById('down') as HTMLElement
@@ -3968,9 +3995,11 @@ refuelShip.addEventListener('click', function () {
 let info = document.getElementById('info') as HTMLElement
 info.addEventListener('click', function () {
     // Возвращаем наши значения из get status в строку событий, добавляем стили
+    // window.location.reload(); // Перехагрузка страницы
     return events.innerHTML = `<div style="color: red;">
     Информация: ${spaceship.status}</div>` 
 })
+
 
 // Контейнеры кнопок для "Информация" и "Заправить корабль"
 let containers = document.querySelectorAll('.containers') 
@@ -3983,9 +4012,8 @@ let control_buttons = document.getElementById('control_buttons') as HTMLElement 
 let fuel_level = document.getElementById('fuel_level') as HTMLElement // Весь fuel-индикатор
 let stripe_fuel = document.getElementById('stripe_fuel') as HTMLElement // бордер fuel-индикатора
 let start = document.getElementById('start') as HTMLElement
-let stopStart = false // Переменная 
 start.addEventListener('click', function () {
-    if (stopStart == false) {
+    if (start.innerHTML == 'Запуск') {
         start.innerHTML = `<div style="
     background-color: rgb(201, 4, 4);; 
     width: 100px; 
@@ -3994,18 +4022,26 @@ start.addEventListener('click', function () {
     align-items: center;
     border-radius: 10px;
     box-shadow: 1px 1px 15px red;
-    font-size: 18px;">Отключить</div>`
+    font-size: 18px; id="buttonReload"">Отключить</div>`
     
     spaceIMGship.style.opacity = '1'
     spaceIMGship.style.transition = '1.5s'
     events.style.opacity = '1'
     events.style.transition = '2s'
-
+        setTimeout(() => {
+            spaceIMGship.style.transition = '.2s'
+        }, 1500);
     containers.forEach(el => {
         el.style.opacity = '1';
         el.style.transition = '4s';
     });
-    
+
+    // let buttonReload = document.getElementById('buttonReload') as HTMLButtonElement
+    // buttonReload.addEventListener('click', ()=> {
+    //         console.log(123);
+            
+    // })
+
     stripe_fuel.style.opacity = '1' // Бордер заправочного индикатора
 
     if (fuel_block.style.width <= '60px') { // Топливный бак при запуске
@@ -4030,7 +4066,6 @@ start.addEventListener('click', function () {
     // }, 2000);
     fuel_level.style.opacity = '1'
     fuel_level.style.transition = '6s'
-    stopStart = true
     }
     
     else {
@@ -4041,53 +4076,30 @@ start.addEventListener('click', function () {
         control_buttons.style.transition = '1s'
         containers.forEach(contain => {
             contain.style.opacity = '0';
-            contain.style.transition = '2s';
+            contain.style.transition = '2s' ;
         });
         fuel_level.style.opacity = '0'
         fuel_level.style.transition = '1s'
     }
 })
-// let stop = document.getElementById('start') as HTMLElement
-// stop.addEventListener('click', function () {
-//     // start.innerHTML = `<button style="display: none;"></button>`
-//     start.innerHTML = `<div style="
-//     background-color: lightgreen; 
-//     width: 100px; 
-//     height: 100px;
-//     display: flex; justify-content: center; 
-//     align-items: center;
-//     border-radius: 10px;">Старт</div>`
-// })
 
 
-// spaceship.ReduceSpeed()
-// console.log(spaceship.status);
+//! Браузерное окружение, спецификации
+console.log(window.innerHeight);
+console.log(window.innerWidth);
+// console.log(document.head);
 
-// spaceship.refuel();
-// spaceship.refuel();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//! Навигация по DOM-элементам
+let nav = document.getElementById('control_buttons') as HTMLElement
+console.log(nav.parentElement);
+console.log(nav.children); // Предпочитаемый
+console.log(nav.childNodes);
+console.log(nav.firstChild);
+console.log(nav.childElementCount); // Предпочитаемый
+console.log(nav.childNodes[2]);
+console.log(nav.firstElementChild);
+console.log(nav.children[1]); // Предпочитаемый
+console.log(nav.previousElementSibling); // Предыдущий соседний элемент
+console.log(nav.nextElementSibling); // Следующий соседний элемент
+console.log(nav.parentElement); // Родитель элемент
     
