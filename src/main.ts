@@ -4103,3 +4103,30 @@ console.log(nav.previousElementSibling); // Предыдущий соседни�
 console.log(nav.nextElementSibling); // Следующий соседний элемент
 console.log(nav.parentElement); // Родитель элемент
     
+
+//! Поиск getElement* и querySelector*
+let digitals = document.getElementById('digitals') as HTMLDivElement
+console.log(digitals);
+let num = document.querySelector('.num') //querySelector находит первый эл-т запроса 
+console.log(num);
+let num2 = document.querySelectorAll('.num')
+console.log(num2); 
+console.log(num2[2]);
+
+// digitals.hidden = true //! Скрывает эллемент
+
+let getEl = document.getElementsByClassName('num')
+console.log(getEl);
+let getEl2 = document.getElementsByTagName('div:lastChild')
+console.log(getEl2);
+
+console.log(digitals.closest('div'));
+
+console.log(digitals.contains(num)); // digitals содержит num
+
+// digitals.innerHTML = 'Hello' + '<br>' + '<br>'
+// digitals.textContent = 'HI'
+console.log(digitals.outerHTML); // Выводит вместе с кодом в виде строчки
+// document.body.innerHTML = '' 
+
+
