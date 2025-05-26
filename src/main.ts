@@ -4130,3 +4130,55 @@ console.log(digitals.outerHTML); // Выводит вместе с кодом в
 // document.body.innerHTML = '' 
 
 
+//! Home Work
+//! Task 3
+let tableStuf = document.querySelector('#tableStuf') as HTMLTableElement
+class Employee {
+    name
+    position
+    salary
+    constructor(name:string, position:string, salary:number) {
+        this.name = name
+        this.position = position
+        this.salary = salary
+    }
+    getHtml() {
+        tableStuf.innerHTML += `
+        <tr>
+          <td>${this.name}</td>
+          <td>${this.position}</td>
+          <td>${this.salary}</td>
+        </tr>`
+    }
+}
+
+let worker1 = new Employee('George Meat', 'Team Lead', 500_000)
+let worker2 = new Employee('Dave Kapro', 'Senior', 350_000)
+let worker3 = new Employee('Roberto Manchini', 'Junior', 200_000)
+
+worker1.getHtml()
+worker2.getHtml()
+worker3.getHtml()
+
+let add_worker = document.querySelector('#add_worker') as HTMLButtonElement
+let new_worker = document.querySelector('#new_worker') as HTMLFormElement
+let delete_worker = document.querySelector('#delete_worker') as HTMLButtonElement
+
+add_worker.addEventListener('click', ()=> {
+    tableStuf.innerHTML += `
+        <tr>
+          <td>${new_worker.children[0].value}</td>
+          <td>${new_worker.children[1].value}</td>
+          <td>${new_worker.children[2].value}</td>
+        </tr>`
+})
+
+delete_worker.addEventListener('click', ()=> {
+    new_worker.children[1] 
+})
+
+console.log(new_worker.children);
+
+
+
+

@@ -354,3 +354,39 @@ body {
     width: 200px;
     height: 0px;
 }
+
+
+/*! Home Work  */
+#tableStuf {
+    margin: 20px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#tableStuf th, #tableStuf td {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+#new_worker {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+}
+
+#new_worker input {
+    height: 20px;
+}
+
+#add_worker {
+    margin-left: 20px;
+    /* width: 177px; */
+    height: 30px;
+}
+
+#delete_worker {
+    height: 30px;
+}
