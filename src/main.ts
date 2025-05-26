@@ -4179,6 +4179,17 @@ delete_worker.addEventListener('click', ()=> {
 
 console.log(new_worker.children);
 
+//! Новая тема 
+console.log(new_worker.hasAttribute('id')); // Проверяет наличие атрибута
+console.log(new_worker.getAttribute('id')) // Получает значения атрибута;
+console.log(new_worker.setAttribute('class', 'newClass'));
+
+new_worker.removeAttribute('id') // Удаляет атрибут
+console.log(new_worker.getAttribute);
+
+
+ 
+
 
 
 
