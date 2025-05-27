@@ -4131,6 +4131,99 @@ console.log(digitals.outerHTML); // Выводит вместе с кодом в
 
 
 //! Home Work
+//!Задание 1
+//! Реализуйте класс ExtentedArray, унаследовав его от стандартного класса Array и добавив следующие методы:
+//! ■ метод getString(separator) – для получения строки со
+//! всеми элементами массива, перечисленными через указанный разделитель: запятая, тире, пробел и т. д.;
+//! ■ метод getHtml(tagName) – для получения строки с html
+//! кодом, где каждый элемент массива будет обернут в указанный тег (учтите, если указывается тег li, то все элементы дополнительно необходимо обернуть в ul).
+//! Создайте объект класса ExtentedArray, заполните его данными и выведите на экран результаты работы методов getString()
+//! и getHtml().
+let task1 = document.querySelector('#task1') as HTMLDivElement
+let arr = ['Олег', "Влад", "Андрей", "Кирилл", "Генадий"]
+class Array {
+    massive
+    constructor(massive:any[]) {
+        this.massive = massive
+    }
+    getString(symbol:string) {
+        console.log(this.massive.join(symbol));
+        
+    }
+    getHtml(tag:string) {
+        let accLi = ''
+        if (tag == 'li') {
+            for (let i = 0; i < this.massive.length; i++) {
+                accLi += `<${tag}>${this.massive[i]}</${tag}>` 
+            }
+            task1.innerHTML = `<ul>
+            ${accLi}
+            </ul>`
+        }
+        else {
+            for (let i = 0; i < this.massive.length; i++) {
+                task1.innerHTML += `<${tag}>${this.massive[i]}</${tag}>` 
+            }
+        }
+    }
+}
+
+let extArr = new Array(arr)
+extArr.getString(': ')
+extArr.getHtml('li')
+
+//! Задание 2
+//! Реализовать класс, описывающий новостную ленту.
+//! Класс должен содержать:
+//! ■ массив новостей;
+//! ■ get-свойство, которое возвращает количество новостей;
+//! ■ метод для вывода на экран всех новостей;
+//! ■ метод для добавления новости;
+//! ■ метод для удаления новости;
+//! ■ метод для сортировки новостей по дате (от последних новостей до старых);
+//! ■ метод для поиска новостей по тегу (возвращает массив
+//! новостей, в которых указан переданный в метод тег).
+//! Продемонстрировать работу написанных методов. 
+let task2 = document.querySelector('#task2') as HTMLDivElement
+let arrayNews = ['Павел Дуров рассказал о своеме дедушке', "В России отметили 80 лет победы",
+    "Погода к концу мая достигла отметки в 30 градусов"]
+class newsList {
+    massive
+    constructor(massive:any[]) {
+        this.massive = massive
+    }
+    
+    get lengthNews() : string { // Количество новостей
+        return `Количество новостей в списке: ${this.massive.length}`
+    }
+
+    getNews(){ // Вывод новостей на экран
+        for (let i = 0; i < this.massive.length; i++) {
+            task2.innerHTML += `<h1>${this.massive[i]}</h1>`
+        }
+    }
+    
+    pushNews(news:string){ // Добавление новости
+        console.log(this.massive.push(news));
+    }
+
+    deletNews() { // Удаление новости
+        this.massive.pop()
+        console.log("Последняя новость удалена!");
+        
+    }
+    
+}
+
+let news = new newsList(arrayNews) 
+console.log(news.lengthNews); // Количество новостей
+news.pushNews("Новая новость добавлена")
+news.pushNews("Новая новость добавлена") // Добавление новости
+news.deletNews() // Удаление новости
+news.getNews() // Вывод новостей на экран
+
+
+
 //! Task 3
 let tableStuf = document.querySelector('#tableStuf') as HTMLTableElement
 class Employee {
