@@ -4147,8 +4147,8 @@ class Array {
         this.massive = massive
     }
     getString(symbol:string) {
+        task1.innerHTML = `<div>${this.massive.join(symbol)}</div>`
         console.log(this.massive.join(symbol));
-        
     }
     getHtml(tag:string) {
         let accLi = ''
@@ -4167,10 +4167,11 @@ class Array {
         }
     }
 }
-
 let extArr = new Array(arr)
 extArr.getString(': ')
 extArr.getHtml('li')
+
+
 
 //! Задание 2
 //! Реализовать класс, описывающий новостную ленту.
@@ -4281,8 +4282,50 @@ new_worker.removeAttribute('id') // Удаляет атрибут
 console.log(new_worker.getAttribute);
 
 
+//! Изменение документа
+let element = document.querySelector('#element') as HTMLDivElement
+
+let new_elements = document.createElement('div')
+new_elements.innerHTML = 'Append'
+element.append(new_elements)
+
+let divPrepend = document.createElement('div')
+divPrepend.innerHTML = 'Prepend'
+element.prepend(divPrepend)
+
+let divBefore = document.createElement('div')
+divBefore.innerHTML = ' Before'
+element.before(divBefore)
+
+let divAfter = document.createElement('div')
+divAfter.innerHTML = ' After'
+element.after(divAfter)
+
+let cloneDiv = element.cloneNode(true) // Клонирование с детьми, если false, то копирует только элемент 
+cloneDiv.textContent = 'TextContent'
+console.log(cloneDiv);
+
+let day = new Date()
+console.log(day.getDay());
+
+
+//! Стили и классы
+let toggle = document.querySelector("#toggle") as HTMLButtonElement 
+let remove = document.querySelector("#remove") as HTMLButtonElement
+let add = document.querySelector("#add") as HTMLButtonElement
+
+add.addEventListener('click', ()=> { // Добавляет класс
+    document.body.classList.add('background') 
+})
+remove.addEventListener('click', ()=> { // Удаляет класс
+    document.body.classList.remove('background') 
+})
+toggle.addEventListener('click', ()=> { // Переключатель
+    document.body.classList.toggle('background') 
+    console.log(document.body.className);  
+})
+
+//.classList.contains('название класса') - проверяет наличие класса
  
-
-
 
 
