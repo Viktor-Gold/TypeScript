@@ -4328,4 +4328,23 @@ toggle.addEventListener('click', ()=> { // Переключатель
 //.classList.contains('название класса') - проверяет наличие класса
  
 
+//! Home Work
+//! Напишите интерфейс для создания списка.
+//! Для каждого пункта:
+//! Запрашивайте содержимое пункта у пользователя с помощью prompt.
+//! Создавайте элемент <li> и добавляйте его к <ul>.
+//! Продолжайте до тех пор, пока пользователь не отменит ввод (нажатием клавиши Esc или введя пустую строку).
+//! Все элементы должны создаваться динамически.
+//! Если пользователь вводит HTML-теги, они должны обрабатываться как текст.  
 
+let list_items = document.querySelector('#list_items') as HTMLUListElement
+while (true) {
+    let user = prompt('Введите пункт или отправьте пустую строку, чтобы завершить: ') as any
+    let newLi = document.createElement('li')
+        newLi.textContent = user
+        list_items.appendChild(newLi)
+
+    if (user == false){
+        break
+    }
+}
