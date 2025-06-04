@@ -4337,14 +4337,60 @@ toggle.addEventListener('click', ()=> { // Переключатель
 //! Все элементы должны создаваться динамически.
 //! Если пользователь вводит HTML-теги, они должны обрабатываться как текст.  
 
-let list_items = document.querySelector('#list_items') as HTMLUListElement
-while (true) {
-    let user = prompt('Введите пункт или отправьте пустую строку, чтобы завершить: ') as any
-    let newLi = document.createElement('li')
-        newLi.textContent = user
-        list_items.appendChild(newLi)
+// let list_items = document.querySelector('#list_items') as HTMLUListElement
+// while (true) {
+//     let user = prompt('Введите пункт или отправьте пустую строку, чтобы завершить: ') as any
+//     let newLi = document.createElement('li')
+//         newLi.textContent = user
+//         list_items.appendChild(newLi)
 
-    if (user == false){
-        break
-    }
-}
+//     if (user == false){
+//         break
+//     }
+// }
+
+
+//! Размеры и прокрутка элементов
+//! Метрики 
+let showParametrs = document.querySelector('#showParametrs') as HTMLDivElement
+// showParametrs.style.borderRadius = '20px'
+console.log(getComputedStyle(showParametrs).height); // getComputedStyle() - выводит параметры стилей
+console.log(showParametrs.clientHeight);
+console.log(showParametrs.offsetHeight);
+console.log(showParametrs.scrollHeight);
+
+console.log(document.body.clientHeight);
+console.log(document.body.clientHeight);
+
+let moveTopUp = document.querySelector('#moveTopUp') as HTMLButtonElement
+moveTopUp.addEventListener('click', ()=> {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    })
+})
+
+
+let field = document.querySelector('#field') as HTMLDivElement
+let ball = document.querySelector('#ball') as HTMLImageElement
+
+let halfOfField = getComputedStyle(field).width // ширина поля
+console.log(halfOfField);
+let heightOfField = getComputedStyle(field).height // высота поля
+
+
+let halfOfBall = (getComputedStyle(ball).width) // ширина мяча
+console.log(halfOfBall);
+let heightOfBall = getComputedStyle(ball).height // высота мяча
+
+
+ball.style.marginLeft = (parseInt(halfOfField) - parseInt(halfOfBall)) / 2 + 'px'
+ball.style.marginTop = (parseInt(heightOfField) - parseInt(heightOfBall)) / 2 + 'px'
+
+field.addEventListener('click', ()=> {
+    
+} )
+
+
+

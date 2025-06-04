@@ -150,102 +150,134 @@
     </div>
 </div> -->
 
-<!--! Космический корабль  -->
-<div id="spaceship">
-  <h1 id="name">
-    Назовите ваш космический корабль
-  </h1>
-  <!-- Поле ввода для пользователя + кнопка -->
-  <h1><input placeholder="Имя корабля" id="name_ship" type="text"> <button id="btnEnter">Enter</button></h1>
-  <!-- Иконка космического корабля -->
-  <div id="spaceShipImg"><img src="/public/spaceShip3.png" alt="Космический корабль"></div>
-  <!-- Строка событий -->
-  <p id="events">События:</p>
-  <!-- Панель управления кораблем -->
-  <div id="ship_control_panel">
-    <h3>Панель управления кораблем</h3>
-    <div style="display: flex; justify-content: space-between; gap: 10px;">
-      <!-- Кнопки управления -->
-      <div id="control_buttons">
-        <div></div>
-        <div><button id="up"><img src="/public/Array.png" alt="стрелка"></button></div>
-        <div></div>
-        <div><button id="left"><img src="/public/Array.png" alt="стрелка"></button></div>
-        <div><button id="down"><img src="/public/Array.png" alt="стрелка"></button></div>
-        <div><button button id="right"><img src="/public/Array.png" alt="стрелка"></button></div>
-      </div>
-      <!-- Запуск двигателя, активизация панели управления -->
-      <div id="start">Запуск</div>
-      <!-- Кнопка информации -->
-      <div class="containers"><button id="info">Информация</button></div>
-      <!-- Уровень топлив + кнопка заправки -->
-      <div>
-        <!-- Кнопка -->
-        <div class="containers"><button id="refuel">Заправить корабль</button></div> 
-        <!-- Индикатор топлива -->
-        <div id="fuel_level">
-          <div>
-            <!-- border топливной линии -->
-            <div id="stripe_fuel">
-              <!-- Бегущий индикатор -->
-              <div id="fuel_block"></div>
-            </div>
-          </div>
+  <!--! Космический корабль  -->
+  <div id="spaceship">
+    <h1 id="name">
+      Назовите ваш космический корабль
+    </h1>
+    <!-- Поле ввода для пользователя + кнопка -->
+    <h1><input placeholder="Имя корабля" id="name_ship" type="text"> <button id="btnEnter">Enter</button></h1>
+    <!-- Иконка космического корабля -->
+    <div id="spaceShipImg"><img src="/public/spaceShip3.png" alt="Космический корабль"></div>
+    <!-- Строка событий -->
+    <p id="events">События:</p>
+    <!-- Панель управления кораблем -->
+    <div id="ship_control_panel">
+      <h3>Панель управления кораблем</h3>
+      <div style="display: flex; justify-content: space-between; gap: 10px;">
+        <!-- Кнопки управления -->
+        <div id="control_buttons">
+          <div></div>
+          <div><button id="up"><img src="/public/Array.png" alt="стрелка"></button></div>
+          <div></div>
+          <div><button id="left"><img src="/public/Array.png" alt="стрелка"></button></div>
+          <div><button id="down"><img src="/public/Array.png" alt="стрелка"></button></div>
+          <div><button button id="right"><img src="/public/Array.png" alt="стрелка"></button></div>
+        </div>
+        <!-- Запуск двигателя, активизация панели управления -->
+        <div id="start">Запуск</div>
+        <!-- Кнопка информации -->
+        <div class="containers"><button id="info">Информация</button></div>
+        <!-- Уровень топлив + кнопка заправки -->
         <div>
-      </div>
-          <img src="/public/fuel_P.png" alt="fuel"> <!-- Иконка индикатора топлива -->
+          <!-- Кнопка -->
+          <div class="containers"><button id="refuel">Заправить корабль</button></div>
+          <!-- Индикатор топлива -->
+          <div id="fuel_level">
+            <div>
+              <!-- border топливной линии -->
+              <div id="stripe_fuel">
+                <!-- Бегущий индикатор -->
+                <div id="fuel_block"></div>
+              </div>
+            </div>
+            <div>
+            </div>
+            <img src="/public/fuel_P.png" alt="fuel"> <!-- Иконка индикатора топлива -->
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div id="digitals">
-  <div class="num">1</div>
-  <div class="num">2</div>
-  <div class="num">3</div>
-  <div class="num">4</div>
-  <div class="num">5</div>
-  <div class="num">6</div>
-</div>
+  <div id="digitals">
+    <div class="num">1</div>
+    <div class="num">2</div>
+    <div class="num">3</div>
+    <div class="num">4</div>
+    <div class="num">5</div>
+    <div class="num">6</div>
+  </div>
 
-<div id="task1">00000000000000</div>
-<div id="task2"></div>
+  <div id="task1">00000000000000</div>
+  <div id="task2"></div>
 
 
-<table id="tableStuf">
-  <tr>
-    <th>Имя</th>
-    <th>Должность</th>
-    <th>Зарплата</th>
-  </tr>
-</table>
+  <table id="tableStuf">
+    <tr>
+      <th>Имя</th>
+      <th>Должность</th>
+      <th>Зарплата</th>
+    </tr>
+  </table>
 
-<form id="new_worker" action="">
-  <input type="text" placeholder="Введите имя">
-  <input type="text" placeholder="Введите должность">
-  <input type="text" placeholder="Введите зарплату">
-</form>
-<button id="add_worker">Добавить работника</button>
-<button id="delete_worker">Удалить работника</button>
+  <form id="new_worker" action="">
+    <input type="text" placeholder="Введите имя">
+    <input type="text" placeholder="Введите должность">
+    <input type="text" placeholder="Введите зарплату">
+  </form>
+  <button id="add_worker">Добавить работника</button>
+  <button id="delete_worker">Удалить работника</button>
 
-<button id="toggle">toggle</button>
-<button id="remove">remove</button>
-<button id="add">add</button>
+  <button id="toggle">toggle</button>
+  <button id="remove">remove</button>
+  <button id="add">add</button>
 
-<style>
-  .background {
-    background-color: grey;
-    color: red;
-  }
-</style>
+  <style>
+    .background {
+      background-color: grey;
+      color: red;
+    }
+  </style>
 
-<div id="element"></div>
+  <div id="element"></div>
 
-<!--! Home Work  -->
-<ul id="list_items">
+  <!--! Home Work  -->
+  <ul id="list_items">
 
-</ul>
+  </ul>
+
+  <!--! Размеры и прокрутка элементов  -->
+  <div id="showParametrs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor corrupti impedit dicta numquam at sed officiis, ea
+    suscipit nisi animi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor corrupti impedit dicta numquam at sed officiis, ea
+    suscipit nisi animi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor corrupti impedit dicta numquam at sed officiis, ea
+    suscipit nisi animi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor corrupti impedit dicta numquam at sed officiis, ea
+    suscipit nisi animi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor corrupti impedit dicta numquam at sed officiis, ea
+    suscipit nisi animi.</div>
+  
+  <style>
+    #showParametrs {
+      width: 300px;
+      height: 100px;
+      background-color: green;
+      margin: 100px;
+      padding: 20px;
+      border: 5px solid #000;
+      overflow-y: scroll;
+    }
+
+  </style>
+
+  <button id="moveTopUp">Наверх</button>
+
+  <div id="field">
+    <img id="ball" src="public/ball.svg" alt="ball">
+    ....................................................
+    ....................................................
+    ....................................................
+    ....................................................
+    ....................................................
+  </div>
 
   <script type="module" src="/src/main.ts"></script>
 </body>

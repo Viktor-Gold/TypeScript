@@ -390,3 +390,19 @@ body {
 #delete_worker {
     height: 30px;
 }
+
+/* ! Поле и мяч */
+#field {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 500px;
+    font-size: 40px;
+    background-color: green;
+    border: 5px solid black;
+    overflow: hidden
+}
+#ball {
+    position: absolute;
+}
+
