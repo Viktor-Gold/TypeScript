@@ -400,7 +400,8 @@ body {
     font-size: 40px;
     background-color: green;
     border: 5px solid black;
-    overflow: hidden
+    overflow: hidden;
+    margin-bottom: 200px;
 }
 #ball {
     position: absolute;
@@ -409,7 +410,7 @@ body {
 /*! HOME WORK  */
 /*! Task 1  */
 #table_one {
-    margin-top: 40px;
+    margin-top: 50px;
     /* border: 2px solid #000; */
     border-collapse: collapse;
 }

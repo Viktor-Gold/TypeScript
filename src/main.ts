@@ -4411,26 +4411,32 @@ console.log(createTree(container, elements));
 //     })
 // })
 
+//! Футбольный мяч 
+let field = document.querySelector('#field') as HTMLDivElement
+let ball = document.querySelector('#ball') as HTMLImageElement
 
-// let field = document.querySelector('#field') as HTMLDivElement
-// let ball = document.querySelector('#ball') as HTMLImageElement
-
-// let halfOfField = getComputedStyle(field).width // ширина поля
-// console.log(halfOfField);
-// let heightOfField = getComputedStyle(field).height // высота поля
-
-
-// let halfOfBall = (getComputedStyle(ball).width) // ширина мяча
-// console.log(halfOfBall);
-// let heightOfBall = getComputedStyle(ball).height // высота мяча
+let halfOfField = getComputedStyle(field).width // ширина поля
+console.log(halfOfField);
+let heightOfField = getComputedStyle(field).height // высота поля
 
 
-// ball.style.marginLeft = (parseInt(halfOfField) - parseInt(halfOfBall)) / 2 + 'px'
-// ball.style.marginTop = (parseInt(heightOfField) - parseInt(heightOfBall)) / 2 + 'px'
+let halfOfBall = (getComputedStyle(ball).width) // ширина мяча
+console.log(halfOfBall);
+let heightOfBall = getComputedStyle(ball).height // высота мяча
+console.log(heightOfBall);
 
-// field.addEventListener('click', ()=> {
-    
-// } )
+
+ball.style.marginLeft = (parseInt(halfOfField) - parseInt(halfOfBall)) / 2 + 'px'
+ball.style.marginTop = (parseInt(heightOfField) - parseInt(heightOfBall)) / 2 + 'px'
+
+let degree = 0
+field.addEventListener('click', (e) => {
+    degree += 90
+    ball.style.marginLeft = e.pageX - field.offsetLeft - parseInt(heightOfBall)/2 + 'px'
+    ball.style.marginTop = e.pageY - field.offsetTop - parseInt(heightOfBall)/2 + 'px'
+    ball.style.rotate = degree + 'deg'
+    ball.style.transition = '0.7s'
+} )
 
 
 //! mouseleave — при уходе курсора задает параметры
@@ -4516,3 +4522,77 @@ toTop.addEventListener('click', () => {
         behavior: "smooth"
     })
 })
+
+
+//! Home Work
+//! Найти размер прокрутки снизу (от элемента до низа и от эл. до верху)
+console.log(getComputedStyle(field).height); // Высота div по id
+console.log(field.clientTop); // border
+console.log(field.clientHeight); // Высота поля в формате числа
+console.log(field.clientHeight + field.clientTop*2); // Высота вместе с границами
+
+let heightField = field.clientHeight + field.clientTop*2
+
+console.log(parseInt(getComputedStyle(document.body).height));
+
+let bodyHeight = parseInt(getComputedStyle(document.body).height)
+console.log(bodyHeight - field.offsetTop - heightField);
+
+//! Узнать ширину полосы прокрутки
+console.log(getComputedStyle(document.body).width);
+console.log(document.body.clientWidth);
+
+let showParametrs = document.querySelector('#showParametrs') as HTMLDivElement
+console.log(showParametrs.clientWidth);
+console.log(showParametrs.scrollWidth);
+console.log(showParametrs.offsetWidth);
+// console.log(getComputedStyle(showParametrs).width);
+
+
+//! Тема: Координаты 
+let show_coordinates = document.querySelector('#show_coordinates') as HTMLDivElement
+document.body.addEventListener('click', (e) => {
+    show_coordinates.innerHTML = `
+    По документу:
+    <br>
+    по оси х = ${e.pageX}px 
+    <br>
+    по оси у = ${e.pageY}px 
+    <br>
+    По окну:
+    <br>
+    по оси х = ${e.clientX}px
+    <br>
+    по оси у = ${e.clientY}px` 
+})
+
+
+//! Новая тема: Обработчики событий
+// textmenu - левая кнопка мыши
+// mousedown - при нажатии левой кнокпи мыши
+// mouseup - при отжатии левой кнопки мыши
+// click - клик левой кнопкой мыши
+// moosemove - при движении мыши
+// mouseleave — при уходе курсора задает параметры
+// mouseenter — при наведении курсора задает параметры
+// transitioned - когда CSS анимация завершена
+
+document.body.addEventListener('click', testEvent)
+
+function testEvent(e:any) {
+    console.log(e);
+}
+
+// document.body.removeEventListener('click', testEvent) // Отменяет обработчик событий
+
+
+
+
+ 
+
+
+
+
+//! getComputedStyle(id).height - Пименяет стиль
+//! 4432 Как мы взаимодействуем с параметром e и pageX/pageY
+//! Спросить про offset
