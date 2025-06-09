@@ -4572,7 +4572,7 @@ document.body.addEventListener('click', (e) => {
 // mousedown - при нажатии левой кнокпи мыши
 // mouseup - при отжатии левой кнопки мыши
 // click - клик левой кнопкой мыши
-// moosemove - при движении мыши
+// mousemove - при движении мыши
 // mouseleave — при уходе курсора задает параметры
 // mouseenter — при наведении курсора задает параметры
 // transitioned - когда CSS анимация завершена
@@ -4586,13 +4586,66 @@ function testEvent(e:any) {
 // document.body.removeEventListener('click', testEvent) // Отменяет обработчик событий
 
 
+//! HOME WORK 
+//! Задание 1
+//! Создать html-страницу для генерации случайных чисел. На странице должна быть кнопка, 
+//! при нажатии на которую случайное целое число от 0 до 100 выводится в div. 
+let random_num = document.querySelector('#random_num') as any
+let generate = document.querySelector('#generate') as HTMLButtonElement
+generate.addEventListener('click', () => {
+    let num = Math.trunc(Math.random() * 100)
+    random_num.innerText = num
+})
 
+//! Задание 2
+//! Создать html-страницу с div, который занимает всю ширину и высоту экрана. 
+//! При движении мышкой внутри этого div, выводить текущие координаты мышки. 
+//! При клике кнопкой мыши тудаже, выводить, какой именно кнопкой был совершен клик (правой или левой). 
+let move_mouse = document.querySelector('#move_mouse') as HTMLDivElement
+move_mouse.style.width = document.body.clientWidth + 'px' //ширина документа
+move_mouse.style.height = window.innerHeight + 'px' // высота видимого окна
 
+let info_coordination = document.querySelector('#info_coordination') as any
+let name_btn_mouse = document.querySelector('#name_btn_mouse') as any
  
+move_mouse.addEventListener('mousemove', (el:any) => {
+    info_coordination.innerText = `
+    Координаты мыши:
+    по оси x = ${el.offsetX}
+    по оси y = ${el.offsetY}
+    `
+})
+
+move_mouse.addEventListener('mousedown', (e:any) => {
+    if (e.button == 0) {
+        name_btn_mouse.innerText = `Пользователь нажал левую кнопку мыши`
+    }
+    if (e.button == 1) {
+        name_btn_mouse.innerText = `Пользователь нажал среднюю кнопку мыши`
+    }
+    if (e.button == 2) {
+        name_btn_mouse.innerText = `Пользователь нажал правую кнопку мыши`
+    }
+})
+
+//! Задание 3.
+//! Создать html-страницу, на которой будет кнопка и текст. При нажатии на кнопку, 
+//! текст должен скрываться. При повторном нажатии – текст должен снова отображаться.  
+let text_none = document.querySelector('#text_none') as HTMLButtonElement
+let text_p = document.querySelector('#text_p') as HTMLParagraphElement
+
+text_none.addEventListener('click', () => {
+    if (text_p.style.display == 'block') {
+        text_p.style.display = 'none'
+    }
+    else {
+        text_p.style.display = 'block'
+    }
+})
 
 
 
 
-//! getComputedStyle(id).height - Пименяет стиль
+//! getComputedStyle(id).height - Применяет стиль
 //! 4432 Как мы взаимодействуем с параметром e и pageX/pageY
 //! Спросить про offset

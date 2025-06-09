@@ -1,7 +1,7 @@
 body {
     /* padding: 0; */
     /* margin: 0; */
-    background:linear-gradient(lightgreen,gold);
+    background:linear-gradient(black, gold, white);
     /* overflow: hidden; */
 }
 #check {
@@ -505,7 +505,7 @@ body {
     display: flex;
     justify-content: space-around;
     height: 62px;
-    margin-bottom: 500px;
+    margin-bottom: 150px;
 }
 
 #header_5 li{
@@ -563,4 +563,37 @@ body {
     100% {
         margin-top: 0px; 
     }
+}
+
+/*! Home work */
+/* Рандомные числа */
+#contain_random {
+    width: 20%;
+    background-color: bisque;
+    margin: 40px 40px;
+    padding: 20px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#generate {
+    margin-top: 15px;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: rgba(255, 217, 0, 0.5);
+}
+#generate:hover {
+    cursor: pointer;
+    background-color: rgba(255, 217, 0);
+    text-shadow: 1px 1px 1px black;
+}
+
+/*! Task 2 */
+#move_mouse {
+    padding: 20px;
+    margin-top: 50px;
+    background-color: rgba(0, 128, 0, 0.517);
 }
