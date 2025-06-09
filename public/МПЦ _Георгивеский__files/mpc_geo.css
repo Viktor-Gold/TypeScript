@@ -1,0 +1,72 @@
+body {
+    background: linear-gradient(brown, black);
+    height: 734px;
+}
+
+#order_window {
+    width: 340px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 20px;
+    /* text-align: center; */
+    border: 1px solid #000;
+}
+
+#order_window input {
+    height: 20px;
+    width: 170px;
+}
+
+#order_window button {
+    height: 24.8px;
+    width: 177px;
+    margin-left: 160px;
+}
+
+#order_window label {
+    /* border: 1px solid #000; */
+    display: flex;
+    gap: 10px;
+}
+
+#order_window label div{
+    /* border: 1px solid #000; */
+    text-align: left;
+    width: 150px
+}
+
+/* Рекламный баннер */
+#banner {
+    width: 486px;
+    height: 729px;
+    background-image: url(image_mpc_geo/photo_2025-06-05_13-29-20.jpg);
+    background-size: contain;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 3px;
+    position: absolute;
+    background-color: rgb(17, 17, 17);
+    color: rgb(228, 213, 160);
+    font-size: 10px;
+    width: 130px;
+    margin-top: 180px;
+    margin-left: 350px;
+}
+
+#menu div {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+#menu img {
+    width: 50px;
+}
+
+

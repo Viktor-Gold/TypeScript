@@ -4340,57 +4340,179 @@ toggle.addEventListener('click', ()=> { // Переключатель
 // let list_items = document.querySelector('#list_items') as HTMLUListElement
 // while (true) {
 //     let user = prompt('Введите пункт или отправьте пустую строку, чтобы завершить: ') as any
-//     let newLi = document.createElement('li')
-//         newLi.textContent = user
-//         list_items.appendChild(newLi)
-
 //     if (user == false){
 //         break
 //     }
+//     else {
+//         let newLi = document.createElement('li')
+//         newLi.textContent = user
+//         list_items.appendChild(newLi)
+//     }
 // }
+
+//! Напишите функцию createTree, которая создаёт вложенный список ul/li из объекта.
+let container = document.querySelector('#container');
+let elements = {
+  "Рыбы": {
+    "форель": {},
+    "лосось": {}
+  },
+
+  "Деревья": {
+    "Огромные": {
+      "секвойя": {},
+      "дуб": {}
+    },
+    "Цветковые": {
+      "яблоня": {},
+      "магнолия": {}
+    }
+  }
+};
+
+function createTree(contain:any, obj:{}) {
+    let ul = document.createElement('ul')
+
+    for (const key in obj) {
+        let li = document.createElement('li')
+        li.textContent = key
+
+        if (Object.keys(obj[key]).length > 0) {
+            createTree(li, obj[key])
+        }
+
+        ul.appendChild(li)
+    }
+
+    contain.appendChild(ul)
+}
+console.log(createTree(container, elements));
+
 
 
 //! Размеры и прокрутка элементов
 //! Метрики 
-let showParametrs = document.querySelector('#showParametrs') as HTMLDivElement
-// showParametrs.style.borderRadius = '20px'
-console.log(getComputedStyle(showParametrs).height); // getComputedStyle() - выводит параметры стилей
-console.log(showParametrs.clientHeight);
-console.log(showParametrs.offsetHeight);
-console.log(showParametrs.scrollHeight);
+// let showParametrs = document.querySelector('#showParametrs') as HTMLDivElement
+// // showParametrs.style.borderRadius = '20px'
+// console.log(getComputedStyle(showParametrs).height); // getComputedStyle() - выводит параметры стилей
+// console.log(showParametrs.clientHeight);
+// console.log(showParametrs.offsetHeight);
+// console.log(showParametrs.scrollHeight);
 
-console.log(document.body.clientHeight);
-console.log(document.body.clientHeight);
+// console.log(document.body.clientHeight);
+// console.log(document.body.clientHeight);
 
-let moveTopUp = document.querySelector('#moveTopUp') as HTMLButtonElement
-moveTopUp.addEventListener('click', ()=> {
+// let moveTopUp = document.querySelector('#moveTopUp') as HTMLButtonElement
+// moveTopUp.addEventListener('click', ()=> {
+//     window.scrollTo({
+//         top: 0,
+//         left: 0,
+//         behavior: "smooth" //! Задает плавную прокрутку страницы 
+//     })
+// })
+
+
+// let field = document.querySelector('#field') as HTMLDivElement
+// let ball = document.querySelector('#ball') as HTMLImageElement
+
+// let halfOfField = getComputedStyle(field).width // ширина поля
+// console.log(halfOfField);
+// let heightOfField = getComputedStyle(field).height // высота поля
+
+
+// let halfOfBall = (getComputedStyle(ball).width) // ширина мяча
+// console.log(halfOfBall);
+// let heightOfBall = getComputedStyle(ball).height // высота мяча
+
+
+// ball.style.marginLeft = (parseInt(halfOfField) - parseInt(halfOfBall)) / 2 + 'px'
+// ball.style.marginTop = (parseInt(heightOfField) - parseInt(heightOfBall)) / 2 + 'px'
+
+// field.addEventListener('click', ()=> {
+    
+// } )
+
+
+//! mouseleave — при уходе курсора задает параметры
+//! mouseenter — при наведении курсора задает параметры
+
+//! Home Work
+//! Task 1
+let td = document.querySelectorAll("td")
+for (let i = 0; i < td.length; i++) {
+    td[i].addEventListener("mouseenter", () => { // mouseenter — при наведении меняет цвет
+        td[i].style.background = 'pink'
+    })
+
+    td[i].addEventListener('mouseleave', () => { // mouseleave — при уходе курсора меняет цвет
+        td[i].style.background = ''
+    })
+}
+
+//! Task 2
+let ban_user = document.querySelector('#ban_user') as HTMLParagraphElement
+ban_user.addEventListener('contextmenu', function(event) {
+  event.preventDefault();
+}); 
+
+//! Task 3
+//! Создать html-страницу с кнопкой Like, при нажатии на которую увеличивается счетчик лайков. 
+let button_like = document.querySelector("#button_like") as HTMLButtonElement
+let accum_like = document.querySelector('#accum_like') as HTMLDivElement
+let like_num = 0
+button_like.addEventListener('click', () => {
+    like_num++
+    accum_like.textContent = like_num
+})
+
+//! Task 4
+//! Создать html-страницу «Калькулятор». Реализовать его функциональность. 
+let user_num = document.querySelector("#user_num") as HTMLInputElement
+let buttons = document.querySelectorAll('#buttons_calc button')
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', () => {
+        user_num.value += buttons[i].textContent
+    })
+//! Доделать на паре! 
+    
+}
+
+//! Task 5
+//! Создать html-страницу с меню, которое имеет выпадающие списки. 
+//! Список с элементами подменю должен появляться по щелчку на соответствующий элемент меню.  
+let li = document.querySelectorAll('.list') 
+let inside_ul = document.querySelectorAll('#header_5 li ul') as any
+
+for (let i = 0; i < li.length; i++) {
+    li[i].addEventListener('click', () => {
+        for (let j = 0; j < inside_ul.length; j++) {
+            inside_ul[i].style.display = 'block'  
+        }
+    })
+
+    li[i].addEventListener('mouseleave', () => {
+        inside_ul[i].style.display = 'none'
+    })
+}
+
+//! Task 6
+//! Создать html-страницу со списком статей. При прокрутке страницы вниз
+//! Более чем на 100 пикселей, справа внизу должна появиться кнопка Вверх  
+//! Для быстрого перехода к началу страницы.  
+let toTop = document.querySelector('#toTop') as HTMLButtonElement
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 800) {
+        toTop.style.display = 'block'
+    }
+    else {
+        toTop.style.display = 'none'
+    }
+})
+
+toTop.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
-        left: 0,
         behavior: "smooth"
     })
 })
-
-
-let field = document.querySelector('#field') as HTMLDivElement
-let ball = document.querySelector('#ball') as HTMLImageElement
-
-let halfOfField = getComputedStyle(field).width // ширина поля
-console.log(halfOfField);
-let heightOfField = getComputedStyle(field).height // высота поля
-
-
-let halfOfBall = (getComputedStyle(ball).width) // ширина мяча
-console.log(halfOfBall);
-let heightOfBall = getComputedStyle(ball).height // высота мяча
-
-
-ball.style.marginLeft = (parseInt(halfOfField) - parseInt(halfOfBall)) / 2 + 'px'
-ball.style.marginTop = (parseInt(heightOfField) - parseInt(heightOfBall)) / 2 + 'px'
-
-field.addEventListener('click', ()=> {
-    
-} )
-
-
-

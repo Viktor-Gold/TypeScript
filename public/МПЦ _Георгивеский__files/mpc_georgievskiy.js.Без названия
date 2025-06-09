@@ -1,0 +1,73 @@
+// let user_number
+// let user_text
+// document.querySelector('button').onclick = click;
+// let userStorage = []
+
+// function click() {
+//     user_text = document.getElementById('user_text');
+//     // Получаем инфу от input
+//     user_number = document.querySelector('#user_number').value;
+//     // value - значение введенное пользователем
+    
+//     let result = Number(user_number);
+//     if (userStorage.includes(result)) {
+//         user_text.innerHTML = 'Cтоимость доставки: 300р'
+//     }
+//     else if (result == false) {
+//         user_text.innerHTML = ""
+//     }
+//     else {
+//         user_text.innerHTML = 'Бесплатная доставка!'
+//         userStorage.push(result)
+        
+//     }
+    
+//     if (isNaN(user_number)) {
+//         user_text.innerHTML = "Введите числа!";
+//     }
+    
+//     console.log(userStorage);
+// }
+
+let user_name = document.querySelector('#user_name').value // Имя пользователя
+let user_number = document.querySelector('#user_number').value // Номер пользователя
+let user_address = document.querySelector('#user_address').value // Адрес доставки
+let info = document.querySelector('#info') 
+let place_order = document.querySelector('#place_order') // Кнопка "Сделать заказ"
+
+class Buyers {
+    constructor(name, number, address) {
+        this.name = name
+        this.number = number
+        this.address = address
+    }
+}
+
+place_order.addEventListener('click', () => {
+    if (user_name && user_number && user_address) {
+        let order = {
+            "Имя": user_name,
+            'Телефон': user_number,
+            'Адрес': user_address,
+        }
+        info.innerHTML = 'Заказ добавлен'
+        users_massive.push(order)
+        console.log('Заказ добавлен');
+    }
+    else {
+        info.innerHTML = 'Заполните все поля!'
+        info.style.color = 'red'
+        console.log('Заполните все поля!');
+    }
+})
+
+
+
+
+let users_massive = [
+    
+]
+console.log();
+
+
+

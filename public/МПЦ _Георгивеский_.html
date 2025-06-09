@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://127.0.0.1:5500/myasnik_zhoreno.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МПЦ "Георгивеский"</title>
+    
+<link rel="stylesheet" href="./МПЦ _Георгивеский__files/mpc_geo.css"></head>
+<body>
+    <!-- <div id="site">
+        <div id="order_window">
+            <label for=""> 
+                <div>На чье имя заказ:</div> 
+                <input id="user_name" type="text" placeholder="Введите ваше имя">
+            </label>
+            <label for="">
+                <div>Номер телефона:</div> 
+                <input id="user_number" type="tel" placeholder="Введите ваш номер">
+            </label>
+            <label for=""> 
+                <div>Адрес доставки:</div> 
+                <input id="user_address" type="text" placeholder="Введите ваш адрес">
+            </label>
+            <div>
+                <div id="info"></div>
+                <div><button id="place_order">Сделать заказ</button></div>
+            </div>
+            <h2 id="info"></h2> -->
+        
+     
+
+    <!-- Рекламный баннер -->
+    <div id="banner">
+        <div id="menu">
+            <div><img src="./МПЦ _Георгивеский__files/sosiski_sv.jpg" alt="">Сосиски свиные</div>
+            <div><img src="./МПЦ _Георгивеский__files/sosiski_gov.jpg" alt="">Сосиски говяжьи</div>
+            <div><img src="./МПЦ _Георгивеский__files/sosiski_kur.jpg" alt="">Сосиски куриные</div>
+            <div><img src="./МПЦ _Георгивеский__files/meat_boom.jpg" alt="">Бомба мясная</div>
+            <div><img src="./МПЦ _Георгивеский__files/vetchina_kur.jpg" alt="">Ветчина куриная</div>
+            <div><img src="./МПЦ _Георгивеский__files/salo_firm.jpg" alt="">Сало фирменное</div>
+            <div><img src="./МПЦ _Георгивеский__files/salo_kop.jpg" alt="">Сало</div>
+            <div><img src="./МПЦ _Георгивеский__files/buzhenina.jpg" alt="">Буженина</div>
+            <div><img src="./МПЦ _Георгивеский__files/Грудинка св ГК.jpg" alt="">Грудинка</div>
+            <div><img src="./МПЦ _Георгивеский__files/tuhka.jpg" alt="">Тушка</div>
+            <div><img src="./МПЦ _Георгивеский__files/krilya.jpg" alt="">Крылья</div>
+            <div><img src="./МПЦ _Георгивеский__files/spinki.jpg" alt="">Спинки</div>
+            <div><img src="./МПЦ _Георгивеский__files/grudka_na_kosti.jpg" alt="">Грудка на кости</div>
+        </div>
+    </div>
+    <script type="module" src="./МПЦ _Георгивеский__files/mpc_georgievskiy.js.Без названия"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

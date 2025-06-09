@@ -406,3 +406,160 @@ body {
     position: absolute;
 }
 
+/*! HOME WORK  */
+/*! Task 1  */
+#table_one {
+    margin-top: 40px;
+    /* border: 2px solid #000; */
+    border-collapse: collapse;
+}
+
+#table_one th, #table_one td {
+    padding: 5px 8px;
+    border: 2px solid #000;
+}
+
+/*! Task 2  */
+#ban_user {
+    background-color: bisque;
+    padding: 20px;
+    height: 250px;
+    user-select: none;
+}
+
+/*! Task 3 */
+#button_like {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: white;
+    background-color: rgb(49, 204, 239);
+}
+#button_like:hover {
+    cursor: pointer;
+    color:  bisque;
+}
+
+#button_like:active {
+    background-color: white;
+    color: rgb(49, 204, 239);
+}
+#button_like img{
+    width: 50px;
+}
+
+/*! Task 4 */
+#calculator {
+    margin-top: 40px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: bisque;
+    width: 220px;
+}
+#input_line{
+    width: 214px;
+}
+#input_line input {
+    width: 100%;
+    /* height: 40px; */
+    font-size: 30px;
+    text-align: right;
+}
+#input_line input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#buttons_calc {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 10px;
+    border: 1px solid #000;
+}
+#buttons_calc button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding:  15px 20px;
+    width: 100%;
+}
+#buttons_calc button:hover {
+    cursor: pointer;
+}
+#equals {
+    grid-column: 2/4;
+}
+
+/*! Task 5 */
+#header_5 {
+    background-color: darkblue;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    height: 62px;
+    margin-bottom: 500px;
+}
+
+#header_5 li{
+    list-style: none;
+    padding: 20px;
+    background-color: darkblue;
+    width: 80px;
+    text-align: center;
+}
+#header_5 li:hover {
+    cursor: pointer;
+    background-color: rgb(20, 23, 173);
+}
+
+#header_5 li ul {
+    margin-left: -60px;
+    display: none;
+}
+
+#header_5 li ul li:first-child {
+    margin-top: 18px;
+}
+
+/*! Task 6 */
+#containBtn {
+    height: 100px;
+    /* border: 1px solid #000; */
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+#toTop {
+    padding: 20px;
+    background-color: darkblue;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 35px;
+    display: none;
+}
+
+#containBtn:hover>#toTop{
+    cursor: pointer;
+    background-color: rgb(19, 19, 189);
+    animation: jump 0.5s ease-in-out infinite alternate;
+    position: static;
+}
+
+@keyframes jump {
+    0% {
+        margin-top: 30px;
+    }
+             
+    100% {
+        margin-top: 0px; 
+    }
+}
