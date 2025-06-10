@@ -4439,9 +4439,6 @@ field.addEventListener('click', (e) => {
 } )
 
 
-//! mouseleave — при уходе курсора задает параметры
-//! mouseenter — при наведении курсора задает параметры
-
 //! Home Work
 //! Task 1
 let td = document.querySelectorAll("td")
@@ -4642,6 +4639,136 @@ text_none.addEventListener('click', () => {
         text_p.style.display = 'block'
     }
 })
+
+//! Задание 4
+//! Создать html-страницу со вкладками. С левой стороны страницы отображается несколько вкладок, 
+//! по которым можно переключаться. У каждой вкладки есть свое содержимое, но в один момент
+//! времени отображается содержимое только активной вкладки.  
+let tab1 = document.querySelector('#panel_control div:first-child') as HTMLDivElement // Вкладка HTML
+let tab2 = document.querySelector('#panel_control div:nth-child(2)') as HTMLDivElement // Вкладка CSS
+let tab3 = document.querySelector('#panel_control div:nth-child(3)') as HTMLDivElement // Вкладка JavaScript
+
+let pages = document.querySelectorAll('.page') as any // Содержимое вкладок
+
+let page0 = pages[0] // Содержимое HTML
+let page1 = pages[1] // Содержимое CSS
+let page2 = pages[2] // Содержимое JavaScript
+
+page1.style.display = 'none'
+page2.style.display = 'none'
+
+function user_tab_click(el:any) {
+    if (el == tab1) {
+        page0.style.display = 'block'
+        page1.style.display = 'none'
+        page2.style.display = 'none'
+    }
+
+    if (el == tab2) {
+        page0.style.display = 'none'
+        page1.style.display = 'block'
+        page2.style.display = 'none'
+    }
+
+    if (el == tab3) {
+        page0.style.display = 'none'
+        page1.style.display = 'none'
+        page2.style.display = 'block'
+    }
+}
+
+tab1.addEventListener('click', () => user_tab_click(tab1))
+tab2.addEventListener('click', () => user_tab_click(tab2))
+tab3.addEventListener('click', () => user_tab_click(tab3))
+
+
+//! Задание 5
+//! Создать html-страницу со списком новостей. Возле каждой новости должна быть 
+//! кнопка "Удалить", при нажатии на которую соответствующая новость исчезает. 
+let news_lorem = document.querySelectorAll('.news') as any
+let buttons_news = document.querySelectorAll('#task5 button') as any
+
+for (let i = 0; i < buttons_news.length; i++) {
+    buttons_news[i].addEventListener('click', () => {
+        buttons_news[i].closest('.news').style.display = 'none'
+    })
+}
+
+//! Задание 6
+//! Создать html-страницу с progressbar и кнопкой, при нажатии
+//! на которую заполненность progressbar увеличивается на 5%. 
+let progressbar = document.querySelector('#progressbar') as HTMLDivElement
+let progress = document.querySelector('#progress') as HTMLDivElement
+let reset = document.querySelector('#reset') as HTMLButtonElement
+let moveProgress = document.querySelector('#progress_move') as any
+
+progress.style.display = 'none'
+reset.style.display = 'none'
+
+let acc = 0
+moveProgress.addEventListener('click', () => {
+    if (acc >= 0 && acc < 100) {
+        acc += 5
+        progress.style.display = 'block'
+        progressbar.style.width = `${acc}%`
+        progress.textContent = `Progress: ${acc}%`
+    }
+    else {
+        progressbar.style.width = 100 + '%'
+        progress.textContent = `Progress: READY`
+        reset.style.display = 'block'
+    }
+})
+
+reset.addEventListener('click', () => {
+    acc = 0
+    progressbar.style.width = `${acc}%`
+    progress.textContent = `Progress: ${acc}%`
+})
+
+//! НАЙТИ КООРДИНАТЫЙ УГЛОВ ФУТБОЛЬНОГО ПОЛЯ
+console.log('_______________________________');
+let rect = field.getBoundingClientRect()
+
+console.log(`Координаты верхнего левого ВНУТРЕННЕГО угла:
+    по оси х: ${Math.trunc(rect.top + field.clientTop)}
+    по оси у: ${rect.left + field.clientLeft}`);
+console.log(`Координаты верхнего левого НАРУЖНЕГО угла:
+    по оси х: ${Math.trunc(rect.top)}
+    по оси у: ${rect.left}`); // верхняя точка elem относительно окна просмотра
+console.log(`Координаты нижнего левого НАРУЖНЕГО угла:
+    по оси х: ${Math.trunc(rect.bottom)}
+    по оси у: ${Math.trunc(rect.right)}`); // левая точка elem относительно окна просмотра
+
+let cornerX = rect.left + field.clientLeft + field.clientWidth
+let cornerY = rect.top + field.clientTop + field.clientHeight
+
+console.log(`Координаты нижнего левого ВНУТРЕННЕГО угла:
+    по оси х: ${cornerX}
+    по оси у: ${Math.trunc(cornerY)}`);
+    
+
+//! Карусель
+let left_btn = document.querySelector('#left_btn') as HTMLButtonElement
+let right_btn = document.querySelector('#right_btn') as HTMLButtonElement
+let carousel_img = document.querySelector('#carousel_img') as HTMLDivElement
+
+let marginLeftAcc = 0
+right_btn.addEventListener('click', () => {
+    if (marginLeftAcc <= 1200) {
+        marginLeftAcc += 330
+        carousel_img.style.marginLeft = `-${marginLeftAcc}px`
+    }
+})
+
+left_btn.addEventListener('click', () => {
+    if (marginLeftAcc >= 10) {
+        marginLeftAcc -= 330
+        carousel_img.style.marginLeft = `-${marginLeftAcc}px`
+    }
+    
+})
+
 
 
 

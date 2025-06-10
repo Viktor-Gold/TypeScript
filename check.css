@@ -399,9 +399,10 @@ body {
     width: 500px;
     font-size: 40px;
     background-color: green;
-    border: 5px solid black;
+    border: 10px solid black;
     overflow: hidden;
     margin-bottom: 200px;
+    margin-left: 5px;
 }
 #ball {
     position: absolute;
@@ -529,6 +530,10 @@ body {
     margin-top: 18px;
 }
 
+.display {
+    display: block;
+}
+
 /*! Task 6 */
 #containBtn {
     height: 100px;
@@ -596,4 +601,163 @@ body {
     padding: 20px;
     margin-top: 50px;
     background-color: rgba(0, 128, 0, 0.517);
+}
+
+/*! Task 3 */
+#text_none {
+    color: white;
+    background-color: darkblue;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 10px;
+}
+#text_none:hover {
+    cursor: pointer;
+    background-color: rgb(2, 2, 205);
+}
+
+/*! Task 4 */
+#Task_4 {
+    margin: auto;
+    overflow-y: scroll;
+    background-color: bisque;
+    height: 300px;
+    width: 700px;
+    display: flex;
+    gap: 10px;
+}
+
+#panel_control {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: darkblue;
+}
+
+#panel_control div {
+    padding: 10px;
+    cursor: pointer;
+}
+#panel_control div:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.page {
+    padding: 20px;
+}
+
+/*! Task 5 */
+#task5 {
+    margin-top: 40px;
+    background-color: bisque;
+    padding: 20px 40px;
+}
+
+#task5 button{
+    height: 30px;
+    cursor: pointer;
+}
+
+.headAndRemoveNews {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*! Task 6 */
+#task6 {
+    background-color: bisque;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+
+#task6 button {
+    padding: 5px;
+    cursor: pointer;
+    background-color: gold;
+    transition: 0.3s;
+}
+#task6 button:hover {
+    background-color: rgba(255, 217, 0, 0.5);
+    letter-spacing: 5px;
+}
+#task6 button:active {
+    background-color: black;
+    color: gold;
+    transition: 0s;
+} 
+
+#contain_porgressbar {
+    border: 2px solid #000;
+    /* overflow: hidden; */
+}
+
+#progressbar {
+    height: 40px;
+    background-color: darkcyan;
+    width: 0%;
+}
+
+#progress {
+    padding: 10px;
+    background-color: darkslategray;
+    color: white;
+}
+
+/*! Карусель */
+#carousel {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: bisque;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 600px;
+}
+
+#carousel button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 50px;
+    cursor: pointer;
+}
+
+#carousel button:hover {
+    filter: contrast(2);
+}
+
+#carousel button img{
+    width: 50px;
+}
+
+#carousel button:nth-child(1) {
+    transform: rotate(180deg);
+}
+
+#contain_carousel {
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#contain_carousel img {
+    width: 160px;
+    border-radius: 50%;
+}
+
+#carousel_img {
+    transition: 0.5s;
+    display: flex;
+    gap: 10px;
 }
