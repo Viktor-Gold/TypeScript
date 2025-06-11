@@ -516,6 +516,11 @@ body {
     width: 80px;
     text-align: center;
 }
+.change_display {
+    display: block !important;
+    background: greenyellow;
+}
+
 #header_5 li:hover {
     cursor: pointer;
     background-color: rgb(20, 23, 173);

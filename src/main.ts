@@ -4432,8 +4432,8 @@ ball.style.marginTop = (parseInt(heightOfField) - parseInt(heightOfBall)) / 2 + 
 let degree = 0
 field.addEventListener('click', (e) => {
     degree += 90
-    ball.style.marginLeft = e.pageX - field.offsetLeft - parseInt(heightOfBall)/2 + 'px'
-    ball.style.marginTop = e.pageY - field.offsetTop - parseInt(heightOfBall)/2 + 'px'
+    ball.style.marginLeft = e.pageX - field.offsetLeft - parseInt(heightOfBall)/2 - 7 + 'px'
+    ball.style.marginTop = e.pageY - field.offsetTop - parseInt(heightOfBall)/2 - 7 + 'px'
     ball.style.rotate = degree + 'deg'
     ball.style.transition = '0.7s'
 } )
@@ -4454,7 +4454,7 @@ for (let i = 0; i < td.length; i++) {
 
 //! Task 2
 let ban_user = document.querySelector('#ban_user') as HTMLParagraphElement
-ban_user.addEventListener('contextmenu', function(event) {
+ban_user.addEventListener('contextmenu', (event) => {
   event.preventDefault();
 }); 
 
@@ -4486,18 +4486,33 @@ for (let i = 0; i < buttons.length; i++) {
 //! Список с элементами подменю должен появляться по щелчку на соответствующий элемент меню.  
 let li = document.querySelectorAll('.list') 
 let inside_ul = document.querySelectorAll('#header_5 li ul') as any
+console.log( inside_ul);
+
+
 
 for (let i = 0; i < li.length; i++) {
     li[i].addEventListener('click', () => {
         for (let j = 0; j < inside_ul.length; j++) {
-            inside_ul[i].style.display = 'block'  
-        }
-    })
 
-    li[i].addEventListener('mouseleave', () => {
-        inside_ul[i].style.display = 'none'
-    })
+            if (inside_ul[i].style.display == 'none') {
+                inside_ul[i].style.display = 'block'
+            } else {
+                inside_ul[i].style.display = 'none'
+            }
+        }
+    })    
 }
+
+
+
+            
+            // setTimeout(() => {
+            //     inside_ul[i].style.display = 'none'
+            // }, 1000);
+            
+
+
+
 
 //! Task 6
 //! Создать html-страницу со списком статей. При прокрутке страницы вниз
@@ -4768,6 +4783,14 @@ left_btn.addEventListener('click', () => {
     }
     
 })
+
+
+//! Всплытие и погружение
+//! Делегирование событий ПОСМОТРЕТЬ ДОМА!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
+
+let carousel = document.querySelector('#carousel') as HTMLDivElement
+console.log(carousel.dataset);
+// data-toggle-id
 
 
 
