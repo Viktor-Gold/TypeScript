@@ -4793,6 +4793,163 @@ console.log(carousel.dataset);
 // data-toggle-id
 
 
+//! Home Work
+//! Задание 1
+//! Создать html-страницу с возможностью ввода числового значения через кнопки (больше, меньше).
+//! Пользователь не должен иметь возможность печатать текст
+//! или цифры. Число изменяется только при нажатии на кнопки 
+let number_value = document.querySelector('#number_value') as HTMLDivElement
+let arr1 = document.querySelector('#arr1') as HTMLButtonElement
+let arr2 = document.querySelector('#arr2') as HTMLButtonElement
+
+let count = 10
+
+arr1.addEventListener('click', () => {
+    count++
+    number_value.innerText = `${count}`
+})
+arr2.addEventListener('click', () => {
+    count--
+    number_value.innerText = `${count}`
+})
+
+//! Задание 2
+//! Создать html-страницу с кнопкой, по нажатию на которую
+//! добавляются цветные блоки на страницу. По клику на сам блок,
+//! он должен удаляться со страницы. 
+let contain_block_color = document.querySelector('#contain_block_color') as HTMLDivElement
+let addColor = document.querySelector('#addColor') as HTMLButtonElement
+let removeColor = document.querySelector('#removeColor') as HTMLButtonElement
+
+
+addColor.addEventListener('click', () => {
+    let r = Math.trunc(Math.random() * 256)
+    let g = Math.trunc(Math.random() * 256)
+    let b = Math.trunc(Math.random() * 256)
+    let r1 = Math.trunc(Math.random() * 256)
+    let g1 = Math.trunc(Math.random() * 256)
+    let b1 = Math.trunc(Math.random() * 256)
+    let r2 = Math.trunc(Math.random() * 256)
+    let g2 = Math.trunc(Math.random() * 256)
+    let b2 = Math.trunc(Math.random() * 256)
+    let colorBlock = `rgb(${r}, ${g}, ${b})`
+    
+    let newBlock = document.createElement('div')
+    newBlock.style.width = '100px'
+    newBlock.style.height = '100px'
+    newBlock.style.backgroundColor = colorBlock
+    contain_block_color.appendChild(newBlock)
+    addColor.style.backgroundImage = `linear-gradient(to right, rgb(${r}, ${g}, ${b}), rgb(${r1}, ${g1}, ${b1}), rgb(${r2}, ${g2}, ${b2}))`
+})
+
+removeColor.addEventListener('click', () => {
+    let r = Math.trunc(Math.random() * 256)
+    let g = Math.trunc(Math.random() * 256)
+    let b = Math.trunc(Math.random() * 256)
+    let r1 = Math.trunc(Math.random() * 256)
+    let g1 = Math.trunc(Math.random() * 256)
+    let b1 = Math.trunc(Math.random() * 256)
+    let r2 = Math.trunc(Math.random() * 256)
+    let g2 = Math.trunc(Math.random() * 256)
+    let b2 = Math.trunc(Math.random() * 256)
+    let lastBlock = contain_block_color.lastElementChild as HTMLDivElement
+    contain_block_color.removeChild(lastBlock)
+    removeColor.style.backgroundImage = `linear-gradient(to right, rgb(${r}, ${g}, ${b}), rgb(${r1}, ${g1}, ${b1}), rgb(${r2}, ${g2}, ${b2}))`
+})
+
+//! Задание 3
+//! Создать html-страницу с текстом и палитрой цветов.
+//! При клике на цвет палитры, должен изменяться цвет текста на
+//! выбранный. Для указания, какой ячейке какой цвет соответствует,
+//! можно использовать атрибут data-color в каждой ячейке, а потом
+//! с помощью JS получать необходимый цвет из этого атрибута
+let block = document.querySelectorAll('#panel_colors div') as any
+let colorText = document.querySelector('#text_new_color') as HTMLParagraphElement
+
+for (let i = 0; i < block.length; i++) {
+    let r = Math.trunc(Math.random() * 256)
+    let g = Math.trunc(Math.random() * 256)
+    let b = Math.trunc(Math.random() * 256)
+    block[i].style.background = `rgb(${r}, ${g}, ${b})`
+
+    block[i].addEventListener('click', () => {
+        colorText.style.color = block[i].style.background
+    })
+}
+
+//! Задание 4
+//! Создать html-страницу со статьей, комментариями к ней и
+//! формой для добавления нового комментария.
+//! При нажатии на кнопку Добавить комментарий форма должна
+//! очищаться, а комментарий добавляться к списку всех комментариев.
+//! Комментарий состоит из имени пользователя, даты и текста.  
+let user_comments = document.querySelector('#user_comments') as HTMLDivElement // Контейнер для блоков комментариев
+let user_name = document.querySelector('#user_name') as HTMLInputElement // Поле ввода имени пользователя
+let comment = document.querySelector('#window_comments textarea') as HTMLTextAreaElement // Поле для комментария пользователя
+let addComment = document.querySelector('#addComment') as HTMLButtonElement // Кнопка для отправки комментария
+
+let date = new Date()
+let day2 = String(date.getDate())
+let month2 = String(date.getMonth()+1).padStart(2, '0')
+let year2 = String(date.getFullYear())
+let now = `${day2}.${month2}.${year2}` // Нынешняя дата
+
+addComment.addEventListener('click', () => {
+    let name = document.createElement('div') // Создаем div для имени пользователя
+    name.style.fontWeight = 'bold' 
+    let data_comments = document.createElement('div') // Создаем div для даты комментария
+    let comment_user = document.createElement('div') // div для комментария
+
+    name.innerText = user_name.value // Устанавливаем значение
+    data_comments.innerText = now
+    comment_user.innerText = comment.value
+
+    let contain_comment = document.createElement('div') // Создаем блок для комментария
+    contain_comment.style.marginTop = '20px'      
+    contain_comment.appendChild(name)
+    contain_comment.appendChild(data_comments) // —————— Добавляем наши значения в блок
+    contain_comment.appendChild(comment_user)
+    let line = document.createElement('hr')
+    line.style.marginTop = '20px'
+    contain_comment.appendChild(line)
+
+    user_comments.appendChild(contain_comment) // Добавляем блок в контейнер для всех комментариев
+
+    // Опустошаем значения
+    user_name.value = ''
+    comment.value = ''
+})
+
+
+//! Задание 5
+//! Создать html-страницу с текстовым полем для ввода страны.
+//! При вводе пользователем страны, под текстовым полем должен
+//! появляться выпадающий список с подсказками (максимум 10 штук).
+//! Подсказки зависят от того, что ввел пользователь. Данные
+//! для подсказок храните в массиве, которые заранее создайте и
+//! заполните странами. При щелчке на подсказку ее текст должен
+//! вводится в input. 
+let countrys = ['Гаити', "Россия", "Румыния", "Республика Конго", "Республика Корея",
+"Германия", "Гренландия"
+]
+
+let user_place = document.querySelector('#user_place') as HTMLInputElement
+
+for (let i = 0; i < countrys.length; i++) {
+    console.log(countrys[i]);
+    for (let j = 0; j < countrys[i].length; j++) {
+        if (user_place.value == countrys[i][j][0]) {
+            console.log("г");
+            
+        }
+        
+    }
+}
+
+
+
+
+
 
 
 
