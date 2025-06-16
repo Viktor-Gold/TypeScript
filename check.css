@@ -781,6 +781,10 @@ body {
     height: 100px;
     font-size: 40px;
 }
+#number_value {
+    min-width: 45px;
+}
+
 #number_value, #arrows button {
     border: 1px solid #000;
     display: flex;
@@ -788,7 +792,6 @@ body {
     align-items: center;
     padding: 5px;
     background-color: transparent;
-    
 }
 
 #arrows button:last-child {
@@ -873,4 +876,25 @@ body {
 #info_users textarea {
     width: 40%;
     height: 100px;
+}
+
+/*! Задание 5 */
+#title {
+    display: none;
+    overflow-y: scroll;
+    height: 100px;
+    border: 1px solid #000;
+    background-color: rgb(136, 136, 136);
+    width: 175px;
+    color: white;
+    /* padding: 5px; */
+}
+
+#title div {
+    padding: 5px;
+}
+
+#title div:hover {
+    background-color: black;
+    cursor: pointer;
 }
