@@ -5200,6 +5200,32 @@ title.addEventListener('click', (e) => {
 })
 
 
+//! Генерация пользовательских событий
+ 
+let outer = document.querySelector('#outer') as HTMLDivElement
+let inner = document.querySelector('#inner') as HTMLDivElement
+
+outer.addEventListener('mouseenter', (e) => {
+    // alert('1')
+    console.log(e.target);
+    console.log(e.currentTarget);
+})
+outer.addEventListener('mouseleave', (e) => {
+    // alert('1')
+    console.log(e.target);
+    console.log(e.currentTarget);
+})
+
+
+// inner.addEventListener('mouseout', (e) => {
+//     alert('2')
+//     console.log(e.target);
+//     console.log(e.currentTarget);
+    
+// })
+
+
+
 
 
 
