@@ -5216,13 +5216,125 @@ outer.addEventListener('mouseleave', (e) => {
     console.log(e.currentTarget);
 })
 
-
 // inner.addEventListener('mouseout', (e) => {
 //     alert('2')
 //     console.log(e.target);
 //     console.log(e.currentTarget);
     
 // })
+
+//! Home Work
+//! Задание 1
+//! Создать html-страницу для ввода имени пользователя.
+//! Необходимо проверять каждый символ, который вводит пользователь. 
+//! Если он ввел цифру, то не отображать ее в input  
+let user_info = document.querySelector('#user_info') as any
+
+user_info.addEventListener('keydown', (e:any) => {
+    if (e.key >= 0) {
+        e.preventDefault()
+    }
+})
+
+//! Задание 4
+//! Создать html-страницу со светофором и кнопкой, которая
+//! переключает светофор на следующий цвет 
+let light_red = document.querySelector('#light_red') as HTMLDivElement
+let light_yellow = document.querySelector('#light_yellow') as HTMLDivElement
+let light_green = document.querySelector('#light_green') as HTMLDivElement
+let btn_next = document.querySelector('#btn_next') as HTMLButtonElement
+
+let count_colors = 0
+
+btn_next.addEventListener('click', () => {
+    count_colors++
+    if (count_colors == 1) {
+        light_red.style.backgroundColor = 'red'
+        light_green.style.backgroundColor = 'transparent'
+    }
+    if (count_colors == 2) {
+        light_red.style.backgroundColor = 'transparent'
+        light_yellow.style.backgroundColor = 'yellow'
+    }
+    if (count_colors == 3) {
+        light_yellow.style.backgroundColor = 'transparent'
+        light_green.style.backgroundColor = 'green'
+        count_colors = 0
+    }
+})
+
+//! Задание 5
+//! Создать html-страницу со списком книг.
+//! При щелчке на книгу, цвет фона должен меняться на оранжевый.
+//! Учтите, что при повторном щелчке на другую книгу, предыдущей –
+//! необходимо возвращать прежний цвет
+let books = document.querySelectorAll('#task5_ol ol li') as any
+for (let i = 0; i < books.length; i++) {
+    books[i].addEventListener('click', () => {
+        for (let j = 0; j < books.length; j++) {
+            books[j].style.backgroundColor = ''            
+        }
+        books[i].style.backgroundColor = 'orangered'
+    })
+}
+
+
+//! Задание 6
+//! Создать html-страницу с несколькими кнопками.
+//! При наведении на кнопку, должна появляться подсказка с текстом. 
+//! По умолчанию – подсказка появляется сверху от кнопки. 
+//! Но если она не помещается сверху от кнопки, тогда отображается снизу 
+let btn1 = document.querySelector('#btn1') as HTMLButtonElement
+let btn2 = document.querySelector('#btn2') as HTMLButtonElement
+let clue1 = document.querySelector('#clue1 div') as HTMLDivElement
+let clue2 = document.querySelector('#clue2 div') as HTMLDivElement
+let tail1 = document.querySelector('#clue1 div div:nth-child(2)') as HTMLDivElement
+let tail2 = document.querySelector('#clue2 div div:nth-child(2)') as HTMLDivElement
+let container_task = document.querySelector('#task_coordinates') as HTMLElement;
+
+let btnRect = btn1.getBoundingClientRect();
+let containerRect = container_task.getBoundingClientRect();
+let distanceTop = Math.trunc(btnRect.top - containerRect.top);
+console.log(distanceTop);
+
+clue1.style.opacity = '0'
+clue2.style.opacity = '0'
+
+function placeBtn(distanceTop:number, clue:HTMLDivElement, tail:HTMLDivElement) {
+    if (distanceTop >= 73) {
+        mouseenter(clue)
+    }
+    else {
+        mouseenter(clue)
+        tail.style.marginTop
+    }
+}
+
+function mouseenter(clue:HTMLDivElement) {
+    clue.style.opacity = '1'
+    clue.style.transition = '1.5s'
+}
+function mouseleave(clue:HTMLDivElement) {
+    clue.style.opacity = '0'
+    clue.style.transition = '0.5s'
+}
+
+btn1.addEventListener('mouseenter', () => {
+    mouseenter(clue1)
+    if (distanceTop > 65) {
+        clue1.style.marginTop = '100px'
+        tail1.style.marginTop = '-48px'
+    }
+})
+
+btn2.addEventListener('mouseenter', () => mouseenter(clue2))
+
+btn1.addEventListener('mouseleave', () => mouseleave(clue1))
+btn2.addEventListener('mouseleave', () => mouseleave(clue2))
+
+
+
+
 
 
 

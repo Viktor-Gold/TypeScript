@@ -912,3 +912,131 @@ body {
     width: 50px;
     height: 50px;
 }
+
+
+/*! Home Work */
+#html_task1 {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: bisque;
+}
+
+/* Task 2 */
+#html_task2 {
+    /* width: 400px; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: bisque;
+}
+
+#light {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #000;
+}
+
+#light div {
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+#btn_next {
+    height: 120px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(to right, red, yellow, green)
+}
+
+/* task 5 */
+#task5_ol {
+    padding: 20px;
+    margin-top: 40px;
+    background-color: bisque;
+}
+
+#task5_ol ol li:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+
+
+/* Задание 6 */
+#task_coordinates {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: bisque;
+}
+
+#task_coordinates button{
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: blueviolet;
+    color: bisque;
+}
+
+#task_coordinates button:hover {
+    background-color: bisque;
+    color: blueviolet;
+    transition: 0.5s;
+    /* outline: none; */
+    border: none;
+    box-shadow: 1px 1px 10px blueviolet;
+}
+
+#clue1, #clue2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#place1, #place2 {
+    position: absolute;
+}
+
+#clue1 div div:nth-child(1), #clue2 div div:nth-child(1) {
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    background-color: violet;
+}
+
+#clue1 div div:nth-child(1), #clue2 div div:nth-child(1) {
+    position: relative;
+    z-index: 2;
+}
+
+#clue1 div div:nth-child(2) {
+    position: absolute;
+    background-color: violet;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: 30px;
+    transform: rotate(45deg);
+}
+
+#clue2 div div:nth-child(2) {
+    position: absolute;
+    z-index: 1;
+    background-color: violet;
+    width: 20px;
+    height: 20px;
+    margin-top: -48px;
+    margin-left: 30px;
+    transform: rotate(45deg);
+}
