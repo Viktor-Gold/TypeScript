@@ -5284,53 +5284,41 @@ for (let i = 0; i < books.length; i++) {
 //! При наведении на кнопку, должна появляться подсказка с текстом. 
 //! По умолчанию – подсказка появляется сверху от кнопки. 
 //! Но если она не помещается сверху от кнопки, тогда отображается снизу 
-let btn1 = document.querySelector('#btn1') as HTMLButtonElement
-let btn2 = document.querySelector('#btn2') as HTMLButtonElement
-let clue1 = document.querySelector('#clue1 div') as HTMLDivElement
-let clue2 = document.querySelector('#clue2 div') as HTMLDivElement
-let tail1 = document.querySelector('#clue1 div div:nth-child(2)') as HTMLDivElement
-let tail2 = document.querySelector('#clue2 div div:nth-child(2)') as HTMLDivElement
-let container_task = document.querySelector('#task_coordinates') as HTMLElement;
+let btn1 = document.querySelector('#btn1 button') as HTMLButtonElement // Кнопка
+let title_btn = document.querySelector('.title_btn') as any // Контейнер подсказки
 
-let btnRect = btn1.getBoundingClientRect();
-let containerRect = container_task.getBoundingClientRect();
-let distanceTop = Math.trunc(btnRect.top - containerRect.top);
-console.log(distanceTop);
-
-clue1.style.opacity = '0'
-clue2.style.opacity = '0'
-
-function placeBtn(distanceTop:number, clue:HTMLDivElement, tail:HTMLDivElement) {
-    if (distanceTop >= 73) {
-        mouseenter(clue)
+btn1.addEventListener('mousemove', (e) => {
+    if (e.clientY > 200) {
+        title_btn.style.top = '10550px'
     }
     else {
-        mouseenter(clue)
-        tail.style.marginTop
-    }
-}
-
-function mouseenter(clue:HTMLDivElement) {
-    clue.style.opacity = '1'
-    clue.style.transition = '1.5s'
-}
-function mouseleave(clue:HTMLDivElement) {
-    clue.style.opacity = '0'
-    clue.style.transition = '0.5s'
-}
-
-btn1.addEventListener('mouseenter', () => {
-    mouseenter(clue1)
-    if (distanceTop > 65) {
-        clue1.style.marginTop = '100px'
-        tail1.style.marginTop = '-48px'
+        title_btn.style.top = '10660px'
     }
 })
 
-btn2.addEventListener('mouseenter', () => mouseenter(clue2))
 
-btn1.addEventListener('mouseleave', () => mouseleave(clue1))
-btn2.addEventListener('mouseleave', () => mouseleave(clue2))
+
+//! form 
+// console.log(document.forms);
+// console.log(document.forms[0]);
+// console.log(document.forms[0].id); // Узнаем id формы
+// console.log(document.forms[0].elements[1]); // Обращается к ребенку внутри form
+// console.log(document.forms[0].elements[1].имя атрибута); // Обращается к атрибуту
+// console.log(document.forms[0][0]); // Упрощенная запись
+
+// <fieldset>
+// <legend>Info</legend>
+// </fieldset>
+
+// console.log(document.forms[2][0][2][0].innerHTML);
+// console.log(document.forms[2][0][2][0].value);
+// console.log(document.forms[0][0][0].value);
+// console.log(document.forms[2][0][2].innerHTML);
+
+
+
+
+
 
 
 
@@ -5347,3 +5335,7 @@ btn2.addEventListener('mouseleave', () => mouseleave(clue2))
 //! 4432 Как мы взаимодействуем с параметром e и pageX/pageY
 //! Спросить про offset
 //! Как работает сервер? В Ютубе 
+
+//! Повторить DataSet 
+//! keydown, keyUp
+//! pointer и mouse, isPramery - поподробнее   
