@@ -5298,7 +5298,7 @@ btn1.addEventListener('mousemove', (e) => {
 
 
 
-//! form 
+//! form
 // console.log(document.forms);
 // console.log(document.forms[0]);
 // console.log(document.forms[0].id); // Узнаем id формы
@@ -5315,14 +5315,37 @@ btn1.addEventListener('mousemove', (e) => {
 // console.log(document.forms[0][0][0].value);
 // console.log(document.forms[2][0][2].innerHTML);
 
+let form_focus = document.querySelector('#form_focus') as HTMLFormElement
+//! Подсвечивает background инпута при уходе 
+form_focus.addEventListener('keydown', (e:any) => {
+    let input = e.target
+    input.classList.add('changeBackgorund')
+    // input.style.background = 'red'
+})
 
+form_focus.addEventListener('keyup', (e:any) => {
+    let input = e.target
+    input.classList.remove('changeBackgorund')
+    // input.style.background = 'red'
+})
 
+//! Тема: change, input, cut, copy, paste
+document.addEventListener('copy', (event) => { 
+    // event.preventDefault() // Запррещает копирование
+    let text = window.getSelection() + ' мы скопировали данный текст'
+    navigator.clipboard.writeText(text)
+    console.log(navigator.clipboard.writeText(text));
+    
+})
 
+console.log(navigator);
 
+//! Отправка формы и событие submit
 
-
-
-
+//! Куки document.cookie
+// HTTP не защищенный протокол
+// HTTPS защищенный протокол — S = Secure
+//! expires, max-age  
 
 
 
@@ -5338,4 +5361,7 @@ btn1.addEventListener('mousemove', (e) => {
 
 //! Повторить DataSet 
 //! keydown, keyUp
-//! pointer и mouse, isPramery - поподробнее   
+//! pointer и mouse, isPramery - поподробнее  
+
+//! Пройти Тема: Focus/Blur, Событимя\\я  
+ 

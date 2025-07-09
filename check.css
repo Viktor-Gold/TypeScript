@@ -1022,3 +1022,20 @@ body {
     background-color: gold;
     padding: 10px;
 }
+
+
+/* ! Классная работа 09.07*/
+#form_focus {
+    padding: 10px;
+    margin: auto;
+    background-color: lightblue;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.changeBackgorund {
+    background-color: red;
+}
