@@ -1039,3 +1039,61 @@ body {
 .changeBackgorund {
     background-color: red;
 }
+
+/*! Task 3 */
+#form_3 {
+    padding: 20px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: bisque;
+}
+
+.infoAboutUser{
+    display: flex;
+    gap: 60px;
+}
+
+#gender {
+    margin-top: 15px;
+    /* width: 200px; */
+}
+
+#gender input {
+    width: 10px;
+}
+
+#date_input input{
+    width: 172px;
+}
+
+.infoAboutUser>div {
+    display: flex;
+    flex-direction: column;
+}
+
+#skills {
+    display: flex;
+    gap: 10px;
+}
+
+#btn_save {
+    width: 100%;
+}
+
+#result {
+    background-color: bisque;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#info_result {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+#info_result div {
+    border: 1px solid #000;
+    padding: 5px;
+}

@@ -5347,6 +5347,63 @@ console.log(navigator);
 // HTTPS защищенный протокол — S = Secure
 //! expires, max-age  
 
+//! Home work 
+//! Task 3
+//! Создать html-страницу с формой для заполнения информации 
+//! о пользователе. После заполнения формы вывести всю введенную 
+//! информацию в текстовом виде  
+let info_result = document.querySelector('#info_result') as HTMLDivElement
+// console.log(info_result.children[1]);
+let form_3 = document.querySelectorAll('#form_3 input') as any
+let btn_save = document.querySelector('#btn_save') as HTMLButtonElement
+// btn_save.value = 'Save'
+btn_save.addEventListener('click', (e) => {
+    e.preventDefault()
+    let child = info_result.children
+    child[1].innerHTML = form_3[0].value
+    child[3].innerHTML = form_3[1].value
+    child[5].innerHTML = form_3[2].value
+    // child[7].innerHTML = form_3[3].value
+    if (form_3[4].value != 'Male') {
+        child[7].innerHTML = form_3[4].value
+    }
+    else if (form_3[3].value != 'Female') {
+        child[7].innerHTML = form_3[3].value
+    }
+    child[9].innerHTML = form_3[5].value
+    child[11].innerHTML = form_3[6].value
+})
+
+//! LocalStorage
+console.log(document.cookie);
+
+localStorage.setItem('surname', 'Petrov');
+localStorage.setItem('city', 'Sochi');
+// localStorage.clear()
+console.log(localStorage)
+console.log(localStorage.getItem('city'));
+// console.log(localStorage.removeItem('surname')); - удаляет значение по ключу
+for (let i = 0; i < localStorage.length; i++) {
+    // console.log(localStorage.key(i));
+    let key = localStorage.key(i)
+    console.log(localStorage.getItem(key));
+}
+
+let user = {
+    name: 'Petya',
+    age: 30,
+}
+
+console.log(user);
+console.log(typeof user);
+console.log(JSON.stringify(user));
+
+let string = JSON.stringify(user)
+console.log(JSON.parse(string));
+document.body.addEventListener('storage', (e) => {
+    
+})
+
 
 
 
