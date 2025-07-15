@@ -1097,3 +1097,20 @@ body {
     border: 1px solid #000;
     padding: 5px;
 }
+
+/* Task textarea */
+#autosave {
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+#textarea {
+    padding: 5px;
+}
+
+#reset_form {
+    padding: 5px;
+    width: 100px;
+    background-color: bisque;
+    border-radius: 10px;
+}

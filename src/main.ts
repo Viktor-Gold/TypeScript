@@ -5409,6 +5409,22 @@ document.body.addEventListener('storage', (e) => { //! Как вызывать s
 })
 
 
+//! Home Work localStorage
+//! Автосохранение поля формы
+//! Создайте поле textarea, значение которого будет 
+//! автоматически сохраняться при каждом его изменении.
+//! Когда пользователь закроет страницу и потом откроет её заново 
+//! он должен увидеть последнее введённое значение.  
+let textarea = document.querySelector('#textarea') as HTMLTextAreaElement
+let textSave = localStorage.getItem('save')
+textarea.value = textSave    
+
+
+textarea.addEventListener('input', () => {
+    localStorage.setItem('save', textarea.value)
+})
+
+
 
 
 
