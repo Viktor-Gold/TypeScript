@@ -5424,6 +5424,67 @@ textarea.addEventListener('input', () => {
     localStorage.setItem('save', textarea.value)
 })
 
+//! Task 3
+let text_for_form = document.querySelector('#text_for_form') as HTMLDivElement
+let styles_text = document.querySelectorAll('#styles_text input') as any
+let text_area = document.querySelector('#text_area') as HTMLTextAreaElement
+let show_text = document.querySelector('#show_text') as HTMLInputElement
+
+show_text.addEventListener('click', (e) => {
+    e.preventDefault()
+    text_for_form.innerText = text_area.value
+    let massive = ['bold', 'underline', 'italic', 'left', 'right', 'justify']
+    for (let i = 0; i < styles_text.length; i++) {
+        if (styles_text[i].checked == true) {
+            text_for_form.classList.add(massive[i])
+        }
+        else {
+            text_for_form.classList.remove(massive[i])
+        }
+    }
+
+    // if (styles_text[1].checked == true) {
+    //     text_for_form.classList.add('underline')
+    // }
+    // else {
+    //     text_for_form.classList.remove('underline')
+    // }
+
+    // if (styles_text[2].checked == true) {
+    //     text_for_form.classList.add('italic')
+    // }
+    // else {
+    //     text_for_form.classList.remove('italic')
+    // }
+
+})
+
+console.log(document.cookie = ('country = Russia'));
+
+//! Перехват ошибок
+//! Промисы  
+let prom = new Promise ((resolve, reject) => {
+    console.log('Promise start');
+    // asfsdfs //! создаем ошибку
+    setTimeout(() => {
+        console.log('Promise end');
+        resolve('Выполнено')
+        reject(new Error('eeeror'))
+        
+    }, 2500)
+})
+.then((data) => { //! Для чего then?
+    console.log(data);
+})
+.catch((error) => { // catch для того, чтобы не падал сервер
+    console.log(error);
+    document.body.style.background = 'black'
+})
+.finally(() => { // finally срабатывает в любом случае (НЕ ОБЯЗАТЕЛЬНЫЙ)
+    console.log('Promise завершен');
+})
+
+
 
 
 
