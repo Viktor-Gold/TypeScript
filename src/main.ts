@@ -5485,6 +5485,69 @@ let prom = new Promise ((resolve, reject) => {
 })
 
 
+//! Домашнее задание PZ_Module_6_7_week_15 
+//! Task 1 
+let form = document.querySelector('#registration_form') as HTMLFormElement // Форма
+let user_mail = document.querySelector('#user_mail') as HTMLInputElement // Email 
+let user_pass = document.querySelector('#user_pass') as HTMLInputElement // Пароль
+let user_pass_repeat = document.querySelector('#user_pass_repeat') as HTMLInputElement // Повторная строка пароля
+
+let wrong_email = document.querySelector('#wrong_email') as HTMLSpanElement // Ошибка в Email
+let requiered_field = document.querySelector('#requiered_field') as HTMLSpanElement // Ошибка в пароле: "Обязательное поле"
+let length_symbols = document.querySelector('#length_symbols') as HTMLSpanElement // Ошибка в пароле: "Минимально 6 символов"
+let wrong_pass = document.querySelector('#wrong_pass') as HTMLSpanElement // Ошбика в пароле о недостающих символах
+let requiered_field2 = document.querySelector('#requiered_field2') as HTMLSpanElement // Ошибка в повторном вводе пароля: "Обязательное поле"
+let not_match = document.querySelector('#not_match') as HTMLSpanElement // Ошибка в повторе пароля: "Пароли не совпадают"
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+//Email
+    if (user_mail.value == '' || 
+        !user_mail.value.includes('@') ||
+        user_mail.value.indexOf('@') < 3 ||
+        user_mail.value.endsWith('@') ||
+        !user_mail.value.includes('.', user_mail.value.indexOf('@'))) {
+        wrong_email.style.display = 'block'
+    }
+    else {
+        wrong_email.style.display = 'none'
+    }
+
+//Password
+    if (user_pass.value == '') {
+        requiered_field.style.display = 'block'
+        length_symbols.style.display = 'none'
+    }
+    else if (user_pass.value.length < 6) {
+        length_symbols.style.display = 'block'
+        requiered_field.style.display = 'none'
+    }
+    else if (/[a-z]/.test(user_pass.value) || /[A-Z]/.test(user_pass.value) || /[0-9]/.test(user_pass.value)) {
+        wrong_pass.style.display = 'block'
+        length_symbols.style.display = 'none'
+        requiered_field.style.display = 'none'
+    }
+    else {
+        wrong_pass.style.display = 'none'
+        length_symbols.style.display = 'none'
+        requiered_field.style.display = 'none'
+    }
+
+// Password repeat
+    if (user_pass_repeat.value == '') {
+        requiered_field2.style.display = 'block'
+    }
+    else if (user_pass.value != user_pass_repeat.value) {
+        not_match.style.display = 'block'
+        requiered_field2.style.display = 'none'
+    }
+    else {
+        not_match.style.display = 'none'
+        requiered_field2.style.display = 'none'
+    }
+
+})
 
 
 

@@ -1156,3 +1156,52 @@ body {
     text-align: center;
 }
 
+
+/*! Домашнее задание PZ_Module_6_7_week_15
+/*! Task 1 */
+#PZ_Module_6_7 {
+    margin-top: 60px;
+    background: linear-gradient(rgb(250, 187, 69), darkblue);
+}
+
+#registration_form {
+    margin: auto;
+    width: 50%;
+    /* margin-top: 20px */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* justify-content: center; */
+}
+
+#registration_form div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#registration_form label {
+    background-color: rgba(179, 179, 179, 0.5);
+    width: 65px;
+    padding: 5px;
+    border-radius: 0px 10px 0px 0px;
+    text-align: center;
+}
+
+.textAboveField span {
+    display: none;
+    color: brown;
+    position: absolute;
+    right: 26%;
+    margin-top: 5px;
+    text-shadow: 1px 1px 1px black;
+}
+
+#sign_up {
+    margin-top: 10px;
+    width: 100%;
+    padding: 5px;
+}
+
