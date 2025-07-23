@@ -1205,3 +1205,61 @@ body {
     padding: 5px;
 }
 
+
+
+#radius_kfc {
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-bottom: 100px;
+    background-color: #000;
+    /* padding: 20px; */
+}
+
+#circle {
+    width: 200px;
+    height: 200px;
+    /* background-color: pink; */
+    border: 5px solid red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#square1 {
+    position: absolute;
+    width: 200px;
+    height: 210px;
+    background-color: black;
+    margin-top: -210px;
+    margin-left: 105px;
+    /* border: 1px solid #000; */
+    animation: moveSquare1 12s linear forwards;
+}
+#square2 {
+    position: absolute;
+    width: 200px;
+    height: 210px;
+    background-color:black;
+    margin-top: 210px;
+    margin-left: -95px;
+    /* border: 1px solid #000; */
+    animation: moveSquare1 12s 12s linear forwards
+}
+
+@keyframes moveSquare1 {
+    from {
+
+    }
+
+    to {
+        margin-top: 0px;
+    }
+}
+@keyframes moveSquare2 {
+    from {
+
+    }
+
+    to {
+        margin-top: 0px;
+    }
+}

@@ -5498,6 +5498,22 @@ let length_symbols = document.querySelector('#length_symbols') as HTMLSpanElemen
 let wrong_pass = document.querySelector('#wrong_pass') as HTMLSpanElement // Ошбика в пароле о недостающих символах
 let requiered_field2 = document.querySelector('#requiered_field2') as HTMLSpanElement // Ошибка в повторном вводе пароля: "Обязательное поле"
 let not_match = document.querySelector('#not_match') as HTMLSpanElement // Ошибка в повторе пароля: "Пароли не совпадают"
+let sign_up = document.querySelector('#sign_up') as HTMLInputElement
+
+console.log(form);
+let inpits_form = form.getElementsByTagName('input') as any
+console.log(inpits_form[0]);
+
+
+
+
+sign_up.addEventListener('click', () => {
+    document.cookie += inpits_form[0].value + ',' + '; max-age=30'
+    document.cookie += inpits_form[1].value + ',' + '; max-age=30'
+    let arrayCookie = document.cookie.split(',')
+    console.log(arrayCookie);
+    
+})
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -5546,8 +5562,31 @@ form.addEventListener('submit', (e) => {
         not_match.style.display = 'none'
         requiered_field2.style.display = 'none'
     }
-
 })
+
+//! ПЕРЕХВАТЧИК ОШИБОК
+
+function sum(a:number, b:number) {
+    if (typeof a !== 'number') {
+        throw Error('a не число');
+    }
+    if (typeof b !== 'number') {
+        throw Error('a не число');
+    }
+    return a + b
+}
+
+try {
+    console.log(sum('3', 4));
+} catch (error) {
+    console.log(error);
+    
+}
+
+
+
+
+
 
 
 
@@ -5565,4 +5604,11 @@ form.addEventListener('submit', (e) => {
 //! pointer и mouse, isPramery - поподробнее  
 
 //! Пройти Тема: Focus/Blur, Событимя\\я  
- 
+//! обработчик событий ('focus') для input  
+
+//! Как сохранять в cookie, как подставлять значение cookie в input? 
+//! resolve, reject  
+
+//! Посмотреть видос про ПРОМИСЫ В JS 
+
+//! GPT Подтянуть JS создав программу основанную на проверке текущих знаний 
